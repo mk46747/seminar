@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>NannyApp</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/mytemplate/")css/style.css" />
+</head>
+<body>
+    <!-- top panel starts here -->
+    <div style="margin:auto; width:1000px;">
+        <div class="flt topblock">
+            <a href="#" class="flt1 tp_txtplay">NannyApp</a> <span class="flt1 tp_txtcss">CHILDREN CARE SITE</span>
+            <p style="clear:left; float:left; display:inline; width:1000px; margin:90px 0px 0px 0px;"><a href="#" class="flt1 tp_home2">Home</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" /> <a href="#" class="flt tp_home">About Us</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" /> <a href="#" class="flt tp_home">Services</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" /> <a href="#" class="flt tp_home">Products</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" /> <a href="#" class="flt tp_home">Contact Us</a> </p>
+        </div>
+        <!-- top panel ends here -->
+        <!-- content panel starts here -->
+        <div id="cpblock">
+            <div class="flt1 cpinner">
+                @RenderBody()
+            </div>
+            <img src="@Url.Content("~/Content/mytemplate/")images/cp_bottcorn.gif" width="898" height="20" alt="" class="flt1" />
+        </div>
+        <!-- content panel ends here -->
+        <!-- footer panel starts here -->
+        <div class="flt1 ft_bg">
+            <a href="#" class="flt ft_txt">home</a> <img src="@Url.Content("~/Content/mytemplate/")images/ft_sqrwhite.gif" width="3" height="3" alt="" class="flt ft_bult" /> <a href="#" class="flt ft_txt2">about Us</a> <img src="@Url.Content("~/Content/mytemplate/")images/ft_sqrwhite.gif" width="3" height="3" alt="" class="flt ft_bult" /> <a href="#" class="flt ft_txt2">company</a> <img src="images/ft_sqrwhite.gif" width="3" height="3" alt="" class="flt ft_bult" /> <a href="#" class="flt ft_txt2">solutions</a> <img src="@Url.Content("~/Content/mytemplate/")images/ft_sqrwhite.gif" width="3" height="3" alt="" class="flt ft_bult" /> <a href="#" class="flt ft_txt2">support</a> <img src="@Url.Content("~/Content/mytemplate/")images/ft_sqrwhite.gif" width="3" height="3" alt="" class="flt ft_bult" /> <a href="#" class="flt ft_txt2">contact us</a><br />
+            <span class="flt1 ft_txt3">2008 Copyright,All rights reserved. <a href="http://www.buytemplates.net/CSS-XHTML-web-templates.aspx" style="color:#ffffff;">Css/Xhtml template</a> designed by buytemplates.net</span> <a href="#" class="flt ft_button"><img src="@Url.Content("~/Content/mytemplate/")images/ft_valid1.gif" width="80" height="18" alt="" /></a> <a href="#" class="flt ft_button2"><img src="@Url.Content("~/Content/mytemplate/")images/ft_valid2.gif" width="80" height="18" alt="" /></a>
+        </div>
+    </div>
+
+</body>
+</html>
