@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NannyApp.Models
 {
-    public enum userType { kilo, piece };
+    public enum userType { administrator, nanny, parrent };
 
     public class User
     {
