@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NannyApp.Models
+namespace NannyApp.Model
 {
     public enum userType { administrator, nanny, parrent };
 
-    public class User
+    class User
     {
         private int _id;
         private string _name;
@@ -19,6 +18,7 @@ namespace NannyApp.Models
         private string _password;
         private userType _userType;
         private string _contact;
+        //mozda tu treba lista Offer? jer svaki user ima svoju listu ponuda
 
         public virtual int Id
         {
