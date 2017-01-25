@@ -37,7 +37,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mappings\CooperationMap.cs" />
     <Compile Include="Mappings\OfferMap.cs" />
+    <Compile Include="Mappings\ReviewMap.cs" />
     <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="NHibernateService.cs" />
   </ItemGroup>

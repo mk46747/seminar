@@ -14,44 +14,42 @@ namespace NannyApp.DAL.Mappings
         {
             Table("Offer");
             UseUnionSubclassForInheritanceMapping();
-            Id(b => b.Id).Column("Id").CustomType("Int32").GeneratedBy.Native();
-            Map(b => b.Username).Column("Username").CustomType("String").Not.Nullable().Length(50);
-            Map(b => b.Password).Column("Password").CustomType("String").Not.Nullable().Length(50);
-            Map(b => b.Name).Column("Name").CustomType("String").Not.Nullable().Length(50);
-            Map(b => b.Surname).Column("Surname").CustomType("String").Not.Nullable().Length(50);
-            Map(b => b.Gender).Column("Gender").CustomType("String").Not.Nullable().Length(10);
-            Map(b => b.Contact).Column("Contact").CustomType("String").Not.Nullable().Length(50);
+
+            Map(b => b.Price).Column("Price").CustomType("Double").Not.Nullable().Length(50);
+            Map(b => b.Experience).Column("Experience").CustomType("String").Not.Nullable().Length(500);
+            Map(b => b.BabySittingPlace).Column("BabySittingPlace").CustomType<BabySittingPlace>().Not.Nullable().Length(50);
+            Map(b => b.Notice).Column("Notice").CustomType("String").Length(500);
+            Map(b => b.StartTime).Column("StartTime").CustomType("datetime").Not.Nullable();
+            Map(b => b.EndTime).Column("EndTime").CustomType("datetime").Not.Nullable();
+            Map(b => b.City).Column("City").CustomType("String").Not.Nullable().Length(50);
+            Map(b => b.Address).Column("Address").CustomType("String").Not.Nullable().Length(100);
+            Map(b => b.ChildrenNumber).Column("ChildrenNumber").CustomType("Int32").Not.Nullable();
+            Map(b => b.MinChildrenAge).Column("MinChildrenAge").CustomType("Int32").Not.Nullable();
+            Map(b => b.MaxChildrenAge).Column("MaxChildrenAge").CustomType("Int32").Not.Nullable();
+            Map(b => b.Deadline).Column("Deadline").CustomType("datetime").Not.Nullable();
+            Map(b => b.Opened).Column("Opened").CustomType("Bool").Not.Nullable();
         }
     }
 
-    class ParentMap : SubclassMap<Parent>
+    class NannyOfferMap : SubclassMap<NannyOffer>
     {
-        public ParentMap()
+        public NannyOfferMap()
         {
-            Table("Parent");
+            Table("NannyOffer");
             Abstract();
 
-            HasMany(b => b.ParrentOffer).Cascade.All();
-            HasMany(b => b.Cooperation).Cascade.All();
+            Map(b => b.Nanny).Column("Nanny").CustomType<Nanny>().Not.Nullable();
         }
     }
 
-    class NannyMap : SubclassMap<Nanny>
+    class ParentOfferMap : SubclassMap<ParentOffer>
     {
-        public NannyMap()
+        public ParentOfferMap()
         {
-            Table("Nanny");
+            Table("ParentOffer");
             Abstract();
 
-            HasMany(b => b.NannyOffer).Cascade.All();
-            HasMany(b => b.Cooperation).Cascade.All();
-            Map(b => b.Education).Column("Education").CustomType("String").Not.Nullable().Length(500);
-            Map(b => b.Smoking).Column("Smoking").CustomType("Bool").Not.Nullable();
-            Map(b => b.Pets).Column("Pets").CustomType("Bool").Not.Nullable();
-            Map(b => b.SickChildern).Column("SickChildern").CustomType("Bool").Not.Nullable();
-            Map(b => b.Car).Column("Car").CustomType("Bool").Not.Nullable();
-            Map(b => b.ExtraServices).Column("ExtraServices").CustomType("String").Length(500);
-            Map(b => b.ExtraQualification).Column("ExtraQualification").CustomType("String").Length(500);
+            Map(b => b.Parent).Column("Parent").CustomType<Parent>().Not.Nullable();
         }
     }
 }
