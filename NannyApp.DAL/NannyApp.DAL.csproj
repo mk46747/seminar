@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mappings\NannyMap.cs" />
+    <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="NHibernateService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -43,6 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NannyApp.Model\NannyApp.Model.csproj">
+      <Project>{0800d709-a81a-4226-b2f3-f76010ef1ca4}</Project>
+      <Name>NannyApp.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
