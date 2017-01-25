@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace NannyApp.Model
 {
-    public class NannyOffer : Offer
+    public class ParentOffer : Offer
     {
-        public virtual Nanny Nanny { get; set; }
-       
-
-        public NannyOffer(int Id)
+        public virtual Parent Parent { get; set; }
+        public ParentOffer(int Id)
             : base(Id)
         {
 
     }
-    }
+
+
+}
 }

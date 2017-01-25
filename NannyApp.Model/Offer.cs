@@ -5,39 +5,31 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace NannyApp.Model
-{
-    public abstract class Offer
-    {
-        private int _idOffer;
-        private double _price;
-        private string _experience;
-        private string _babysittingPlace;
-        private string _notice;
 
-        public virtual int IdOffer
+{
+    public enum BabySittingPlace { NANNYS_PLACE, PARENTS_PLACE}
+    public abstract class Offer : EntityBase<int>
+    {
+        public virtual double Price { get; set; }
+        public virtual string Experience { get; set; }
+        public virtual BabySittingPlace BabySittingPlace { get; set; }
+        public virtual string Notice { get; set; }
+        public virtual DateTime StartTime { get; set; }
+        public virtual DateTime EndTime{ get; set; }
+        public virtual string City { get; set; }
+        public virtual string Address { get; set; }
+        public virtual int ChildrenNumber { get; set; }
+        public virtual int MinChildrenAge { get; set; }
+        public virtual int MaxChildrenAge { get; set; }
+        public virtual DateTime Deadline { get; set; }
+
+        public virtual bool Opened {get; set;;}
+
+        public Offer(int Id)
+            : base(Id)
         {
-            get { return _idOffer; }
-            set { _idOffer = value; }
+
         }
-        public virtual double Price
-        {
-            get { return _price; }
-            set { _price = value; }
-        }
-        public virtual string Experience
-        {
-            get { return _experience; }
-            set { _experience = value; }
-        }
-        public virtual string BabysittingPlace
-        {
-            get { return _babysittingPlace; }
-            set { _babysittingPlace = value; }
-        }
-        public virtual string Notice
-        {
-            get { return _notice; }
-            set { _notice = value; }
-        }      
+     
     }
 }

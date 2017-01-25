@@ -35,12 +35,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection.cs" />
+    <Compile Include="Admin.cs" />
+    <Compile Include="Cooperation.cs" />
+    <Compile Include="EntityBase.cs" />
     <Compile Include="Nanny.cs" />
     <Compile Include="NannyOffer.cs" />
     <Compile Include="Offer.cs" />
-    <Compile Include="Parrent.cs" />
-    <Compile Include="ParrentOffer.cs" />
+    <Compile Include="Parent.cs" />
+    <Compile Include="ParentOffer.cs" />
+    <Compile Include="Review.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>

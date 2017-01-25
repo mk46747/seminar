@@ -6,59 +6,36 @@ using System.Threading.Tasks;
 
 namespace NannyApp.Model
 {
-    public enum userType { administrator, nanny, parrent };
+   // public enum UserType { ADMIN, NANNY, PARENT };
+    public enum Gender { MALE, FEMALE}
 
-    class User
+    public abstract class User : EntityBase<int>
     {
-        private int _id;
-        private string _name;
-        private string _surname;
-        private string _sex;
-        private string _email;
-        private string _password;
-        private userType _userType;
-        private string _contact;
-        //mozda tu treba lista Offer? jer svaki user ima svoju listu ponuda
+        public virtual string Username { get; set; }
+        public virtual string Password { get; set; }
+        public virtual string Name { get; set; }
+        public virtual string Surname { get; set; }
+        public virtual Gender Gender { get; set; }
+        public virtual string Contact { get; set; }
 
-        public virtual int Id
+        public User(int id, string Username, String Password)
+            : base(id)
         {
-            get { return _id; }
-            set { _id = value; }
+            this.Username = Username;
+            this.Password = Password;
+
         }
-        public virtual string Name
+        
+         public User(int Id, string Username, string Password, 
+             string Name, string Surname, Gender Gender, string Contact)  
+             : base(Id)
         {
-            get { return _name; }
-            set { _name = value; }
+            this.Name = Name;
+            this.Surname = Surname;
+            this.Gender = Gender;
+            this.Contact = Contact;
+
         }
-        public virtual string Surname
-        {
-            get { return _surname; }
-            set { _surname = value; }
-        }
-        public virtual string Sex
-        {
-            get { return _sex; }
-            set { _sex = value; }
-        }
-        public virtual string Email
-        {
-            get { return _email; }
-            set { _email = value; }
-        }
-        public virtual string Password
-        {
-            get { return _password; }
-            set { _password = value; }
-        }
-        public virtual userType UserType
-        {
-            get { return _userType; }
-            set { _userType = value; }
-        }
-        public virtual string Contact
-        {
-            get { return _contact; }
-            set { _contact = value; }
-        }
+
     }
 }

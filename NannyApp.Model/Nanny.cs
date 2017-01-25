@@ -6,56 +6,39 @@ using System.Threading.Tasks;
 
 namespace NannyApp.Model
 {
-    class Nanny
+    public class Nanny : User
     {
-        private int _idNanny;
-        private string _exstraServices; //mozda neko polje services koje moze ponuditi (kuhanje, ciscenje...), ako joj damo checkbox?
-        private string _extraQualification;
-        private string _education;
-        private bool _smoking; //flag
-        private bool _pets; //flag
-        private bool _sickChildren; //flag
-        private bool _car; //flag
+       // public IList<ExtraServiceType> ExtraServices {get; set;}
+       // public IList<Education> Education {get; set;}
 
-        public virtual int IdNanny
+        public virtual IList<NannyOffer> Offers { get; set; }
+        public virtual IList<Cooperation> Cooperations { get; set; }
+        public virtual string Education { get; set; }
+        public virtual bool Smoking { get; set; }
+        public virtual bool Pets { get; set; }
+        public virtual bool SickChildern { get; set; }
+        public virtual bool Car { get; set; }
+        //mozda nece bit obavezni?
+        public virtual string ExtraServices { get; set; }
+        public virtual string ExtraQualification { get; set; }
+
+        public Nanny(int Id, string Username, string Password)
+            : base(Id, Username, Password)
         {
-            get { return _idNanny; }
-            set { _idNanny = value; }
+
         }
-        public virtual string ExtraServices
+
+        public Nanny(int Id, string Username, string Password, String Education, bool Smoking,
+            bool Pets, bool Car)
+            :base(Id, Username, Password)
         {
-            get { return _exstraServices; }
-            set { _exstraServices = value; }
+            this.Education = Education;
+            this.Smoking = Smoking;
+            this.Pets = Pets;
+            this.Car = Car;
+           
         }
-        public virtual string ExtraQualification
-        {
-            get { return _extraQualification; }
-            set { _extraQualification = value; }
-        }
-        public virtual string Education
-        {
-            get { return _education; }
-            set { _education = value; }
-        }
-        public virtual bool Smoking
-        {
-            get { return _smoking; }
-            set { _smoking = value; }
-        }
-        public virtual bool Pets
-        {
-            get { return _pets; }
-            set { _pets = value; }
-        }
-        public virtual bool SickChildren
-        {
-            get { return _sickChildren; }
-            set { _sickChildren = value; }
-        }
-        public virtual bool Car
-        {
-            get { return _car; }
-            set { _car = value; }
-        }
+
+
     }
 }
