@@ -14,11 +14,13 @@ namespace NannyApp.DAL.Mappings
         {
             Table("Cooperation");
 
-            Map(b => b.CooperationInitiator).Column("CooperationInitiator").CustomType<User>().Not.Nullable(); //treba provjeriti je li ovo ide tako
-            Map(b => b.CooperationAcceptee).Column("CooperationAcceptee").CustomType<User>().Not.Nullable();
-            Map(b => b.Offer).Column("Offer").CustomType<Offer>().Not.Nullable();
-            Map(b => b.Status).Column("Status").CustomType<CooperationStatus>().Not.Nullable();
-            Map(b => b.Review).Column("Review").CustomType<Review>().Not.Nullable();
+            References(b => b.CooperationInitiator).Column("CooperationInitiatorId").Cascade.All();
+            //ili References(b => b.User).Column("CooperationInitiatorId").Cascade.All();
+            References(b => b.CooperationAcceptee).Column("CooperationAccepteeId").Cascade.All();
+            //ili References(b => b.User).Column("CooperationAccepteeId").Cascade.All();
+            References(b => b.Offer).Column("OfferId").Cascade.All();
+            Map(b => b.Status).Column("StatusId").CustomType<CooperationStatus>().Not.Nullable();
+            References(b => b.Review).Column("ReviewId").Cascade.All();
         }
     }
 }
