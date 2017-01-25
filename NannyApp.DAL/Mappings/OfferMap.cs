@@ -8,11 +8,11 @@ using FluentNHibernate.Mapping;
 
 namespace NannyApp.DAL.Mappings
 {
-    class UserMap : ClassMap<User>
+    class OfferMap : ClassMap<Offer>
     {
-        public UserMap()
+        public OfferMap()
         {
-            Table("User");
+            Table("Offer");
             UseUnionSubclassForInheritanceMapping();
             Id(b => b.Id).Column("Id").CustomType("Int32").GeneratedBy.Native();
             Map(b => b.Username).Column("Username").CustomType("String").Not.Nullable().Length(50);

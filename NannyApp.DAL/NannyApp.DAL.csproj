@@ -35,7 +35,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mappings\NannyMap.cs" />
+    <Compile Include="Mappings\OfferMap.cs" />
     <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="NHibernateService.cs" />
   </ItemGroup>
