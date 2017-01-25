@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NannyAppMVC", "NannyApp\NannyAppMVC.csproj", "{635E7E33-3F8E-43CF-BDC3-FD880AF42A5E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0800D709-A81A-4226-B2F3-F76010EF1CA4} = {0800D709-A81A-4226-B2F3-F76010EF1CA4}
+		{010DFEA1-8689-4732-B119-834AB2B1887F} = {010DFEA1-8689-4732-B119-834AB2B1887F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NannyApp.Model", "NannyApp.Model\NannyApp.Model.csproj", "{0800D709-A81A-4226-B2F3-F76010EF1CA4}"
 EndProject
