@@ -23,7 +23,7 @@ namespace NannyApp.Model
         public virtual int MaxChildrenAge { get; set; }
         public virtual DateTime Deadline { get; set; }
 
-        public virtual bool Opened {get; set;;}
+        public virtual bool Opened {get; set;}
 
         public Offer(int Id)
             : base(Id)
