@@ -11,7 +11,7 @@ namespace NannyApp.Model
        // public IList<ExtraServiceType> ExtraServices {get; set;}
        // public IList<Education> Education {get; set;}
 
-        public virtual IList<NannyOffer> Offers { get; set; }
+        public virtual IList<Offer> Offers { get; set; }
         public virtual IList<Cooperation> Cooperations { get; set; }
         public virtual string Education { get; set; }
         public virtual bool Smoking { get; set; }
@@ -22,20 +22,22 @@ namespace NannyApp.Model
         public virtual string ExtraServices { get; set; }
         public virtual string ExtraQualification { get; set; }
 
-        public Nanny(int Id, string Username, string Password)
-            : base(Id, Username, Password)
-        {
 
-        }
 
-        public Nanny(int Id, string Username, string Password, String Education, bool Smoking,
-            bool Pets, bool Car)
-            :base(Id, Username, Password)
+        public Nanny(string Username, string Password, 
+             string Name, string Surname, Gender Gender, string Contact, string Education, bool Smoking,
+            bool Pets, bool Car, string ExtraServices, string ExtraQualification,
+            IList<Offer> Offers, IList<Cooperation> Cooperations)
+            : base(Username, Password, Name, Surname, Gender, Contact)
         {
             this.Education = Education;
             this.Smoking = Smoking;
             this.Pets = Pets;
             this.Car = Car;
+            this.ExtraServices = ExtraServices;
+            this.ExtraQualification = ExtraQualification;
+            this.Offers = Offers;
+            this.Cooperations = Cooperations;
            
         }
         public Nanny()
@@ -43,6 +45,18 @@ namespace NannyApp.Model
         {
             
 
+        }
+        public void AddCooperation(Cooperation Cooperation)
+        {
+            Cooperations.Add(Cooperation);
+        }
+        public void RemoveOffer(Offer Offer)
+        {
+            Offers.Remove(Offer);
+        }
+        public void RemoveCooperation(Cooperation Cooperation)
+        {
+            Cooperations.Remove(Cooperation);
         }
 
 

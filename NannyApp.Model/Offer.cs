@@ -25,15 +25,30 @@ namespace NannyApp.Model
 
         public virtual bool Opened {get; set;}
 
+        public Offer( double Price, string Experience, BabySittingPlace BabySittingPlace, string Notice,
+        DateTime StartTime,  DateTime EndTime, string City, string Address, int ChildrenNumber,
+         int MinChildrenAge,  int MaxChildrenAge, DateTime Deadline)
+        {
+            this.Price = Price;
+            this.Experience = Experience;
+            this.BabySittingPlace = BabySittingPlace;
+            this.Notice = Notice;
+            this.StartTime = StartTime;
+            this.EndTime = EndTime;
+            this.City = City;
+            this.Address = Address;
+            this.ChildrenNumber = ChildrenNumber;
+            this.MinChildrenAge = this.MinChildrenAge;
+            this.MaxChildrenAge = MaxChildrenAge;
+            this.Deadline = Deadline;
+        }
+
         public Offer()
+            :base()
         {
-
         }
-        public Offer(int Id)
-            : base(Id)
-        {
 
-        }
+    }
      
     }
 }

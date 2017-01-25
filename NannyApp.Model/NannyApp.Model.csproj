@@ -43,12 +43,14 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Cooperation.cs" />
     <Compile Include="EntityBase.cs" />
+    <Compile Include="Factories\OfferFactory.cs" />
+    <Compile Include="Factories\UserFactory.cs" />
     <Compile Include="Nanny.cs" />
     <Compile Include="NannyOffer.cs" />
     <Compile Include="Offer.cs" />
     <Compile Include="Parent.cs" />
     <Compile Include="ParentOffer.cs" />
-    <Compile Include="Repositories\IOfferRepositository.cs" />
+    <Compile Include="Repositories\IOfferRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Review.cs" />
     <Compile Include="User.cs" />
@@ -77,9 +79,7 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Factories\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.104.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net45\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -15,10 +15,12 @@ namespace NannyApp.Model
         {
 
         }
-        public NannyOffer(int Id)
-            : base(Id)
-        {
-
-        }
+        public NannyOffer( double Price, string Experience, BabySittingPlace BabySittingPlace, string Notice,
+        DateTime StartTime,  DateTime EndTime, string City, string Address, int ChildrenNumber,
+         int MinChildrenAge,  int MaxChildrenAge, DateTime Deadline, Nanny Nanny)   
+            :base( Price,  Experience,  BabySittingPlace,  Notice, StartTime,   EndTime,
+            City,  Address,  ChildrenNumber, MinChildrenAge,   MaxChildrenAge,  Deadline){
+                this.Nanny = Nanny;
+            }
     }
 }

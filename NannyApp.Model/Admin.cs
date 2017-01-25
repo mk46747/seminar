@@ -15,8 +15,9 @@ namespace NannyApp.Model
             
 
         }
-       public Admin(int Id, string Username, string Password)
-           : base(Id, Username, Password)
+       public Admin(string Username, string Password,
+             string Name, string Surname, Gender Gender, string Contact)
+           : base(Username, Password, Name, Surname, Gender, Contact)
        {
 
        }

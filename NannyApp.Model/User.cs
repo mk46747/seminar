@@ -24,18 +24,14 @@ namespace NannyApp.Model
             
 
         }
-        public User(int id, string Username, String Password)
-            : base(id)
+      
+        
+         public User(string Username, string Password, 
+             string Name, string Surname, Gender Gender, string Contact)  
+             : base()
         {
             this.Username = Username;
             this.Password = Password;
-
-        }
-        
-         public User(int Id, string Username, string Password, 
-             string Name, string Surname, Gender Gender, string Contact)  
-             : base(Id)
-        {
             this.Name = Name;
             this.Surname = Surname;
             this.Gender = Gender;
