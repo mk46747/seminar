@@ -9,6 +9,7 @@ namespace NannyApp.Model
     public enum CooperationStatus {PENDING, ACCEPTED, DECLINED}
     public class Cooperation
     {
+        public virtual int Id { get; set; }
         public virtual User CooperationInitiator { get; set; }
         public virtual User CooperationAcceptee { get; set; }
         public virtual Offer Offer { get; set; }

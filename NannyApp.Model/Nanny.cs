@@ -38,6 +38,12 @@ namespace NannyApp.Model
             this.Car = Car;
            
         }
+        public Nanny()
+            : base()
+        {
+            
+
+        }
 
 
     }

@@ -39,12 +39,14 @@ namespace NannyApp.DAL
         {
             var nhConfig = Fluently.Configure()
                 .Database(SQLiteConfiguration.Standard
-                    .ConnectionString("Data Source=TestNHibernate_fluent.db;Version=3")
+                    .ConnectionString("Data Source=NannyAppDB.db;Version=3")
                     .AdoNetBatchSize(100))
                 .Mappings(mappings => mappings.FluentMappings.AddFromAssemblyOf<UserMap>())
                 .BuildConfiguration();
 
             var sessionFactory = nhConfig.BuildSessionFactory();
+            var schemaExport = new SchemaUpdate(nhConfig);
+            schemaExport.Execute(true, true); 
 
             return sessionFactory;
         }

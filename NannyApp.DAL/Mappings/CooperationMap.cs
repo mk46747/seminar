@@ -13,6 +13,7 @@ namespace NannyApp.DAL.Mappings
         public CooperationMap()
         {
             Table("Cooperation");
+            Id(b => b.Id).Column("Id").CustomType("Int32").GeneratedBy.Native();
 
             References(b => b.CooperationInitiator).Column("CooperationInitiatorId").Cascade.All();
             //ili References(b => b.User).Column("CooperationInitiatorId").Cascade.All();

@@ -9,7 +9,7 @@ namespace NannyApp.Model
     public class Review
     {
         public virtual int Id { get; set; }
-        public virtual string Review { get; set; }
+        public virtual string ReviewText { get; set; }
         public virtual int Grade { get; set; }
 
     }

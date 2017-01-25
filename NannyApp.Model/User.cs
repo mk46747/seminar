@@ -18,6 +18,12 @@ namespace NannyApp.Model
         public virtual Gender Gender { get; set; }
         public virtual string Contact { get; set; }
 
+        public User()
+            : base()
+        {
+            
+
+        }
         public User(int id, string Username, String Password)
             : base(id)
         {

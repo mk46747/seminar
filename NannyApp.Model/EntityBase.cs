@@ -8,6 +8,10 @@ namespace NannyApp.Model
 {
     public abstract class EntityBase<TId> : IEquatable<EntityBase<TId>>
     {
+        public EntityBase()
+        {
+
+        }
         protected EntityBase(TId id)
         {
            /* if (Equals(id, default(TId)))

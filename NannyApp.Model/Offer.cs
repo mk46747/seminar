@@ -25,6 +25,10 @@ namespace NannyApp.Model
 
         public virtual bool Opened {get; set;}
 
+        public Offer()
+        {
+
+        }
         public Offer(int Id)
             : base(Id)
         {

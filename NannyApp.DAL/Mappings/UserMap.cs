@@ -14,7 +14,7 @@ namespace NannyApp.DAL.Mappings
         {
             Table("User");
             UseUnionSubclassForInheritanceMapping();
-            Id(b => b.Id).Column("Id").CustomType("Int32").GeneratedBy.Native();
+            Id(b => b.Id).Column("Id").CustomType("Int32").GeneratedBy.HiLo("1000");
             Map(b => b.Username).Column("Username").CustomType("String").Not.Nullable().Length(50);
             Map(b => b.Password).Column("Password").CustomType("String").Not.Nullable().Length(50);
             Map(b => b.Name).Column("Name").CustomType("String").Not.Nullable().Length(50);
@@ -43,7 +43,7 @@ namespace NannyApp.DAL.Mappings
         {
             Table("Nanny");
             Abstract();
-
+            /*
             HasMany(b => b.Offers).Cascade.All();
             HasMany(b => b.Cooperations).Cascade.All();
             Map(b => b.Education).Column("Education").CustomType("String").Not.Nullable().Length(500);
@@ -53,6 +53,18 @@ namespace NannyApp.DAL.Mappings
             Map(b => b.Car).Column("Car").CustomType("Bool").Not.Nullable();
             Map(b => b.ExtraServices).Column("ExtraServices").CustomType("String").Length(500);
             Map(b => b.ExtraQualification).Column("ExtraQualification").CustomType("String").Length(500);
+             * */
+
+            HasMany(b => b.Offers).Cascade.All();
+            HasMany(b => b.Cooperations).Cascade.All();
+            Map(b => b.Education).Column("Education").CustomType("String").Not.Nullable().Length(500);
+            Map(b => b.Smoking).Column("Smoking").Not.Nullable();
+            Map(b => b.Pets).Column("Pets").Not.Nullable();
+            Map(b => b.SickChildern).Column("SickChildern").Not.Nullable();
+            Map(b => b.Car).Column("Car").Not.Nullable();
+            Map(b => b.ExtraServices).Column("ExtraServices").CustomType("String").Length(500);
+            Map(b => b.ExtraQualification).Column("ExtraQualification").CustomType("String").Length(500);
+
         }
     }
 

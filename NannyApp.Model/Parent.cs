@@ -10,6 +10,13 @@ namespace NannyApp.Model
     {
         public virtual IList<ParentOffer> Offers {get; set;}
         public virtual IList<Cooperation> Cooperations {get; set;}
+
+        public Parent()
+            : base()
+        {
+            
+
+        }
         public Parent(int Id, string Username, string Password)
             :base(Id, Username, Password)
         {

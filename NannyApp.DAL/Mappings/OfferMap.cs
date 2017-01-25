@@ -15,7 +15,7 @@ namespace NannyApp.DAL.Mappings
             Table("Offer");
             UseUnionSubclassForInheritanceMapping();
 
-            Id(b => b.Id).Column("Id").CustomType("Int32").GeneratedBy.Native();
+            Id(b => b.Id).Column("Id").CustomType("Int32").GeneratedBy.HiLo("1000");
             Map(b => b.Price).Column("Price").CustomType("Double").Not.Nullable().Length(50);
             Map(b => b.Experience).Column("Experience").CustomType("String").Not.Nullable().Length(500);
             Map(b => b.BabySittingPlace).Column("BabySittingPlace").CustomType<BabySittingPlace>().Not.Nullable().Length(50);
@@ -28,7 +28,8 @@ namespace NannyApp.DAL.Mappings
             Map(b => b.MinChildrenAge).Column("MinChildrenAge").CustomType("Int32").Not.Nullable();
             Map(b => b.MaxChildrenAge).Column("MaxChildrenAge").CustomType("Int32").Not.Nullable();
             Map(b => b.Deadline).Column("Deadline").CustomType("datetime").Not.Nullable();
-            Map(b => b.Opened).Column("Opened").CustomType("Bool").Not.Nullable();
+            //Map(b => b.Opened).Column("Opened").CustomType("Bool").Not.Nullable();
+            Map(b => b.Opened).Column("Opened").Not.Nullable();
         }
     }
 
@@ -39,7 +40,7 @@ namespace NannyApp.DAL.Mappings
             Table("NannyOffer");
             Abstract();
 
-            References(b => b.Nanny).Column("NannyId").Cascade.All();
+            HasOne(b => b.Nanny).Cascade.All();
         }
     }
 
@@ -50,7 +51,7 @@ namespace NannyApp.DAL.Mappings
             Table("ParentOffer");
             Abstract();
 
-            References(b => b.Parent).Column("ParentId").Cascade.All();
+            HasOne(b => b.Parent).Cascade.All();
         }
     }
 }

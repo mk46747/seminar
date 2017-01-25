@@ -15,7 +15,7 @@ namespace NannyApp.DAL.Mappings
             Table("Review");
 
             Id(b => b.Id).Column("Id").CustomType("Int32").GeneratedBy.Native();
-            Map(b => b.Review).Column("Review").CustomType("String").Not.Nullable().Length(500);
+            Map(b => b.ReviewText).Column("Review").CustomType("String").Not.Nullable().Length(500);
             Map(b => b.Grade).Column("Grade").CustomType("Int32").Not.Nullable();
         }
     }

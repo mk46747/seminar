@@ -12,6 +12,10 @@ namespace NannyApp.Model
         public ParentOffer(int Id)
             : base(Id)
         {
+        }
+            public ParentOffer()
+            : base()
+        {
 
     }
 

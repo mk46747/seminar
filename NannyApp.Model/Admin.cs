@@ -8,6 +8,13 @@ namespace NannyApp.Model
 {
    public class Admin : User
     {
+               
+       public Admin()
+            : base()
+        {
+            
+
+        }
        public Admin(int Id, string Username, string Password)
            : base(Id, Username, Password)
        {

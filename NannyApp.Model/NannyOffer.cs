@@ -9,12 +9,16 @@ namespace NannyApp.Model
     public class NannyOffer : Offer
     {
         public virtual Nanny Nanny { get; set; }
-       
 
+        public NannyOffer()
+            : base()
+        {
+
+        }
         public NannyOffer(int Id)
             : base(Id)
         {
 
-    }
+        }
     }
 }
