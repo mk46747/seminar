@@ -8,8 +8,8 @@ namespace NannyApp.Model.Repositories
 {
     interface IOfferRepository
     {
-        public IList<NannyOffer> GetAllNannyOffers();
+        //public IList<NannyOffer> GetAllNannyOffers();
 
-        public IList<ParentOffer> GetAllParentOffers();
+        //public IList<ParentOffer> GetAllParentOffers();
     }
 }
