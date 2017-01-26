@@ -12,7 +12,37 @@ namespace NannyApp.DAL
         private static void Main(string[] args)
         {
             CreateReviewAndSaveToDatabase();
+            CreateAndFetchParent();
+        }
 
+        private static void CreateAndFetchParent()
+        {
+            ParentOffer offer = new ParentOffer(200, "doslovno bilo tko", BabySittingPlace.PARENTS_PLACE, "This is a notice?", new DateTime(), new DateTime(), "Varaždin", "Unska 2.4", 1, 8, 8, new DateTime(), null);
+            User parent = new Parent("ZZZ", "1234", "Živadin", "Krempitić", Gender.MALE, "Unska 2.4", new List<Offer>() { offer }, null);
+            offer.Parent = (Parent) parent;
+            object id = 0;
+            using(var session = NHibernateService.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    id = session.Save(parent);
+                    transaction.Commit();
+                }
+                Console.WriteLine("parent (and offer?) saved");
+                session.Clear();
+            }
+
+            using(var session = NHibernateService.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    Parent fetchedParent = session.Get<Parent>(id);
+                    Console.WriteLine(fetchedParent.Name);
+                    transaction.Commit();
+                }
+            }
+
+            Console.ReadLine();
         }
 
         private static void CreateReviewAndSaveToDatabase()
@@ -24,7 +54,7 @@ namespace NannyApp.DAL
 
             using (var session = NHibernateService.OpenSession())
             {
-                using (var transaction = session.BeginTransaction())
+               using (var transaction = session.BeginTransaction())
                 {
                     session.Save(review);
                     transaction.Commit();
@@ -32,7 +62,5 @@ namespace NannyApp.DAL
                 Console.WriteLine("Saved review to the database");
             }
         }
-
-        
     }
 }
