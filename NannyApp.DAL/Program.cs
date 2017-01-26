@@ -19,8 +19,8 @@ namespace NannyApp.DAL
         {
             var review = new Review();
 
-            review.Grade = 4;
-            review.ReviewText = "tdsdstt";
+            review.Grade = 7;
+            review.ReviewText = "marko mrzljak";
 
             using (var session = NHibernateService.OpenSession())
             {

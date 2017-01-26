@@ -46,15 +46,20 @@ namespace NannyApp.Model
             
 
         }
-        public void AddCooperation(Cooperation Cooperation)
+        public virtual void AddCooperation(Cooperation Cooperation)
         {
             Cooperations.Add(Cooperation);
         }
-        public void RemoveOffer(Offer Offer)
+
+        public virtual void AddOffer(Offer Offer)
+        {
+            Offers.Add(Offer);
+        }
+        public virtual void RemoveOffer(Offer Offer)
         {
             Offers.Remove(Offer);
         }
-        public void RemoveCooperation(Cooperation Cooperation)
+        public virtual void RemoveCooperation(Cooperation Cooperation)
         {
             Cooperations.Remove(Cooperation);
         }
