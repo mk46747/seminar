@@ -48,8 +48,13 @@ namespace NannyApp.Controllers
                 }
                 else if (user.UserType.Equals(UserType.NANNY))
                 {
-                    //User newUser = UserFactory.CreateNanny(user.Username, user.Password, user.Name, user.Surname, user.Gender, user.Contact, UserType.NANNY);
-                    //UserRepository.AddUser(newUser);
+                    User newUser = UserFactory.CreateNanny(user.Username, user.Password, user.Name, user.Surname, user.Gender, user.Contact, UserType.NANNY);
+                    UserRepository.AddUser(newUser);
+                }
+                else if (user.UserType.Equals(UserType.ADMIN))
+                {
+                    User newUser = UserFactory.CreateAdmin(user.Username, user.Password, user.Name, user.Surname, user.Gender, user.Contact, UserType.Admin);
+                    UserRepository.AddUser(newUser);
                 }
                 //User newUser = UserFactory.CreateAccount(Name, AccType, Balance);
 

@@ -18,8 +18,8 @@ namespace NannyApp.Model
 
         }
        public Parent(string Username, string Password, 
-             string Name, string Surname, Gender Gender, string Contact, IList<ParentOffer> Offers, IList<Cooperation> Cooperations)
-            : base(Username, Password, Name, Surname, Gender, Contact)
+             string Name, string Surname, Gender Gender, string Contact, UserType UserType, IList<ParentOffer> Offers, IList<Cooperation> Cooperations)
+            : base(Username, Password, Name, Surname, Gender, Contact, UserType)
         {
             this.Offers = Offers;
             this.Cooperations = Cooperations;
