@@ -6,7 +6,9 @@ using System.Web.Mvc;
 
 using NannyApp.Model;
 using NannyApp.Model.Repositories;
+using NannyApp.Model.Factories;
 using NannyApp.DAL;
+using NannyApp.DAL.Repositories;
 using NHibernate;
 
 namespace NannyApp.Controllers
@@ -29,14 +31,26 @@ namespace NannyApp.Controllers
         public ActionResult Create()
         {
             return View();
-        }
 
+        }
         // POST: User/Create
         [HttpPost]
         public ActionResult Create(User user)
         {
             try
-            {             
+            {
+                UserRepository UserRepository = new UserRepository();
+
+                if (user.UserType.Equals(UserType.PARENT))
+                {
+                    User newUser = UserFactory.CreateParent(user.Username, user.Password, user.Name, user.Surname, user.Gender, user.Contact, UserType.PARENT);
+                    UserRepository.AddUser(newUser);
+                }
+                else if (user.UserType.Equals(UserType.NANNY))
+                {
+                    //User newUser = UserFactory.CreateNanny(user.Username, user.Password, user.Name, user.Surname, user.Gender, user.Contact, UserType.NANNY);
+                    //UserRepository.AddUser(newUser);
+                }
                 //User newUser = UserFactory.CreateAccount(Name, AccType, Balance);
 
                 //userRepository.AddUser(newUser);

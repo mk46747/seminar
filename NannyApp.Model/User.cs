@@ -16,7 +16,7 @@ namespace NannyApp.Model
         public virtual string Name { get; set; }
         public virtual string Surname { get; set; }
         public virtual Gender Gender { get; set; }
-        public virtual string Contact { get; set; }
+        public virtual string Contact { get; set; }    
         public virtual UserType UserType { get; set; }
 
         public User()
