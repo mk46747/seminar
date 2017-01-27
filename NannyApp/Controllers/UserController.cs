@@ -28,39 +28,29 @@ namespace NannyApp.Controllers
         }
 
         // GET: User/Create
-        public ActionResult Create()
+        public ActionResult CreateNanny()
         {
             return View();
 
         }
         // POST: User/Create
         [HttpPost]
-        public ActionResult Create(User user)
+        public ActionResult CreateNanny(Nanny user)
         {
             try
             {
+
+                Gender gender = Gender.MALE;
                 UserRepository UserRepository = new UserRepository();
-
-                if (user.UserType.Equals(UserType.PARENT))
-                {
-                    User newUser = UserFactory.CreateParent(user.Username, user.Password, user.Name, user.Surname, user.Gender, user.Contact, UserType.PARENT);
-                    UserRepository.AddUser(newUser);
+                 if(user.Gender.Equals(Gender.FEMALE)){
+                     gender = Gender.FEMALE;
+                } else if(user.Gender.Equals(Gender.MALE)){
+                     gender = Gender.MALE;
                 }
-                else if (user.UserType.Equals(UserType.NANNY))
-                {
-                    User newUser = UserFactory.CreateNanny(user.Username, user.Password, user.Name, user.Surname, user.Gender, user.Contact, UserType.NANNY);
-                    UserRepository.AddUser(newUser);
-                }
-                else if (user.UserType.Equals(UserType.ADMIN))
-                {
-                    User newUser = UserFactory.CreateAdmin(user.Username, user.Password, user.Name, user.Surname, user.Gender, user.Contact, UserType.Admin);
-                    UserRepository.AddUser(newUser);
-                }
-                //User newUser = UserFactory.CreateAccount(Name, AccType, Balance);
+                Nanny newNanny = (Nanny)UserFactory.CreateNanny(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, UserType.NANNY, user.Education, user.Smoking, user.Pets, user.Car, user.ExtraServices, user.ExtraQualification);
+                UserRepository.AddUser(newNanny);
 
-                //userRepository.AddUser(newUser);
-
-                return RedirectToAction("Index");
+                return RedirectToAction("Home/Index");
             }
             catch
             {

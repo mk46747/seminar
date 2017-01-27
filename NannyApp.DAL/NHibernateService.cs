@@ -37,20 +37,32 @@ namespace NannyApp.DAL
 
         private static ISessionFactory OpenSessionFactory()
         {
-            var nhConfig = Fluently.Configure()
-                .Database(SQLiteConfiguration.Standard
-                    .ConnectionString("Data Source=NannyAppDB.db;Version=3")
-                    .AdoNetBatchSize(100))
-                .Mappings(mappings => mappings.FluentMappings.AddFromAssemblyOf<UserMap>())
-                .BuildConfiguration();
+            ISessionFactory sessionFactory = null;
+            try
+            {
+                var nhConfig = Fluently.Configure()
+                    .Database(SQLiteConfiguration.Standard
+                        .ConnectionString("Data Source=NannyAppDB.db;Version=3")
+                        .AdoNetBatchSize(100))
+                    .Mappings(mappings => mappings.FluentMappings.AddFromAssemblyOf<UserMap>())
+                    .BuildConfiguration();
 
-            var sessionFactory = nhConfig.BuildSessionFactory();
-            var schemaExport = new SchemaUpdate(nhConfig);
-            //var schemaExport = new SchemaExport(nhConfig);
-            schemaExport.Execute(true, true); 
-            //schemaExport.Create(false, true); 
+                sessionFactory = nhConfig.BuildSessionFactory();
+                var schemaExport = new SchemaUpdate(nhConfig);
+                //var schemaExport = new SchemaExport(nhConfig);
+                schemaExport.Execute(true, true);
+                //schemaExport.Create(false, true); 
+
+            }
+            catch(Exception e)
+            {
+                Logger.Log(e);
+                Console.WriteLine(e.Message);
+                Console.ReadLine();
+            }
 
             return sessionFactory;
+            
         }
     }
 }

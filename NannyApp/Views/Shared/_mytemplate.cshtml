@@ -18,6 +18,8 @@
         <div id="cpblock">
             <div class="flt1 cpinner">
                 @RenderBody()
+                @RenderSection("featured", required: false)
+                @RenderSection("scripts", required: false)
             </div>
             <img src="@Url.Content("~/Content/mytemplate/")images/cp_bottcorn.gif" width="898" height="20" alt="" class="flt1" />
         </div>
