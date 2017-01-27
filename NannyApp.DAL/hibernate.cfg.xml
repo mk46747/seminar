@@ -8,6 +8,7 @@
     </property>
     <property name = "connection.connection_string">
       Data Source=nhibernate.db;Version=3
+      
     </property>
 
     <property name = "dialect">
