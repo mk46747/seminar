@@ -16,6 +16,7 @@ namespace NannyApp.DAL
         {
             CreateReviewAndSaveToDatabase();
             CreateAndFetchParent();
+            Console.ReadLine();
         }
 
         private static void CreateAndFetchParent()
