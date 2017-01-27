@@ -11,7 +11,7 @@ namespace NannyApp.BaseLib
         void AddNanny();
         void AddParent();
         void AddNannyOffer();
-        void AddParentOffer();
+       // void AddParentOffer();
 
        // void EditAccount(string accountName);
     }
