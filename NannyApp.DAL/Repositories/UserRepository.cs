@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NannyApp.Model.Repositories;
 using NannyApp.Model;
 using NHibernate;
+using NHibernate.Linq.ResultOperators;
 
 namespace NannyApp.DAL.Repositories
 {
@@ -159,11 +160,10 @@ namespace NannyApp.DAL.Repositories
                 {
                     using (var transaction = session.BeginTransaction())
                     {
-                        
+
 
                         User = session.QueryOver<T>().Where(c => c.Username == Username)
-                            .And(c => c.Password == Password)
-                            .SingleOrDefault();
+                            .And(c => c.Password == Password).SingleOrDefault();
                         transaction.Commit();
                     }
                     session.Clear();

@@ -35,7 +35,7 @@ namespace NannyApp.DAL
                 session.Clear();
                // session.c;
             }
-
+            /*
             UserRepository UserRepository = new UserRepository();
             OfferRepository OfferRepository = new OfferRepository();
             Parent p = UserRepository.GetParent((int)id);
@@ -55,7 +55,7 @@ namespace NannyApp.DAL
 
 
             Console.ReadLine();
-
+            */
 
         }
 
