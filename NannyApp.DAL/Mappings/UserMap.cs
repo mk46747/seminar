@@ -26,6 +26,7 @@ namespace NannyApp.DAL.Mappings
             //Map(o => o.AccountType).CustomType<AccountType>();
             Map(b => b.Gender).Column("Gender").CustomType<Gender>().Not.Nullable().Length(10);
             Map(b => b.Contact).Column("Contact").CustomType("String").Not.Nullable().Length(50);
+            Map(b => b.UserType).Column("UserType").CustomType<UserType>().Not.Nullable().Length(25);
         }
     }
 

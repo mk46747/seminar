@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NannyApp.Model
 {
-   // public enum UserType { ADMIN, NANNY, PARENT };
+    public enum UserType { ADMIN, NANNY, PARENT };
     public enum Gender { MALE, FEMALE}
 
     public abstract class User : EntityBase<int>
@@ -17,6 +17,7 @@ namespace NannyApp.Model
         public virtual string Surname { get; set; }
         public virtual Gender Gender { get; set; }
         public virtual string Contact { get; set; }
+        public virtual UserType UserType { get; set; }
 
         public User()
             : base()
@@ -26,8 +27,8 @@ namespace NannyApp.Model
         }
       
         
-         public User(string Username, string Password, 
-             string Name, string Surname, Gender Gender, string Contact)  
+         public User(string Username, string Password,
+             string Name, string Surname, Gender Gender, string Contact, UserType UserType)  
              : base()
         {
             this.Username = Username;
@@ -36,6 +37,7 @@ namespace NannyApp.Model
             this.Surname = Surname;
             this.Gender = Gender;
             this.Contact = Contact;
+            this.UserType = UserType;
 
         }
 

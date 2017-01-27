@@ -33,11 +33,11 @@ namespace NannyApp.Controllers
 
         // POST: User/Create
         [HttpPost]
-        public ActionResult Create(User newUser)
+        public ActionResult Create(User user)
         {
             try
             {             
-                //Account newAccount = AccountFactory.CreateAccount(Name, AccType, Balance);
+                //User newUser = UserFactory.CreateAccount(Name, AccType, Balance);
 
                 //userRepository.AddUser(newUser);
 
