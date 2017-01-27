@@ -13,18 +13,38 @@ namespace NannyApp.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Login()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Login(korisnik u)
+        //{
+        //    // this action is for handle post (login)
+        //    if (ModelState.IsValid) // this is check validity
+        //    {
+        //        using (Entities dc = new Entities())
+        //        {
+        //            var v = dc.korisnik.Where(a => a.email.Equals(u.email) && a.lozinka.Equals(u.lozinka)).FirstOrDefault();
+        //            if (v != null)
+        //            {
+        //                Session["LogedUserID"] = v.idKorisnik.ToString();
+        //                Session["LogedUserFullname"] = v.korisnickoIme.ToString();
+        //                Session["User"] = v.vrstaKorisnik.ToString();
 
-            return View();
-        }
+        //                return RedirectToAction("Index", "Korisnik");
+        //            }
+        //        }
+        //    }
+        //    return View(u);
+        //}
+
+        //public ActionResult Logout()
+        //{
+        //    Session.Clear();
+        //    return RedirectToAction("Index", "Home");
+        //}
     }
 }
