@@ -13,29 +13,22 @@ namespace NannyApp.DAL.Tests
         [TestMethod]
         public void Parent_CreateInstance()
         {
-            User newParent = UserFactory.CreateParent("IIvic", "12321", "Ivan", "Ivić", Gender.MALE, "060 723 555");
-            UserRepository repository = new UserRepository();
-            repository.AddUser(newParent);
+            User newParent = UserFactory.CreateParent("IIvic", "12321", "Ivan", "Ivić", Gender.MALE, "060 723 555", UserType.PARENT);
+            object id = 0;
 
-            Parent p = repository.GetParent("IIvic", "12321");
+            using (var session = NHibernateService.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    id = session.Save(newParent);
+                    transaction.Commit();
+                }
+                session.Clear();
+            }
+
+            UserRepository repository = new UserRepository();
+            Parent p = repository.GetParent((int)id);
             Debug.Assert(p == newParent);
-        }
-
-        [TestMethod]
-        public void Parent_RemoveInstance()
-        {
-            UserRepository repository = new UserRepository();
-            repository.AddUser(UserFactory.CreateParent("JJovic", "qwewq", "Jelena", "Jović", Gender.FEMALE, "092 092 092"));
-            Parent p = repository.GetParent("JJovic", "qwewq");
-            repository.DeleteUser(p);
-        }
-
-        [TestMethod]
-        public void Nanny_CreateInstance()
-        {
-            //User newNanny = UserFactory.CreateNanny()
-            //UserRepository repository = new UserRepository();
-
         }
     }
 }
