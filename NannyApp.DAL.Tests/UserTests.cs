@@ -51,12 +51,33 @@ namespace NannyApp.DAL.Tests
         }
 
         [TestMethod]
-        public void User_UpdateInstance()
+        public void Admin_CreateInstance()
         {
             User newAdmin = UserFactory.CreateAdmin("IMesic", "474811", "Ivana", "Mesić", Gender.FEMALE, "060 722 722", UserType.ADMIN);
             UserRepository repository = new UserRepository();
             repository.AddUser(newAdmin);
-            //fuck you, github
+            Admin a = repository.GetAdmin("IMesic", "474811");
+            Debug.Assert(a == newAdmin);
+        }
+
+        [TestMethod]
+        public void Admin_RemoveInstance()
+        {
+            User newAdmin = UserFactory.CreateAdmin("JPajic", "abc123", "Juraj", "Pajić", Gender.MALE, "098 886 432", UserType.ADMIN);
+            UserRepository repository = new UserRepository();
+            repository.AddUser(newAdmin);
+            repository.DeleteUser(newAdmin);
+            Debug.Assert(repository.GetAdmin("JPajic", "abc123") == null);
+        }
+
+        [TestMethod]
+        public void User_UpdateInstance()
+        {
+            User newUser = UserFactory.CreateAdmin("MCesarec", "bmwbmw", "Marija", "Cesarec", Gender.MALE, "091 285, 3470", UserType.ADMIN);
+            UserRepository repository = new UserRepository();
+            repository.AddUser(newUser);
+            newUser.Contact = "091 295, 3470";
+            repository.UpdateUser(newUser);
         }
     }
 }
