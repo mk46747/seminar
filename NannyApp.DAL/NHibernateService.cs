@@ -44,11 +44,12 @@ namespace NannyApp.DAL
                 .Mappings(mappings => mappings.FluentMappings.AddFromAssemblyOf<UserMap>())
                 .BuildConfiguration();
 
-            var sessionFactory = nhConfig.BuildSessionFactory();
             //var schemaExport = new SchemaUpdate(nhConfig);
+            var sessionFactory = nhConfig.BuildSessionFactory();
             var schemaExport = new SchemaExport(nhConfig);
             //schemaExport.Execute(true, true); 
-            schemaExport.Create(false, true); 
+            schemaExport.Create(false, true); 
+
             return sessionFactory;
         }
     }
