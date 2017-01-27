@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NannyApp.Model;
 using NannyApp.Model.Factories;
 using NannyApp.DAL.Repositories;
+using System.Diagnostics;
 
 namespace NannyApp.DAL.Tests
 {
@@ -27,7 +28,7 @@ namespace NannyApp.DAL.Tests
 
             UserRepository repository = new UserRepository();
             Parent p = repository.GetParent((int)id);
-
+            Debug.Assert(p == newParent);
         }
     }
 }
