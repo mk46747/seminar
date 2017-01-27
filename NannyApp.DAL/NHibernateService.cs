@@ -45,10 +45,10 @@ namespace NannyApp.DAL
                 .BuildConfiguration();
 
             var sessionFactory = nhConfig.BuildSessionFactory();
-            //var schemaExport = new SchemaUpdate(nhConfig);
-            var schemaExport = new SchemaExport(nhConfig);
-            //schemaExport.Execute(true, true); 
-            schemaExport.Create(false, true); 
+            var schemaExport = new SchemaUpdate(nhConfig);
+            //var schemaExport = new SchemaExport(nhConfig);
+            schemaExport.Execute(true, true); 
+            //schemaExport.Create(false, true); 
             return sessionFactory;
         }
     }

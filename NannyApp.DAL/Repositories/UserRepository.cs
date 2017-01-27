@@ -9,7 +9,7 @@ using NHibernate;
 
 namespace NannyApp.DAL.Repositories
 {
-    class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
         public UserRepository()
         {
