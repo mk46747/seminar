@@ -15,8 +15,12 @@ namespace NannyApp.DAL.Mappings
             Table("User");
             UseUnionSubclassForInheritanceMapping();
             Id(b => b.Id).Column("Id").CustomType("Int32").GeneratedBy.HiLo("1000");
-            Map(b => b.Username).Column("Username").CustomType("String").Not.Nullable().Length(50);
-            Map(b => b.Password).Column("Password").CustomType("String").Not.Nullable().Length(50);
+            // Map(b => b.Username).Column("Username").CustomType("String").Not.Nullable().Length(50);
+            //  Map(b => b.Password).Column("Password").CustomType("String").Not.Nullable().Length(50);
+
+             Map(b => b.Username).Column("Username").Not.Nullable().Length(50);
+             Map(b => b.Password).Column("Password").Not.Nullable().Length(50);
+
             Map(b => b.Name).Column("Name").CustomType("String").Not.Nullable().Length(50);
             Map(b => b.Surname).Column("Surname").CustomType("String").Not.Nullable().Length(50);
             //Map(o => o.AccountType).CustomType<AccountType>();
@@ -32,8 +36,8 @@ namespace NannyApp.DAL.Mappings
             Table("Parent");
             Abstract();
 
-            HasMany(b => b.Offers).Cascade.All();
-            HasMany(b => b.Cooperations).Cascade.All();
+            HasMany(b => b.Offers).KeyColumn("OfferId").Cascade.All();
+            HasMany(b => b.Cooperations).KeyColumn("CooperationId").Cascade.All();
         }
     }
 
@@ -43,20 +47,10 @@ namespace NannyApp.DAL.Mappings
         {
             Table("Nanny");
             Abstract();
-            /*
-            HasMany(b => b.Offers).Cascade.All();
-            HasMany(b => b.Cooperations).Cascade.All();
-            Map(b => b.Education).Column("Education").CustomType("String").Not.Nullable().Length(500);
-            Map(b => b.Smoking).Column("Smoking").CustomType("Bool").Not.Nullable();
-            Map(b => b.Pets).Column("Pets").CustomType("Bool").Not.Nullable();
-            Map(b => b.SickChildern).Column("SickChildern").CustomType("Bool").Not.Nullable();
-            Map(b => b.Car).Column("Car").CustomType("Bool").Not.Nullable();
-            Map(b => b.ExtraServices).Column("ExtraServices").CustomType("String").Length(500);
-            Map(b => b.ExtraQualification).Column("ExtraQualification").CustomType("String").Length(500);
-             * */
 
-            HasMany(b => b.Offers).Cascade.All();
-            HasMany(b => b.Cooperations).Cascade.All();
+            HasMany(b => b.Offers).KeyColumn("OfferId").Cascade.All();
+            HasMany(b => b.Cooperations).KeyColumn("CooperationId").Cascade.All();
+
             Map(b => b.Education).Column("Education").CustomType("String").Not.Nullable().Length(500);
             Map(b => b.Smoking).Column("Smoking").Not.Nullable();
             Map(b => b.Pets).Column("Pets").Not.Nullable();

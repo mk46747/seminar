@@ -16,5 +16,19 @@ namespace NannyApp.Model
         public virtual CooperationStatus Status { get; set; }
         public virtual Review Review { get; set; }
 
+        public Cooperation()
+        {
+
+        }
+        public Cooperation(User CooperationInitiator, User CooperationAcceptee, Offer Offer)
+        {
+            this.CooperationInitiator = CooperationInitiator;
+            this.CooperationAcceptee = CooperationAcceptee;
+            this.Offer = Offer;
+            Status = CooperationStatus.PENDING;
+            Review = null;
+        }
+
+
     }
 }

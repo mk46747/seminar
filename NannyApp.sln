@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NannyAppMVC", "NannyApp\NannyAppMVC.csproj", "{635E7E33-3F8E-43CF-BDC3-FD880AF42A5E}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NannyApp.Model", "NannyApp.Model\NannyApp.Model.csproj", "{0800D709-A81A-4226-B2F3-F76010EF1CA4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NannyApp.DAL", "NannyApp.DAL\NannyApp.DAL.csproj", "{010DFEA1-8689-4732-B119-834AB2B1887F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NannyApp.DAL.Tests", "NannyApp.DAL.Tests\NannyApp.DAL.Tests.csproj", "{788F53CA-BE2E-4E33-B436-216DD71F73BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{010DFEA1-8689-4732-B119-834AB2B1887F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{010DFEA1-8689-4732-B119-834AB2B1887F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{010DFEA1-8689-4732-B119-834AB2B1887F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{788F53CA-BE2E-4E33-B436-216DD71F73BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{788F53CA-BE2E-4E33-B436-216DD71F73BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{788F53CA-BE2E-4E33-B436-216DD71F73BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{788F53CA-BE2E-4E33-B436-216DD71F73BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -43,6 +43,7 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Cooperation.cs" />
     <Compile Include="EntityBase.cs" />
+    <Compile Include="Factories\CooperationFactory.cs" />
     <Compile Include="Factories\OfferFactory.cs" />
     <Compile Include="Factories\UserFactory.cs" />
     <Compile Include="Nanny.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="Offer.cs" />
     <Compile Include="Parent.cs" />
     <Compile Include="ParentOffer.cs" />
+    <Compile Include="Repositories\ICooperationRepository.cs" />
     <Compile Include="Repositories\IOfferRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Review.cs" />
@@ -62,6 +64,10 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
