@@ -27,13 +27,12 @@ namespace NannyApp.Controllers
             return View();
         }
 
-        // GET: User/Create
         public ActionResult CreateNanny()
         {
             return View();
 
         }
-        // POST: User/Create
+
         [HttpPost]
         public ActionResult CreateNanny(Nanny user)
         {
@@ -49,6 +48,38 @@ namespace NannyApp.Controllers
                 }
                 Nanny newNanny = (Nanny)UserFactory.CreateNanny(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, UserType.NANNY, user.Education, user.Smoking, user.Pets, user.Car, user.ExtraServices, user.ExtraQualification);
                 UserRepository.AddUser(newNanny);
+
+                return RedirectToAction("Home/Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        public ActionResult CreateParent()
+        {
+            return View();
+
+        }
+
+        [HttpPost]
+        public ActionResult CreateParent(Parent user)
+        {
+            try
+            {
+
+                Gender gender = Gender.MALE;
+                UserRepository UserRepository = new UserRepository();
+                if (user.Gender.Equals(Gender.FEMALE))
+                {
+                    gender = Gender.FEMALE;
+                }
+                else if (user.Gender.Equals(Gender.MALE))
+                {
+                    gender = Gender.MALE;
+                }
+                Parent newParent = (Parent)UserFactory.CreateParent(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, UserType.PARENT);
+                UserRepository.AddUser(newParent);
 
                 return RedirectToAction("Home/Index");
             }
