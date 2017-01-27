@@ -13,7 +13,7 @@ namespace NannyApp.DAL.Tests
         [TestMethod]
         public void Parent_CreateInstance()
         {
-            User newParent = UserFactory.CreateParent("IIvic", "12321", "Ivan", "Ivić", Gender.MALE, "060 723 555");
+            User newParent = UserFactory.CreateParent("IIvic", "12321", "Ivan", "Ivić", Gender.MALE, "060 723 555", UserType.PARENT);
             object id = 0;
 
             using (var session = NHibernateService.OpenSession())
