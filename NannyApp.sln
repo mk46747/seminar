@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NannyApp.DAL", "NannyApp.DA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NannyApp.DAL.Tests", "NannyApp.DAL.Tests\NannyApp.DAL.Tests.csproj", "{788F53CA-BE2E-4E33-B436-216DD71F73BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NannyApp.BaseLib", "NannyApp.BaseLib\NannyApp.BaseLib.csproj", "{0EF04B02-ACF1-4790-88E5-2872C2F413AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{788F53CA-BE2E-4E33-B436-216DD71F73BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{788F53CA-BE2E-4E33-B436-216DD71F73BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{788F53CA-BE2E-4E33-B436-216DD71F73BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EF04B02-ACF1-4790-88E5-2872C2F413AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF04B02-ACF1-4790-88E5-2872C2F413AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF04B02-ACF1-4790-88E5-2872C2F413AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF04B02-ACF1-4790-88E5-2872C2F413AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
