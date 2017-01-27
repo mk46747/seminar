@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace NannyApp.Model.Repositories
 {
-    public interface IOfferRepository
+    public interface ICooperationRepository
     {
-        IList<NannyOffer> GetAllNannyOffers();
-
-        IList<ParentOffer> GetAllParentOffers();
+        IList<Cooperation> GetAllCooperations();
     }
 }

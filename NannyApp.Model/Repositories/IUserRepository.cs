@@ -6,22 +6,25 @@ using System.Threading.Tasks;
 
 namespace NannyApp.Model.Repositories
 {
-    interface IUserRepository
+    public interface IUserRepository
     {
-        //public bool AddUser(User User);
+        bool AddUser(User User);
+        bool DeleteUser(User User);
+        bool DeleteUser(int Id);
+        bool DeleteUser(string Username, string Password);
+        Admin GetAdmin(int Id);
 
-        //public bool DeleteUser(User User);
+        Nanny GetNanny(int Id);
+        Parent GetParent(int Id);
 
-        //public bool DeleteUser(int Id);
+        Admin GetAdmin(string Username, string Password);
+        Nanny GetNanny(string Username, string Password);
+        Parent GetParent(string Username, string Password);
+        IList<Nanny> GetAllNannies();
+        IList<Parent> GetAllParents();
+        bool UpdateUser(User User);
 
-        //public User GetUser(int id);
-        //public User GetUser(String Email);
 
-        //public IList<Nanny> GetAllNannies();
-
-        //public IList<Parent> GetAllParents();
-
-        //public bool UpdateUser(User user);
 
     }
 }

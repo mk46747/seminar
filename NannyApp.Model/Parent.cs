@@ -8,7 +8,7 @@ namespace NannyApp.Model
 {
     public class Parent : User
     {
-        public virtual IList<Offer> Offers {get; set;}
+        public virtual IList<ParentOffer> Offers {get; set;}
         public virtual IList<Cooperation> Cooperations {get; set;}
 
         public Parent()
@@ -18,7 +18,7 @@ namespace NannyApp.Model
 
         }
        public Parent(string Username, string Password, 
-             string Name, string Surname, Gender Gender, string Contact, IList<Offer> Offers, IList<Cooperation> Cooperations)
+             string Name, string Surname, Gender Gender, string Contact, IList<ParentOffer> Offers, IList<Cooperation> Cooperations)
             : base(Username, Password, Name, Surname, Gender, Contact)
         {
             this.Offers = Offers;
@@ -26,7 +26,7 @@ namespace NannyApp.Model
             
         }
 
-       public virtual void AddOffer(Offer Offer)
+       public virtual void AddOffer(ParentOffer Offer)
        {
            Offers.Add(Offer);
        }
@@ -34,7 +34,7 @@ namespace NannyApp.Model
        {
            Cooperations.Add(Cooperation);
        }
-       public virtual void RemoveOffer(Offer Offer)
+       public virtual void RemoveOffer(ParentOffer Offer)
        {
            Offers.Remove(Offer);
        }

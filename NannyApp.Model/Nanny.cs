@@ -11,7 +11,7 @@ namespace NannyApp.Model
        // public IList<ExtraServiceType> ExtraServices {get; set;}
        // public IList<Education> Education {get; set;}
 
-        public virtual IList<Offer> Offers { get; set; }
+        public virtual IList<NannyOffer> Offers { get; set; }
         public virtual IList<Cooperation> Cooperations { get; set; }
         public virtual string Education { get; set; }
         public virtual bool Smoking { get; set; }
@@ -27,7 +27,7 @@ namespace NannyApp.Model
         public Nanny(string Username, string Password, 
              string Name, string Surname, Gender Gender, string Contact, string Education, bool Smoking,
             bool Pets, bool Car, string ExtraServices, string ExtraQualification,
-            IList<Offer> Offers, IList<Cooperation> Cooperations)
+            IList<NannyOffer> Offers, IList<Cooperation> Cooperations)
             : base(Username, Password, Name, Surname, Gender, Contact)
         {
             this.Education = Education;
@@ -51,11 +51,11 @@ namespace NannyApp.Model
             Cooperations.Add(Cooperation);
         }
 
-        public virtual void AddOffer(Offer Offer)
+        public virtual void AddOffer(NannyOffer Offer)
         {
             Offers.Add(Offer);
         }
-        public virtual void RemoveOffer(Offer Offer)
+        public virtual void RemoveOffer(NannyOffer Offer)
         {
             Offers.Remove(Offer);
         }

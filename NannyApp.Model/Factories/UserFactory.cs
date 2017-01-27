@@ -20,14 +20,14 @@ namespace NannyApp.Model.Factories
        {
            return new Nanny(Username, Password, Name, Surname, Gender, Contact,
                Education, Smoking, Pets, Car, ExtraServices, ExtraQualification,
-               new List<Offer>(), new List<Cooperation>());
+               new List<NannyOffer>(), new List<Cooperation>());
        }
 
        public static User CreateParent(string Username, string Password,
              string Name, string Surname, Gender Gender, string Contact)
        {
            return new Parent(Username, Password, Name, Surname, Gender, Contact,
-               new List<Offer>(), new List<Cooperation>());
+               new List<ParentOffer>(), new List<Cooperation>());
        }
     }
 }

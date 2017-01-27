@@ -39,8 +39,8 @@ namespace NannyApp.DAL.Mappings
         {
             Table("NannyOffer");
             Abstract();
+            References(b => b.Nanny, "NannyId").Cascade.None(); 
 
-            HasOne(b => b.Nanny).Cascade.All();
         }
     }
 
@@ -51,7 +51,7 @@ namespace NannyApp.DAL.Mappings
             Table("ParentOffer");
             Abstract();
 
-            HasOne(b => b.Parent).Cascade.All();
+            References(b => b.Parent, "ParentId").Cascade.None();
         }
     }
 }
