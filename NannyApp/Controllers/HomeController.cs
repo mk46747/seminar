@@ -4,10 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-using NannyApp.Model;
-using NannyApp.Model.Repositories;
-using NannyApp.DAL;
-
 namespace NannyApp.Controllers
 {
     public class HomeController : Controller
@@ -16,19 +12,15 @@ namespace NannyApp.Controllers
         {
             return View();
         }
-        //public ActionResult Test()
-        //{
-        //    Review review = new Review();
-        //    review.Id = 1;
-        //    review.Grade = 4;
-        //    review.ReviewText = "dadasda";
 
-        //    return View(review);
-        //}
+        public ActionResult Login()
+        {
+            return View();
+        }
 
         //[HttpPost]
         //[ValidateAntiForgeryToken]
-        //public ActionResult Login(User u)
+        //public ActionResult Login(korisnik u)
         //{
         //    // this action is for handle post (login)
         //    if (ModelState.IsValid) // this is check validity

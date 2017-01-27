@@ -21,7 +21,7 @@ namespace NannyApp.DAL
         private static void CreateAndFetchParent()
         {
             ParentOffer offer = new ParentOffer(200, "doslovno bilo tko", BabySittingPlace.PARENTS_PLACE, "This is a notice?", new DateTime(), new DateTime(), "Varaždin", "Unska 2.4", 1, 8, 8, new DateTime(), null);
-            Parent parent = new Parent("ZZZ", "1234", "Živadin", "Krempitić", Gender.MALE, "Unska 2.4", UserType.PARENT, new List<ParentOffer>(), null);
+            Parent parent = new Parent("ZZZ", "1234", "Živadin", "Krempitić", Gender.MALE, "Unska 2.4", new List<ParentOffer>(), null);
             offer.Parent = (Parent) parent;
             parent.AddOffer(offer);
             object id = 0;
@@ -35,7 +35,7 @@ namespace NannyApp.DAL
                 session.Clear();
                // session.c;
             }
-
+            /*
             UserRepository UserRepository = new UserRepository();
             OfferRepository OfferRepository = new OfferRepository();
             Parent p = UserRepository.GetParent((int)id);
@@ -55,7 +55,7 @@ namespace NannyApp.DAL
 
 
             Console.ReadLine();
-
+            */
 
         }
 

@@ -25,10 +25,10 @@ namespace NannyApp.Model
 
 
         public Nanny(string Username, string Password, 
-             string Name, string Surname, Gender Gender, string Contact, UserType UserType, string Education, bool Smoking,
+             string Name, string Surname, Gender Gender, string Contact, string Education, bool Smoking,
             bool Pets, bool Car, string ExtraServices, string ExtraQualification,
             IList<NannyOffer> Offers, IList<Cooperation> Cooperations)
-            : base(Username, Password, Name, Surname, Gender, Contact, UserType)
+            : base(Username, Password, Name, Surname, Gender, Contact)
         {
             this.Education = Education;
             this.Smoking = Smoking;

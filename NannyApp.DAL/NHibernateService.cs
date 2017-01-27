@@ -20,7 +20,7 @@ namespace NannyApp.DAL
 
         public static ISession OpenSession()
         {
-            try
+            //try
             {
                 if (sessionFactory == null)
                 {
@@ -29,10 +29,10 @@ namespace NannyApp.DAL
                 ISession session = sessionFactory.OpenSession();
                 return session;
             }
-            catch (Exception e)
-            {
-                throw e.InnerException ?? e;
-            }
+            //catch (Exception e)
+            //{
+            //    throw e.InnerException ?? e;
+            //}
         }
 
         private static ISessionFactory OpenSessionFactory()
@@ -48,7 +48,8 @@ namespace NannyApp.DAL
             var schemaExport = new SchemaUpdate(nhConfig);
             //var schemaExport = new SchemaExport(nhConfig);
             schemaExport.Execute(true, true); 
-            //schemaExport.Create(false, true); 
+            //schemaExport.Create(false, true); 
+
             return sessionFactory;
         }
     }
