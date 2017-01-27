@@ -20,7 +20,7 @@ namespace NannyApp.DAL
 
         public static ISession OpenSession()
         {
-            try
+            //try
             {
                 if (sessionFactory == null)
                 {
@@ -29,10 +29,10 @@ namespace NannyApp.DAL
                 ISession session = sessionFactory.OpenSession();
                 return session;
             }
-            catch (Exception e)
-            {
-                throw e.InnerException ?? e;
-            }
+            //catch (Exception e)
+            //{
+            //    throw e.InnerException ?? e;
+            //}
         }
 
         private static ISessionFactory OpenSessionFactory()
