@@ -13,14 +13,9 @@ namespace NannyApp.Controllers
             return View();
         }
 
-        public ActionResult Login()
-        {
-            return View();
-        }
-
         //[HttpPost]
         //[ValidateAntiForgeryToken]
-        //public ActionResult Login(korisnik u)
+        //public ActionResult Login(User u)
         //{
         //    // this action is for handle post (login)
         //    if (ModelState.IsValid) // this is check validity
