@@ -4,97 +4,94 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_mytemplate_nanny.cshtml";
 }
+<div class="form-style-8">
+    <h2>Hello @Html.DisplayNameFor(model => model.Name)!</h2>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
+    <table class="table">
+        <tr>
             @Html.DisplayNameFor(model => model.Username)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Surname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Contact)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Education)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Smoking)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pets)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SickChildern)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Car)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ExtraServices)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ExtraQualification)
-        </th>
-        <th></th>
-    </tr>
+        </tr><br />
+                @Html.DisplayNameFor(model => model.Password)
+            
+            <tr>
+                @Html.DisplayNameFor(model => model.Name)
+            </tr>
+            <tr>
+                @Html.DisplayNameFor(model => model.Surname)
+            </tr>
+            <tr>
+                @Html.DisplayNameFor(model => model.Contact)
+            </tr>
+            <tr>
+                @Html.DisplayNameFor(model => model.Education)
+            </tr>
+            <tr>
+                @Html.DisplayNameFor(model => model.Smoking)
+            </tr>
+            <tr>
+                @Html.DisplayNameFor(model => model.Pets)
+            </tr>
+            <tr>
+                @Html.DisplayNameFor(model => model.SickChildern)
+            </tr>
+            <tr>
+                @Html.DisplayNameFor(model => model.Car)
+            </tr>
+            <tr>
+                @Html.DisplayNameFor(model => model.ExtraServices)
+            </tr>
+            <tr>
+                @Html.DisplayNameFor(model => model.ExtraQualification)
+            </tr>
+            <tr></tr>
+        
 
-@*@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Username)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Surname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contact)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Education)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Smoking)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pets)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SickChildern)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Car)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ExtraServices)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ExtraQualification)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}*@
+        @*@foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contact)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Education)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Smoking)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SickChildern)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Car)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExtraServices)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExtraQualification)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }*@
 
-</table>
+    </table>
+    <input type="button" value="Edit my profile" onclick="location.href='@Url.Action("Edit", "Nanny")'" />
+</div>
