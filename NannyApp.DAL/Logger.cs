@@ -17,7 +17,7 @@ namespace NannyApp.DAL
 
             
             System.IO.StreamWriter file = File.AppendText(path);
-            file.Write(e.Message +" \n" + e.Source+ "\n " + e.StackTrace);
+            file.Write("\n[" + new DateTime() + "] " + e.Message +" \n" + e.Source+ "\n " + e.StackTrace);
 
             file.Close();
 
