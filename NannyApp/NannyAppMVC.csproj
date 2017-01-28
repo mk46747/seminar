@@ -183,9 +183,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\CooperationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NannyOfferController.cs" />
     <Compile Include="Controllers\ParentController.cs" />
+    <Compile Include="Controllers\ParentOfferController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\NannyController.cs" />
@@ -267,9 +269,11 @@
     <Content Include="Views\NannyOffer\Create.cshtml" />
     <Content Include="Views\Test\Create.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\ParentOffer\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Cooperation\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
