@@ -49,7 +49,7 @@ namespace NannyApp.Controllers
                 Nanny newNanny = (Nanny)UserFactory.CreateNanny(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, UserType.NANNY, user.Education, user.Smoking, user.Pets, user.Car, user.ExtraServices, user.ExtraQualification);
                 UserRepository.AddUser(newNanny);
 
-                return RedirectToAction("Home/Index");
+                return RedirectToAction("Index", "Home");
             }
             catch
             {
@@ -81,7 +81,7 @@ namespace NannyApp.Controllers
                 Parent newParent = (Parent)UserFactory.CreateParent(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, UserType.PARENT);
                 UserRepository.AddUser(newParent);
 
-                return RedirectToAction("Home/Index");
+                return RedirectToAction("Index", "Home");
             }
             catch
             {
