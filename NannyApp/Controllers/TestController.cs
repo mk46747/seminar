@@ -12,46 +12,35 @@ using NHibernate;
 
 namespace NannyApp.Controllers
 {
-    public class NannyController : Controller
+    public class TestController : Controller
     {
-        // GET: Nanny
+        // GET: Test
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Nanny/Details/5
+        // GET: Test/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        public ActionResult CreateNanny()
+        public ActionResult Create()
         {
             return View();
-
         }
 
         [HttpPost]
-        public ActionResult CreateNanny(Nanny user)
+        public ActionResult Create(NannyOffer offer)
         {
             try
             {
-
-                Gender gender = Gender.MALE;
+                Nanny nanny = new Nanny();
                 UserRepository UserRepository = new UserRepository();
-                if (user.Gender.Equals(Gender.FEMALE))
-                {
-                    gender = Gender.FEMALE;
-                }
-                else if (user.Gender.Equals(Gender.MALE))
-                {
-                    gender = Gender.MALE;
-                }
-                Nanny newNanny = (Nanny)UserFactory.CreateNanny(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, UserType.NANNY, user.Education, user.Smoking, user.Pets, user.Car, user.ExtraServices, user.ExtraQualification);
-                UserRepository.AddUser(newNanny);
+                nanny = UserRepository.GetNanny("iva123", "ivica");
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Nanny");
             }
             catch
             {
@@ -59,13 +48,13 @@ namespace NannyApp.Controllers
             }
         }
 
-        // GET: Nanny/Edit/5
+        // GET: Test/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Nanny/Edit/5
+        // POST: Test/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -81,13 +70,13 @@ namespace NannyApp.Controllers
             }
         }
 
-        // GET: Nanny/Delete/5
+        // GET: Test/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Nanny/Delete/5
+        // POST: Test/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

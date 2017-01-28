@@ -175,3 +175,11 @@ NHibernate
    at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
    at NHibernate.Impl.SessionImpl.Save(Object obj)
    at NannyApp.DAL.Repositories.UserRepository.AddUser(User User) in c:\oo\NannyApp\NannyApp.DAL\Repositories\UserRepository.cs:line 28
+[1.1.0001. 0:00:00] query did not return a unique result: 2 
+NHibernate
+    at NHibernate.Impl.AbstractQueryImpl.UniqueElement(IList list)
+   at NHibernate.Impl.CriteriaImpl.UniqueResult()
+   at NHibernate.Impl.CriteriaImpl.UniqueResult[T]()
+   at NHibernate.Criterion.QueryOver`1.SingleOrDefault()
+   at NHibernate.Criterion.QueryOver`1.NHibernate.IQueryOver<TRoot>.SingleOrDefault()
+   at NannyApp.DAL.Repositories.UserRepository.GetUser[T](String Username, String Password) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 165

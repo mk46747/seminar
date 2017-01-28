@@ -12,28 +12,28 @@ using NHibernate;
 
 namespace NannyApp.Controllers
 {
-    public class NannyController : Controller
+    public class ParentController : Controller
     {
-        // GET: Nanny
+        // GET: Parent
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Nanny/Details/5
+        // GET: Parent/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        public ActionResult CreateNanny()
+        public ActionResult CreateParent()
         {
             return View();
 
         }
 
         [HttpPost]
-        public ActionResult CreateNanny(Nanny user)
+        public ActionResult CreateParent(Parent user)
         {
             try
             {
@@ -48,8 +48,8 @@ namespace NannyApp.Controllers
                 {
                     gender = Gender.MALE;
                 }
-                Nanny newNanny = (Nanny)UserFactory.CreateNanny(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, UserType.NANNY, user.Education, user.Smoking, user.Pets, user.Car, user.ExtraServices, user.ExtraQualification);
-                UserRepository.AddUser(newNanny);
+                Parent newParent = (Parent)UserFactory.CreateParent(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, UserType.PARENT);
+                UserRepository.AddUser(newParent);
 
                 return RedirectToAction("Index", "Home");
             }
@@ -59,13 +59,14 @@ namespace NannyApp.Controllers
             }
         }
 
-        // GET: Nanny/Edit/5
+
+        // GET: Parent/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Nanny/Edit/5
+        // POST: Parent/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -81,13 +82,13 @@ namespace NannyApp.Controllers
             }
         }
 
-        // GET: Nanny/Delete/5
+        // GET: Parent/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Nanny/Delete/5
+        // POST: Parent/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

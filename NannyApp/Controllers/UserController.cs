@@ -6,8 +6,7 @@ using System.Web.Mvc;
 
 using NannyApp.Model;
 using NannyApp.Model.Repositories;
-using NannyApp.Model.Factories;
-using NannyApp.DAL;
+using NannyApp.Model.Factories;using NannyApp.DAL;
 using NannyApp.DAL.Repositories;
 using NHibernate;
 
@@ -15,122 +14,57 @@ namespace NannyApp.Controllers
 {
     public class UserController : Controller
     {
-        // GET: User
-        public ActionResult Index()
+        public ActionResult Login()
         {
             return View();
-        }
-
-        // GET: User/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        public ActionResult CreateNanny()
-        {
-            return View();
-
         }
 
         [HttpPost]
-        public ActionResult CreateNanny(Nanny user)
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(Parent u)
         {
-            try
+            if (ModelState.IsValid) // this is check validity
             {
-
-                Gender gender = Gender.MALE;
+                Nanny checkNanny = new Nanny();
+                Parent checkParrent = new Parent();
+                Admin checkAdmin = new Admin();
                 UserRepository UserRepository = new UserRepository();
-                 if(user.Gender.Equals(Gender.FEMALE)){
-                     gender = Gender.FEMALE;
-                } else if(user.Gender.Equals(Gender.MALE)){
-                     gender = Gender.MALE;
-                }
-                Nanny newNanny = (Nanny)UserFactory.CreateNanny(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, UserType.NANNY, user.Education, user.Smoking, user.Pets, user.Car, user.ExtraServices, user.ExtraQualification);
-                UserRepository.AddUser(newNanny);
+                checkNanny = UserRepository.GetNanny(u.Username, u.Password);
+                checkParrent = UserRepository.GetParent(u.Username, u.Password);
+                checkAdmin = UserRepository.GetAdmin(u.Username, u.Password);
 
-                return RedirectToAction("Index", "Home");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-        public ActionResult CreateParent()
-        {
-            return View();
-
-        }
-
-        [HttpPost]
-        public ActionResult CreateParent(Parent user)
-        {
-            try
-            {
-
-                Gender gender = Gender.MALE;
-                UserRepository UserRepository = new UserRepository();
-                if (user.Gender.Equals(Gender.FEMALE))
+                if (checkNanny != null)
                 {
-                    gender = Gender.FEMALE;
+                    Session["Id"] = checkNanny.Id;
+                    Session["Username"] = checkNanny.Username;
+                    Session["UserType"] = checkNanny.UserType;
+
+                    return RedirectToAction("Index", "Home");
                 }
-                else if (user.Gender.Equals(Gender.MALE))
+                else if (checkParrent != null)
                 {
-                    gender = Gender.MALE;
+                    Session["Id"] = checkParrent.Id;
+                    Session["Username"] = checkParrent.Username;
+                    Session["UserType"] = checkParrent.UserType;
+
+                    return RedirectToAction("Index", "Home");
                 }
-                Parent newParent = (Parent)UserFactory.CreateParent(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, UserType.PARENT);
-                UserRepository.AddUser(newParent);
+                else if (checkAdmin != null)
+                {
+                    Session["Id"] = checkAdmin.Id;
+                    Session["Username"] = checkAdmin.Username;
+                    Session["UserType"] = checkAdmin.UserType;
 
-                return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home");
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return View(u);
         }
 
-        // GET: User/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Logout()
         {
-            return View();
-        }
-
-        // POST: User/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: User/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: User/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

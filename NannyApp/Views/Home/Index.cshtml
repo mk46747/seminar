@@ -1,28 +1,26 @@
-﻿
+﻿@model NannyApp.Model.User
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_mytemplate.cshtml";
 }
 
 <div class="flt lp_block">
-    <img src="@Url.Content("~/Content/mytemplate/")images/lp_imgpair.jpg" width="51" height="37" alt="" class="flt1 lp_imgpair" /> 
-    <span class="flt lp_txtmem">Member <span style="color:#2C3E46;">login</span></span><br />
-    <span class="flt1 lp_txtlog">Username</span>
-    <input name="username" type="text" class="flt lp_textbox" />
-    <br />
-    <span class="flt1 lp_txtlog2">Password</span>
-    <input name="password" type="password" class="flt lp_textbox2" />
-    <a href="#" class="flt lp_arrow"><img src="@Url.Content("~/Content/mytemplate/")images/lp_arrow.gif" width="24" height="20" alt="" /></a> 
-
     <img src="@Url.Content("~/Content/mytemplate/")images/lp_boxcorn3.gif" width="260" height="15" alt="" class="flt1 lp_boxtop3" />
     <div class="flt1 lp_box2bg">
-        <span class="flt lp_txtclint"><a href="@Url.Content("~/User/CreateNanny")" style="color: rgb(255,255,255)">Create account as nanny</a> </span> 
+        <span class="flt lp_txtclint"><a href="@Url.Content("~/User/Login")" style="color: rgb(255,255,255)">Member login</a> </span><br />
     </div>
     <img src="@Url.Content("~/Content/mytemplate/")images/lp_boxcorn4.gif" width="260" height="14" alt="" class="flt1" />
 
     <img src="@Url.Content("~/Content/mytemplate/")images/lp_boxcorn3.gif" width="260" height="15" alt="" class="flt1 lp_boxtop3" />
     <div class="flt1 lp_box2bg">
-        <span class="flt lp_txtclint"><a href="@Url.Content("~/User/CreateParent")" style="color: rgb(255,255,255)">Create account as parrent</a> </span>
+        <span class="flt lp_txtclint"><a href="@Url.Content("~/Nanny/CreateNanny")" style="color: rgb(255,255,255)">Create account as nanny</a> </span> 
+    </div>
+    <img src="@Url.Content("~/Content/mytemplate/")images/lp_boxcorn4.gif" width="260" height="14" alt="" class="flt1" />
+
+    <img src="@Url.Content("~/Content/mytemplate/")images/lp_boxcorn3.gif" width="260" height="15" alt="" class="flt1 lp_boxtop3" />
+    <div class="flt1 lp_box2bg">
+        <span class="flt lp_txtclint"><a href="@Url.Content("~/Parent/CreateParent")" style="color: rgb(255,255,255)">Create account as parrent</a> </span>
     </div>
     <img src="@Url.Content("~/Content/mytemplate/")images/lp_boxcorn4.gif" width="260" height="14" alt="" class="flt1" />
 </div>

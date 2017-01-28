@@ -184,8 +184,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\NannyController.cs" />
+    <Compile Include="Controllers\NannyOfferController.cs" />
+    <Compile Include="Controllers\ParentController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\NannyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -258,9 +261,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_mytemplate.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\User\CreateNanny.cshtml" />
-    <Content Include="Views\User\CreateParent.cshtml" />
     <Content Include="Views\Nanny\Index.cshtml" />
+    <Content Include="Views\Nanny\CreateNanny.cshtml" />
+    <Content Include="Views\Parent\CreateParent.cshtml" />
+    <Content Include="Views\NannyOffer\Create.cshtml" />
+    <Content Include="Views\Test\Create.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,37 @@
+﻿@model NannyApp.Model.Parent
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_mytemplate.cshtml";
+}
+<div class="form-style-8">
+    <h2>Login</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <table>
+            <tr>
+                @Html.LabelFor(model => model.Username)
+                @Html.EditorFor(model => model.Username)
+            </tr>
+            <tr>
+                @Html.LabelFor(model => model.Password)
+                @Html.EditorFor(model => model.Password)
+
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Login" /></td>
+            </tr>
+        </table>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+

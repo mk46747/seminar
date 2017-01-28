@@ -12,46 +12,48 @@ using NHibernate;
 
 namespace NannyApp.Controllers
 {
-    public class NannyController : Controller
+    public class NannyOfferController : Controller
     {
-        // GET: Nanny
+        // GET: Offer
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Nanny/Details/5
+        // GET: Offer/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        public ActionResult CreateNanny()
+        public ActionResult Create()
         {
             return View();
-
         }
 
         [HttpPost]
-        public ActionResult CreateNanny(Nanny user)
+        public ActionResult Create(NannyOffer offer)
         {
             try
             {
-
-                Gender gender = Gender.MALE;
+                Nanny nanny = new Nanny();
                 UserRepository UserRepository = new UserRepository();
-                if (user.Gender.Equals(Gender.FEMALE))
-                {
-                    gender = Gender.FEMALE;
-                }
-                else if (user.Gender.Equals(Gender.MALE))
-                {
-                    gender = Gender.MALE;
-                }
-                Nanny newNanny = (Nanny)UserFactory.CreateNanny(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, UserType.NANNY, user.Education, user.Smoking, user.Pets, user.Car, user.ExtraServices, user.ExtraQualification);
-                UserRepository.AddUser(newNanny);
+                //nanny = UserRepository.GetNanny(Session['Id']);
 
-                return RedirectToAction("Index", "Home");
+                BabySittingPlace place = BabySittingPlace.NANNYS_PLACE;
+                if (offer.BabySittingPlace.Equals(BabySittingPlace.NANNYS_PLACE))
+                {
+                    place = BabySittingPlace.NANNYS_PLACE;
+                }
+                else if (offer.BabySittingPlace.Equals(BabySittingPlace.PARENTS_PLACE))
+                {
+                    place = BabySittingPlace.PARENTS_PLACE;
+                }
+                NannyOffer newOffer = (NannyOffer)OfferFactory.CreateNannyOffer(offer.Price, offer.Experience, place, offer.Notice, offer.StartTime, offer.EndTime, offer.City, offer.Address, offer.ChildrenNumber, offer.MinChildrenAge, offer.MaxChildrenAge, offer.Deadline, offer.Nanny);
+                nanny.AddOffer(newOffer);
+                UserRepository.UpdateUser(nanny);
+
+                return RedirectToAction("Index", "Nanny");
             }
             catch
             {
@@ -59,13 +61,13 @@ namespace NannyApp.Controllers
             }
         }
 
-        // GET: Nanny/Edit/5
+        // GET: Offer/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Nanny/Edit/5
+        // POST: Offer/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -81,13 +83,13 @@ namespace NannyApp.Controllers
             }
         }
 
-        // GET: Nanny/Delete/5
+        // GET: Offer/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Nanny/Delete/5
+        // POST: Offer/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

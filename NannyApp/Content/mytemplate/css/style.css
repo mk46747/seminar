@@ -65,7 +65,7 @@ img{border:0px;
     background: url(images/main-nav-bg-right.gif) no-repeat right 0;*/
 .form-style-8{
     font-family: 'Open Sans Condensed', arial, sans;
-    width: 500px;
+    width: 600px;
     padding: 30px;
     background: url(images/main-nav-bg-left.gif) no-repeat 0 0;
     margin: 50px auto;
@@ -111,7 +111,7 @@ img{border:0px;
     border-bottom: 1px solid #ddd;
     background: transparent;
     margin-bottom: 10px;
-    color: #C0C0C0;
+    color: #FFFFFF;
     font: 16px Arial, Helvetica, sans-serif;
     height: 45px;
 }
