@@ -7,7 +7,8 @@
 <div class="form-style-8">
     @foreach (var item in Model)
     {
-        if (item.Username.Equals(Session["Username"]))
+        string username = Convert.ToString(Session["Username"]);
+        if (item.Username.Equals(username))
         {
             <br />
             <h1>
@@ -50,7 +51,7 @@
 
 
             <br /><br />
-            <h3>@Html.ActionLink("Edit", "Edit", new { id = item.Id })</h3>
+            <h3>@Html.ActionLink("Edit profile", "Edit", new { id = item.Id })</h3>
             <br><br><br><br>
         }
     }

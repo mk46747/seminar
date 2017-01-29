@@ -9,6 +9,7 @@ using NannyApp.Model.Factories;
 using NannyApp.DAL;
 using NannyApp.DAL.Repositories;
 using NHibernate;
+using System.Net;
 
 namespace NannyApp.Controllers
 {
@@ -17,7 +18,8 @@ namespace NannyApp.Controllers
         // GET: Nanny
         public ActionResult Index()
         {
-            return View();
+            UserRepository nannies = new UserRepository();
+            return View(nannies.GetAllNannies());
         }
 
         // GET: Nanny/Details/5
@@ -62,23 +64,29 @@ namespace NannyApp.Controllers
         // GET: Nanny/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            UserRepository UserRepository = new UserRepository();
+            Nanny nanny = new Nanny();
+            nanny = UserRepository.GetNanny(id);
+            if (nanny == null)
+            {
+                return HttpNotFound();
+            }
+            
+            return View(nanny);
         }
 
         // POST: Nanny/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Nanny nanny)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                UserRepository UserRepository = new UserRepository();
+                UserRepository.UpdateUser(nanny);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            
+            return View(nanny);
         }
 
         // GET: Nanny/Delete/5

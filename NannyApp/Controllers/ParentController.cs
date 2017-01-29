@@ -65,23 +65,29 @@ namespace NannyApp.Controllers
         // GET: Parent/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            UserRepository UserRepository = new UserRepository();
+            Parent parent = new Parent();
+            parent = UserRepository.GetParent(id);
+            if (parent == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(parent);
         }
 
         // POST: Parent/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Parent parent)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                UserRepository UserRepository = new UserRepository();
+                UserRepository.UpdateUser(parent);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(parent);
         }
 
         // GET: Parent/Delete/5

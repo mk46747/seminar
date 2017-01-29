@@ -5,93 +5,110 @@
     Layout = "~/Views/Shared/_mytemplate_nanny.cshtml";
 }
 <div class="form-style-8">
-    <h2>Hello @Html.DisplayNameFor(model => model.Name)!</h2>
+    @foreach (var item in Model)
+    {
+        string username = Convert.ToString(Session["Username"]);
+        if (item.Username.Equals(username))
+        {
+            <br />
+            <h1>
+                Helllooo
+                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Surname) :)
+            </h1>
+            <br />
+            <hr />
+            <br /><br />
+            <table border="1" style="width:600px" color="#448CCB">
 
-    <table class="table">
-        <tr>
-            @Html.DisplayNameFor(model => model.Username)
-        </tr><br />
-                @Html.DisplayNameFor(model => model.Password)
-            
-            <tr>
-                @Html.DisplayNameFor(model => model.Name)
-            </tr>
-            <tr>
-                @Html.DisplayNameFor(model => model.Surname)
-            </tr>
-            <tr>
-                @Html.DisplayNameFor(model => model.Contact)
-            </tr>
-            <tr>
-                @Html.DisplayNameFor(model => model.Education)
-            </tr>
-            <tr>
-                @Html.DisplayNameFor(model => model.Smoking)
-            </tr>
-            <tr>
-                @Html.DisplayNameFor(model => model.Pets)
-            </tr>
-            <tr>
-                @Html.DisplayNameFor(model => model.SickChildern)
-            </tr>
-            <tr>
-                @Html.DisplayNameFor(model => model.Car)
-            </tr>
-            <tr>
-                @Html.DisplayNameFor(model => model.ExtraServices)
-            </tr>
-            <tr>
-                @Html.DisplayNameFor(model => model.ExtraQualification)
-            </tr>
-            <tr></tr>
-        
-
-        @*@foreach (var item in Model) {
                 <tr>
-                    <td>
+                    <td height="50">
+                        <h3>@Html.DisplayNameFor(model => model.Username):</h3>
+                    </td>
+                    <th>
                         @Html.DisplayFor(modelItem => item.Username)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Password)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Surname)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Contact)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Education)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Smoking)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Pets)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.SickChildern)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Car)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ExtraServices)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ExtraQualification)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                    </td>
+                    </th>
                 </tr>
-            }*@
 
-    </table>
-    <input type="button" value="Edit my profile" onclick="location.href='@Url.Action("Edit", "Nanny")'" />
+                <tr>
+                    <td height="50">
+                        <h3>@Html.DisplayNameFor(model => model.Gender):</h3>
+                    </td>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.Gender)
+                    </th>
+                </tr>
+
+                <tr>
+                    <td height="50">
+                        <h3>@Html.DisplayNameFor(model => model.Contact):</h3>
+                    </td>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.Contact)
+                    </th>
+                </tr>
+                <tr>
+                    <td height="50">
+                        <h3>@Html.DisplayNameFor(model => model.Education):</h3>
+                    </td>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.Education)
+                    </th>
+                </tr>
+                <tr>
+                    <td height="50">
+                        <h3>Extra qualifications that you have:</h3>
+                    </td>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.ExtraQualification)
+                    </th>
+                </tr>
+                <tr>
+                    <td height="50">
+                        <h3>Extra services that you can do:</h3>
+                    </td>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.ExtraServices)
+                    </th>
+                </tr>
+                <tr>
+                    <td height="50">
+                        <h3>Do you smoke?:</h3>
+                    </td>
+                    <th>
+                        @((bool)item.Smoking ? "Yes" : "No")
+                    </th>
+                </tr>
+                <tr>
+                    <td height="50">
+                        <h3>Can you handle pets?:</h3>
+                    </td>
+                    <th>
+                        @((bool)item.Pets ? "Yes" : "No")
+                    </th>
+                </tr>
+                <tr>
+                    <td height="50">
+                        <h3>Can you take care of ill child?:</h3>
+                    </td>
+                    <th>
+                        @((bool)item.SickChildern ? "Yes" : "No")
+                    </th>
+                </tr>
+                <tr>
+                    <td height="50">
+                        <h3>Do you have drivers licencse?:</h3>
+                    </td>
+                    <th>
+                        @((bool)item.Car ? "Yes" : "No")
+                    </th>
+                </tr>
+            </table>
+
+
+            <br /><br />
+            <h3>@Html.ActionLink("Edit Profile", "Edit", new { id = item.Id })</h3>
+            <br><br><br><br>
+        }
+    }
 </div>
