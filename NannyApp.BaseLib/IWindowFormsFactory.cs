@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace NannyApp.BaseLib
 {
-    interface IWindowsFormFactory
+    public interface IWindowFormsFactory
     {
+     //   IAddNannyView CreateNannyView();
+        ILoginView CreateLoginView(IMainFormController MainFormController);
+        ICreateNannyView CreateNannyView(IMainFormController MainFormController);
+
         /*
         IAddNewAccountView CreateAddNewAccountView(List<string> inAccType);
         IEditAccountView CreateEditAccountView();

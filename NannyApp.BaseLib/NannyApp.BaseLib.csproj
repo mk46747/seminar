@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0EF04B02-ACF1-4790-88E5-2872C2F413AE}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NannyApp.BaseLib</RootNamespace>
     <AssemblyName>NannyApp.BaseLib</AssemblyName>
@@ -31,17 +31,31 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAddNewNannyView.cs" />
-    <Compile Include="IMainController.cs" />
-    <Compile Include="IShowNanniesView.cs" />
-    <Compile Include="IWindowsFormFactory.cs" />
+    <Compile Include="ICreateNannyView.cs" />
+    <Compile Include="ILoginView.cs" />
+    <Compile Include="IMainFormController.cs" />
+    <Compile Include="INannyView.cs" />
+    <Compile Include="IWindowFormsFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NannyApp.DAL\NannyApp.DAL.csproj">
+      <Project>{010dfea1-8689-4732-b119-834ab2b1887f}</Project>
+      <Name>NannyApp.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NannyApp.Model\NannyApp.Model.csproj">
+      <Project>{0800d709-a81a-4226-b2f3-f76010ef1ca4}</Project>
+      <Name>NannyApp.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
