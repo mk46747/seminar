@@ -5,7 +5,18 @@
     Layout = "~/Views/Shared/_mytemplate.cshtml";
 }
 
+@Session["Id"];
 <div class="flt lp_block">
+    @if (Session["Id"] != null)
+    {
+        <img src="@Url.Content("~/Content/mytemplate/")images/lp_boxcorn3.gif" width="260" height="15" alt="" class="flt1 lp_boxtop3" />
+        <div class="flt1 lp_box2bg">
+            <span class="flt lp_txtclint"><a href="@Url.Content("~/User/Logout")" style="color: rgb(255,255,255)">@Session["Username"] logout</a> </span><br />
+        </div>
+        <img src="@Url.Content("~/Content/mytemplate/")images/lp_boxcorn4.gif" width="260" height="14" alt="" class="flt1" />
+    }
+    else
+    {
     <img src="@Url.Content("~/Content/mytemplate/")images/lp_boxcorn3.gif" width="260" height="15" alt="" class="flt1 lp_boxtop3" />
     <div class="flt1 lp_box2bg">
         <span class="flt lp_txtclint"><a href="@Url.Content("~/User/Login")" style="color: rgb(255,255,255)">Member login</a> </span><br />
@@ -23,6 +34,7 @@
         <span class="flt lp_txtclint"><a href="@Url.Content("~/Parent/CreateParent")" style="color: rgb(255,255,255)">Create account as parrent</a> </span>
     </div>
     <img src="@Url.Content("~/Content/mytemplate/")images/lp_boxcorn4.gif" width="260" height="14" alt="" class="flt1" />
+    }
 </div>
 <div class="flt rp_block">
     <img src="@Url.Content("~/Content/mytemplate/")images/rp_topcorn.gif" width="560" height="14" alt="" class="flt1 rp_topcornn" />

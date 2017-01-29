@@ -51,7 +51,7 @@ namespace NannyApp.Controllers
                 Nanny newNanny = (Nanny)UserFactory.CreateNanny(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, UserType.NANNY, user.Education, user.Smoking, user.Pets, user.Car, user.ExtraServices, user.ExtraQualification);
                 UserRepository.AddUser(newNanny);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "User");
             }
             catch
             {
