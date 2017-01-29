@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace NannyApp.BaseLib
 {
-    interface IShowNanniesView
+    public interface ILoginView
     {
-
+        string GetUsername();
+        string GetPassword();
     }
 }

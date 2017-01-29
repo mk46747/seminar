@@ -37,6 +37,64 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CreateNannyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNannyForm.Designer.cs">
+      <DependentUpon>CreateNannyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainNannyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainNannyForm.Designer.cs">
+      <DependentUpon>MainNannyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindowForm.Designer.cs">
+      <DependentUpon>MainWindowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowFormsFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CreateNannyForm.resx">
+      <DependentUpon>CreateNannyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainNannyForm.resx">
+      <DependentUpon>MainNannyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindowForm.resx">
+      <DependentUpon>MainWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NannyApp.BaseLib\NannyApp.BaseLib.csproj">
+      <Project>{0ef04b02-acf1-4790-88e5-2872c2f413ae}</Project>
+      <Name>NannyApp.BaseLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NannyApp.Model\NannyApp.Model.csproj">
+      <Project>{0800d709-a81a-4226-b2f3-f76010ef1ca4}</Project>
+      <Name>NannyApp.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
