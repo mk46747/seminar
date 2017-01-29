@@ -39,6 +39,7 @@ namespace NannyApp.Controllers
             {
 
                 Gender gender = Gender.MALE;
+                UserType type = UserType.PARENT;
                 UserRepository UserRepository = new UserRepository();
                 if (user.Gender.Equals(Gender.FEMALE))
                 {
@@ -48,7 +49,7 @@ namespace NannyApp.Controllers
                 {
                     gender = Gender.MALE;
                 }
-                Parent newParent = (Parent)UserFactory.CreateParent(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, UserType.PARENT);
+                Parent newParent = (Parent)UserFactory.CreateParent(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, type);
                 UserRepository.AddUser(newParent);
 
                 return RedirectToAction("Index", "Home");
