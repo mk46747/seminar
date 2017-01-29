@@ -39,7 +39,8 @@ namespace NannyApp.Controllers
             {
                 Parent parent = new Parent();
                 UserRepository UserRepository = new UserRepository();
-                //parent = UserRepository.GetParent(Session['Id']);
+                int id = Convert.ToInt32(Session["Id"]);
+                parent = UserRepository.GetParent(id);
 
                 BabySittingPlace place = BabySittingPlace.NANNYS_PLACE;
                 if (offer.BabySittingPlace.Equals(BabySittingPlace.NANNYS_PLACE))
@@ -50,11 +51,11 @@ namespace NannyApp.Controllers
                 {
                     place = BabySittingPlace.PARENTS_PLACE;
                 }
-                ParentOffer newOffer = (ParentOffer)OfferFactory.CreateParentOffer(offer.Price, offer.Experience, place, offer.Notice, offer.StartTime, offer.EndTime, offer.City, offer.Address, offer.ChildrenNumber, offer.MinChildrenAge, offer.MaxChildrenAge, offer.Deadline, offer.Parent);
+                ParentOffer newOffer = (ParentOffer)OfferFactory.CreateParentOffer(offer.Price, offer.Experience, place, offer.Notice, offer.StartTime, offer.EndTime, offer.City, offer.Address, offer.ChildrenNumber, offer.MinChildrenAge, offer.MaxChildrenAge, offer.Deadline, parent);
                 parent.AddOffer(newOffer);
                 UserRepository.UpdateUser(parent);
 
-                return RedirectToAction("Index", "Parent");
+                return RedirectToAction("Index", "Home");
             }
             catch
             {

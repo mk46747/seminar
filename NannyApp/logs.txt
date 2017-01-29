@@ -183,3 +183,14 @@ NHibernate
    at NHibernate.Criterion.QueryOver`1.SingleOrDefault()
    at NHibernate.Criterion.QueryOver`1.NHibernate.IQueryOver<TRoot>.SingleOrDefault()
    at NannyApp.DAL.Repositories.UserRepository.GetUser[T](String Username, String Password) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 165
+[1.1.0001. 0:00:00] not-null property references a null or transient value NannyApp.Model.Parent.Username 
+NHibernate
+    at NHibernate.Engine.Nullability.CheckNullability(Object[] values, IEntityPersister persister, Boolean isUpdate)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.ScheduleUpdate(FlushEntityEvent event)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event)
+   at NHibernate.Impl.SessionImpl.Flush()
+   at NHibernate.Transaction.AdoTransaction.Commit()
+   at NannyApp.DAL.Repositories.UserRepository.UpdateUser(User User) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 225

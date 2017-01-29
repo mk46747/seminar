@@ -37,7 +37,7 @@ namespace NannyApp.Controllers
                 {
                     Session["Id"] = checkNanny.Id;
                     Session["Username"] = checkNanny.Username;
-                    Session["UserType"] = checkNanny.UserType;
+                    Session["UserType"] = UserType.NANNY;
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -45,7 +45,7 @@ namespace NannyApp.Controllers
                 {
                     Session["Id"] = checkParrent.Id;
                     Session["Username"] = checkParrent.Username;
-                    Session["UserType"] = checkParrent.UserType;
+                    Session["UserType"] = UserType.PARENT;
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -53,7 +53,7 @@ namespace NannyApp.Controllers
                 {
                     Session["Id"] = checkAdmin.Id;
                     Session["Username"] = checkAdmin.Username;
-                    Session["UserType"] = checkAdmin.UserType;
+                    Session["UserType"] = UserType.ADMIN;
 
                     return RedirectToAction("Index", "Home");
                 }
