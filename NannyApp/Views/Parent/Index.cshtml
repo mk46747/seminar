@@ -1,59 +1,57 @@
-﻿@model NannyApp.Model.Parent
+﻿@model IEnumerable<NannyApp.Model.Parent>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_mytemplate_nanny.cshtml";
 }
+<div class="form-style-8">
+    @foreach (var item in Model)
+    {
+        if (item.Username.Equals(Session["Username"]))
+        {
+            <br />
+            <h1>
+                Helllooo
+                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Surname) :)
+            </h1>
+            <br />
+            <hr />
+            <br /><br />
+    <table border="1" style="width:300px" color="#448CCB">
 
-<h2>Index</h2>
+        <tr>
+            <td height="50">
+                <h3>@Html.DisplayNameFor(model => model.Username):</h3>
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.Username)
+            </th>
+        </tr>
 
-<div>
-    <h4>Parent</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
+        <tr>
+            <td height="50">
+                <h3>@Html.DisplayNameFor(model => model.Gender):</h3>
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </th>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Username)
-        </dd>
+        <tr>
+            <td height="50">
+                <h3>@Html.DisplayNameFor(model => model.Contact):</h3>
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.Contact)
+            </th>
+        </tr>
+    </table>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Surname)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Surname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Contact)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Contact)
-        </dd>
-
-    </dl>
+            <br /><br />
+            <h3>@Html.ActionLink("Edit", "Edit", new { id = item.Id })</h3>
+            <br><br><br><br>
+        }
+    }
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -17,7 +17,8 @@ namespace NannyApp.Controllers
         // GET: Parent
         public ActionResult Index()
         {
-            return View();
+            UserRepository parents = new UserRepository();
+            return View(parents.GetAllParents());
         }
 
         // GET: Parent/Details/5
