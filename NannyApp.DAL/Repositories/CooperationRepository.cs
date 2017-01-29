@@ -8,7 +8,7 @@ using NannyApp.Model;
 
 namespace NannyApp.DAL.Repositories
 {
-    class CooperationRepository : ICooperationRepository
+    public class CooperationRepository : ICooperationRepository
     {
         public IList<Cooperation> GetAllCooperations()
         {
