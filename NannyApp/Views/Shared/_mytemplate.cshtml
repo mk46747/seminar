@@ -12,10 +12,31 @@
         <div class="flt topblock">
             <a href="#" class="flt1 tp_txtplay">NannyApp</a> <span class="flt1 tp_txtcss">CHILDREN CARE SITE</span>
             <p style="clear:left; float:left; display:inline; width:1000px; margin:90px 0px 0px 0px;">
-            <a href="@Url.Content("~/Home/Index")" class="flt1 tp_home2">Home</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" /> 
-            <a href="#" class="flt tp_home">Giving services</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" /> 
-            <a href="#" class="flt tp_home">Looking for services</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" />
-        </div>
+
+                @if (Session["Id"] != null)
+                {
+                    <a href="@Url.Content("~/Home/Index")" class="flt1 tp_home2">Home</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" />
+                    <a href="#" class="flt tp_home">Profile</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" />
+                    <a href="#" class="flt tp_home">My offers</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" />
+                    
+                    string check = Convert.ToString(Session["UserType"]);
+                    if (check.Equals("NANNY"))
+                    {
+                        <a href="@Url.Content("~/NannyOffer/Create")" class="flt tp_home">New offer</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" />
+                    }
+                    else if (check.Equals("PARENT"))
+                    {
+                        <a href="@Url.Content("~/ParentOffer/Create")" class="flt tp_home">New offer</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" />
+                    }
+                 <a href="#" class="flt tp_home">Cooperations</a>
+                }
+                else
+                {
+                    <a href="@Url.Content("~/Home/Index")" class="flt1 tp_home2">Home</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" />
+                    <a href="#" class="flt tp_home">Giving services</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" />
+                    <a href="#" class="flt tp_home">Looking for services</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" />
+                }
+</div>
         <!-- top panel ends here -->
         <!-- content panel starts here -->
         <div id="cpblock">

@@ -40,7 +40,8 @@ namespace NannyApp.DAL.Tests
 
             UserRepository repository = new UserRepository();
             repository.AddUser(nanny);
-            repository.DeleteUser(nanny);
+            nanny.RemoveOffer((NannyOffer)nannyOffer);
+            repository.UpdateUser(nanny);
             OfferRepository offerRepository = new OfferRepository();
             List<NannyOffer> fetchedNannyOffers = (List<NannyOffer>)offerRepository.GetAllNannyOffers();
             Debug.Assert(fetchedNannyOffers == null);

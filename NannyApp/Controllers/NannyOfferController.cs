@@ -38,7 +38,8 @@ namespace NannyApp.Controllers
             {
                 Nanny nanny = new Nanny();
                 UserRepository UserRepository = new UserRepository();
-                //nanny = UserRepository.GetNanny(Session['Id']);
+                int id = Convert.ToInt32(Session["Id"]);
+                nanny = UserRepository.GetNanny(id);
 
                 BabySittingPlace place = BabySittingPlace.NANNYS_PLACE;
                 if (offer.BabySittingPlace.Equals(BabySittingPlace.NANNYS_PLACE))
