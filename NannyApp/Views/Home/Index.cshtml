@@ -1,12 +1,8 @@
-﻿@model NannyApp.Model.User
-
+﻿@model IEnumerable<NannyApp.Models.OffersViewModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_mytemplate.cshtml";
 }
-
-@Session["Id"];
-@Session["UserType"];
 
 <div class="flt lp_block">
     @if (Session["Id"] != null)
@@ -44,6 +40,11 @@
         <span class="flt rp_txtour">Giving <span style="color:#3F4534;">services</span></span>
         <span class="flt rp_weltxt">
             Ovdje bi ispisali ponude dadilja - npr. 3 najnovije koje nemaju jos suradnju        
+            @foreach (var item in Model)
+            {
+                @Html.DisplayFor(modelItem => item.NannyOffer.Nanny.Username)
+                @Html.DisplayFor(modelItem => item.NannyOffer.City)
+            }
         </span> 
         <img src="@Url.Content("~/Content/mytemplate/")images/cp_line.gif" width="511" height="1" alt="" class="flt1 rp_line" /> 
         <span class="flt rp_txtour">Looking for <span style="color:#3F4534;">services</span></span> 
