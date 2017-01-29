@@ -36,8 +36,8 @@ namespace NannyApp.DAL.Mappings
             Table("Parent");
             Abstract();
 
-            HasMany(b => b.Offers).KeyColumn("OfferId").Cascade.All();
-            HasMany(b => b.Cooperations).KeyColumn("CooperationId").Cascade.All();
+            HasMany(b => b.Offers).KeyColumn("OfferId").Not.LazyLoad().Cascade.All();
+            HasMany(b => b.Cooperations).KeyColumn("CooperationId").Not.LazyLoad().Cascade.All();
         }
     }
 
@@ -48,8 +48,8 @@ namespace NannyApp.DAL.Mappings
             Table("Nanny");
             Abstract();
 
-            HasMany(b => b.Offers).KeyColumn("OfferId").Cascade.All();
-            HasMany(b => b.Cooperations).KeyColumn("CooperationId").Cascade.All();
+            HasMany(b => b.Offers).KeyColumn("OfferId").Not.LazyLoad().Cascade.All();
+            HasMany(b => b.Cooperations).KeyColumn("CooperationId").Not.LazyLoad().Cascade.All();
 
             Map(b => b.Education).Column("Education").CustomType("String").Not.Nullable().Length(500);
             Map(b => b.Smoking).Column("Smoking").Not.Nullable();
