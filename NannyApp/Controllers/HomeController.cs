@@ -35,7 +35,7 @@ namespace NannyApp.Controllers
                     ParentOffer = parentOffer
                 });
             }
-            return View(offersList.OrderByDescending(o => o.ParentOffer.Deadline).OrderByDescending(o => o.NannyOffer.Deadline));
+            return View(offersList);
             //return View();
         }
 

@@ -194,3 +194,17 @@ NHibernate
    at NHibernate.Impl.SessionImpl.Flush()
    at NHibernate.Transaction.AdoTransaction.Commit()
    at NannyApp.DAL.Repositories.UserRepository.UpdateUser(User User) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 225
+[1.1.0001. 0:00:00] Begin failed with SQL exception 
+NHibernate
+    at NHibernate.Transaction.AdoTransaction.Begin(IsolationLevel isolationLevel)
+   at NHibernate.Transaction.AdoTransaction.Begin()
+   at NHibernate.AdoNet.ConnectionManager.BeginTransaction()
+   at NHibernate.Impl.SessionImpl.BeginTransaction()
+   at NannyApp.DAL.Repositories.UserRepository.GetUser[T](Int32 Id) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 121
+[1.1.0001. 0:00:00] Begin failed with SQL exception 
+NHibernate
+    at NHibernate.Transaction.AdoTransaction.Begin(IsolationLevel isolationLevel)
+   at NHibernate.Transaction.AdoTransaction.Begin()
+   at NHibernate.AdoNet.ConnectionManager.BeginTransaction()
+   at NHibernate.Impl.SessionImpl.BeginTransaction()
+   at NannyApp.DAL.Repositories.UserRepository.GetUser[T](Int32 Id) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 121
