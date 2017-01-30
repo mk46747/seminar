@@ -50,17 +50,17 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainNannyForm.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainNannyForm.Designer.cs">
-      <DependentUpon>MainNannyForm.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainWindowForm.cs">
+    <Compile Include="StartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindowForm.Designer.cs">
-      <DependentUpon>MainWindowForm.cs</DependentUpon>
+    <Compile Include="StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WindowFormsFactory.cs" />
   </ItemGroup>
@@ -78,11 +78,11 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainNannyForm.resx">
-      <DependentUpon>MainNannyForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindowForm.resx">
-      <DependentUpon>MainWindowForm.cs</DependentUpon>
+    <EmbeddedResource Include="StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

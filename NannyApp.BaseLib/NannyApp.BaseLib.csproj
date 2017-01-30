@@ -41,7 +41,8 @@
     <Compile Include="ICreateNannyView.cs" />
     <Compile Include="ILoginView.cs" />
     <Compile Include="IMainFormController.cs" />
-    <Compile Include="INannyView.cs" />
+    <Compile Include="IMainView.cs" />
+    <Compile Include="IStartView.cs" />
     <Compile Include="IWindowFormsFactory.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -40,7 +40,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginController.cs" />
+    <Compile Include="AccountController.cs" />
     <Compile Include="MainFormController.cs" />
     <Compile Include="NannyController.cs" />
   </ItemGroup>

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace NannyApp.Controllers
 {
-    public class LoginController
+    public class AccountController
     {
 
         public static void Login(IUserRepository UserRepository, ILoginView LoginView, IMainFormController MainController)
@@ -27,20 +27,33 @@ namespace NannyApp.Controllers
             Admin Admin = UserRepository.GetAdmin(Username, Password);
             if (Admin != null)
             {
-              //  MainController admin view
+                return;
+              //  MainController.ShowAdminView()
             }
             Nanny Nanny = UserRepository.GetNanny(Username, Password);
             if (Nanny != null)
             {
-                //  MainController nanny view
+                MainController.ShowMainForm(Nanny);
+                return;
             }
+            
             Parent Parent = UserRepository.GetParent(Username, Password);
 
             if (Parent != null)
             {
-                //  MainController nanny view
+                MainController.ShowMainForm(Parent);
+                return;
             }
+            MessageBox.Show("Invalid username or password, please try again.");
+            return;
 
+
+        }
+
+        public void ShowLoginForm(ILoginView LoginView)
+        {
+            var form = (Form)LoginView;
+            form.Show();
         }
     }
 }

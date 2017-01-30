@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NannyApp.BaseLib;
+using NannyApp.Model;
 
 namespace NannyApp.Presentation
 {
-    public partial class MainNannyForm : Form
+    public partial class MainForm : Form, IMainView
     {
-        public MainNannyForm()
+        private IMainFormController MainController;
+
+        public MainForm(IMainFormController MainController)
         {
+            this.MainController = MainController;
             InitializeComponent();
         }
+
+        public User User { get; set; } //???
     }
 }

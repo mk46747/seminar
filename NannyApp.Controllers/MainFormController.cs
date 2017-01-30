@@ -7,6 +7,9 @@ using NannyApp.BaseLib;
 using NannyApp.DAL;
 using NannyApp.Model.Repositories;
 using NannyApp.Presentation;
+using NannyApp.Model;
+using System.Windows.Forms;
+
 
 namespace NannyApp.Controllers
 {
@@ -26,6 +29,21 @@ namespace NannyApp.Controllers
             this.UserRepository = UserRepository;
             this.OfferRepository = OfferRepository;
             this.CooperationRepository = CooperationRepository;
+        }
+
+        public void ShowMainForm(User User)
+        {
+            var MainForm = WindowFormsFactory.CreateMainView(this);
+            var form = (Form)MainForm;
+            form.Show();
+        }
+
+        public void ShowLoginForm()
+        {
+            AccountController AccountController = new AccountController();
+            var LoginView = WindowFormsFactory.CreateLoginView(this);
+            AccountController.ShowLoginForm(LoginView);
+           // LoginController.Login(UserRepository, LoginView, this);
         }
 
         public void ShowCreateNannyForm()
@@ -49,9 +67,9 @@ namespace NannyApp.Controllers
 
         public void LoginUser(ILoginView LoginView)
         {
-            LoginController LoginController = new LoginController();
+            AccountController LoginController = new AccountController();
 
-            LoginController.Login(UserRepository, LoginView, this);
+            AccountController.Login(UserRepository, LoginView, this);
         }
     }
 }

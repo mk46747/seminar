@@ -33,7 +33,7 @@ namespace NannyApp.Start
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NannyApp.Presentation.LoginForm(mainController));
+            Application.Run(new NannyApp.Presentation.StartForm(mainController));
         }
     }
 }

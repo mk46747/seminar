@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NannyApp.Model;
 
 namespace NannyApp.BaseLib
 {
@@ -11,6 +12,10 @@ namespace NannyApp.BaseLib
         void LoginUser(ILoginView LoginView);
 
         void CreateNanny(ICreateNannyView CreateNannyForm);
+        
+        void ShowLoginForm();
+
+        void ShowMainForm(User User);
 
         void ShowCreateNannyForm();
 
