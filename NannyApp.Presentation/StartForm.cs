@@ -33,7 +33,7 @@ namespace NannyApp.Presentation
 
         public void ShowLoginForm(object sender, EventArgs e)
         {
-            MainController.ShowLoginForm();
+            MainController.ShowLoginForm(this);
         }
 
 

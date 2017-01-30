@@ -9,28 +9,25 @@ namespace NannyApp.BaseLib
 {
     public interface IMainFormController
     {
-        void LoginUser(ILoginView LoginView);
-
-        void CreateNanny(ICreateNannyView CreateNannyForm);
-        
-        void ShowLoginForm();
-
-        void ShowMainForm(User User);
-
         void ShowCreateNannyForm();
+        void CreateNanny(ICreateNannyView CreateNannyView);
+        void ShowLoginForm(IStartView StartView);
+        void LoginUser(ILoginView LoginView);
+        void ShowMainForm(User User);
+        void ShowCreateParentForm();
+        void CreateParent(ICreatParentView CreateParentView);
+        void ShowCreateNannyOfferForm();
+        void CreateNannyOffer(ICreateNannyOfferView CreateNannyOfferView);
+        void ShowCreateParentOfferForm();
+        void CreateParentOffer(ICreateParentOfferView CreateParentOfferView);
+        void ShowOffersForm();
+        void ShowOfferForm();
+        void ShowCooperationsForm();
+        void ShowNannyForm();
+        void ShowParentForm();
+        void ShowCooperationsForm();
+        void ShowCooperationForm();
 
-        void CreateParent();
-        /*
-        void AddNanny();
-        void AddParent();
-        void AddNannyOffer();
-        void AddParentOffer();
-        void ShowNannyOffers();
-        void ShowParentOffers();
-         * */
-
-       // void AddParentOffer();
-
-       // void EditAccount(string accountName);
+       
     }
 }
