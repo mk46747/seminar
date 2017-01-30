@@ -50,6 +50,12 @@
     <Compile Include="CreateOfferForm.Designer.cs">
       <DependentUpon>CreateOfferForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateParentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateParentForm.Designer.cs">
+      <DependentUpon>CreateParentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateOfferForm.resx">
       <DependentUpon>CreateOfferForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateParentForm.resx">
+      <DependentUpon>CreateParentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
