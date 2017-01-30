@@ -44,11 +44,11 @@
     <Compile Include="CreateNannyForm.Designer.cs">
       <DependentUpon>CreateNannyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateNannyOfferForm.cs">
+    <Compile Include="CreateOfferForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateNannyOfferForm.Designer.cs">
-      <DependentUpon>CreateNannyOfferForm.cs</DependentUpon>
+    <Compile Include="CreateOfferForm.Designer.cs">
+      <DependentUpon>CreateOfferForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="CreateNannyForm.resx">
       <DependentUpon>CreateNannyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateNannyOfferForm.resx">
-      <DependentUpon>CreateNannyOfferForm.cs</DependentUpon>
+    <EmbeddedResource Include="CreateOfferForm.resx">
+      <DependentUpon>CreateOfferForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

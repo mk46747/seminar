@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NannyApp.Presentation
 {
-    public partial class CreateNannyOfferForm : Form
+    public partial class CreateOfferForm : Form
     {
-        public CreateNannyOfferForm()
+        public CreateOfferForm()
         {
             InitializeComponent();
         }
