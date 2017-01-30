@@ -44,12 +44,15 @@
             <h2>
                 @foreach (var item in Model)
                 {
-                    @*@Html.DisplayFor(modelItem => item.NannyOffer.Nanny.Username)*@
-                    @Html.DisplayFor(modelItem => item.NannyOffer.City)
-                    <br /> 
-                    @Html.DisplayFor(modelItem => item.NannyOffer.ChildrenNumber)
-                    <br />
-                    @Html.DisplayFor(modelItem => item.NannyOffer.Price)
+                    <p>
+                        @Html.DisplayFor(modelItem => item.NannyOffer.Nanny.Username) ,
+                        @Html.DisplayFor(modelItem => item.NannyOffer.City)
+
+                        <br />
+                        @Html.DisplayFor(modelItem => item.NannyOffer.ChildrenNumber)
+                        <br />
+                        @Html.DisplayFor(modelItem => item.NannyOffer.Price)
+                    </p>
                 }
             </h2>
         </span> 
@@ -60,7 +63,8 @@
             <h2>
                 @foreach (var item in Model)
                 {
-                    @*@Html.DisplayFor(modelItem => item.ParentOffer.Parent.Username)*@
+                    @Html.DisplayFor(modelItem => item.ParentOffer.Parent.Username)
+                    <br />
                     @Html.DisplayFor(modelItem => item.ParentOffer.City)
                     <br />
                     @Html.DisplayFor(modelItem => item.ParentOffer.ChildrenNumber)
