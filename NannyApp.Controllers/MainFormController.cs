@@ -58,18 +58,28 @@ namespace NannyApp.Controllers
             // LoginController.Login(UserRepository, LoginView, this);
         }
 
+
         public void ShowNannyForm(Form LoginView)
         {//ovdje dođem s create forme i trebao bih otići spremiti nanny i vratiti mainnannyform
             NannyController NannyController = new NannyController();
             var CreateNannyForm = WindowFormsFactory.CreateNannyView(this);
             NannyController.ShowCreateNannyForm(CreateNannyForm);
+            CreateNannyForm.HideUpdateButton();
+            CreateNannyForm.HideViewReviewsButton();
             LoginView.Close();
             //nanycon umjesto
         }
         public void CreateNanny(INannyView CreateNannyForm)
         {
             NannyController NannyController = new NannyController();
-            NannyController.CreateNanny(CreateNannyForm, UserRepository);
+            User User = NannyController.CreateNanny(CreateNannyForm, UserRepository);
+            if (User == null)
+            {
+                return;
+            }
+            var frm = (Form)CreateNannyForm;
+            frm.Close();
+            ShowMainForm(User);
         }
 
         public void ShowParentForm(Form LoginView)
@@ -89,9 +99,14 @@ namespace NannyApp.Controllers
 
             ShowMainForm(User);
         }
-        private void HideForm(Form form)
+        public void ShowCreateOfferForm()
         {
-
+            OfferController OfferController = new OfferController();
+            //var OfferView = WindowFormsFactory.CreateOfferView(this);
+            //NannyController.ShowCreateNannyForm(CreateNannyForm);
+            //CreateNannyForm.HideUpdateButton();
+            //CreateNannyForm.HideViewReviewsButton();
+            //LoginView.Close();
         }
     }
 }

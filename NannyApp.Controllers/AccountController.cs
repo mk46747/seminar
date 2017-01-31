@@ -63,5 +63,6 @@ namespace NannyApp.Controllers
             var form = (Form)LoginView;
             form.Show();
         }
+
     }
 }

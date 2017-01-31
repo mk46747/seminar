@@ -43,6 +43,7 @@
     <Compile Include="AccountController.cs" />
     <Compile Include="MainFormController.cs" />
     <Compile Include="NannyController.cs" />
+    <Compile Include="OfferController.cs" />
     <Compile Include="ParentController.cs" />
   </ItemGroup>
   <ItemGroup>

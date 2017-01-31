@@ -20,7 +20,7 @@ namespace NannyApp.Controllers
            
         }
 
-        public void CreateNanny(INannyView CreateNannyView, IUserRepository UserRepository)
+        public User  CreateNanny(INannyView CreateNannyView, IUserRepository UserRepository)
         {
             string Username = CreateNannyView.Username;
             string Password = CreateNannyView.Password;
@@ -40,13 +40,13 @@ namespace NannyApp.Controllers
                 || Contact.Length == 0 || Education.Length == 0)
             {
                 MessageBox.Show("Please fill all the fields.");
-                return;
+                return null;
             }
             Nanny Nanny = UserRepository.GetNanny(Username, Password);
             if (Nanny != null)
             {
                 MessageBox.Show("User with inserted username and password already exists. Please choose another one.");
-                return;
+                return null;
             }
 
             Nanny = (Nanny) UserFactory.CreateNanny(Username, Password, Name, Surname, Gender, 
@@ -56,8 +56,9 @@ namespace NannyApp.Controllers
             if (UserRepository.AddUser(Nanny) == false)
             {
                 MessageBox.Show("Error creating account, please try again");
-                return;
+                return null;
             }
+            return Nanny;
 
         }
     
