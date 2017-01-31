@@ -44,6 +44,12 @@
     <Compile Include="CooperationForm.Designer.cs">
       <DependentUpon>CooperationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CooperationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CooperationsForm.Designer.cs">
+      <DependentUpon>CooperationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NannyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,11 +74,11 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm2.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm2.Designer.cs">
-      <DependentUpon>MainForm2.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OfferForm.cs">
       <SubType>Form</SubType>
@@ -86,11 +92,23 @@
     <Compile Include="OffersForm.Designer.cs">
       <DependentUpon>OffersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="ReviewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="ReviewForm.Designer.cs">
+      <DependentUpon>ReviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReviewsForm.Designer.cs">
+      <DependentUpon>ReviewsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WindowFormsFactory.cs" />
   </ItemGroup>
@@ -105,6 +123,9 @@
     <EmbeddedResource Include="CooperationForm.resx">
       <DependentUpon>CooperationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CooperationsForm.resx">
+      <DependentUpon>CooperationsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NannyForm.resx">
       <DependentUpon>NannyForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,8 +138,8 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm2.resx">
-      <DependentUpon>MainForm2.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OfferForm.resx">
       <DependentUpon>OfferForm.cs</DependentUpon>
@@ -126,8 +147,14 @@
     <EmbeddedResource Include="OffersForm.resx">
       <DependentUpon>OffersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="ReviewForm.resx">
+      <DependentUpon>ReviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReviewsForm.resx">
+      <DependentUpon>ReviewsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -66,6 +66,7 @@
             this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.UpdateAccountButton = new System.Windows.Forms.Button();
+            this.ReviewsButton = new System.Windows.Forms.Button();
             this.genderPanel.SuspendLayout();
             this.smokingPanel.SuspendLayout();
             this.petsPanel.SuspendLayout();
@@ -428,11 +429,21 @@
             this.UpdateAccountButton.Text = "Update Account";
             this.UpdateAccountButton.UseVisualStyleBackColor = true;
             // 
-            // CreateNannyForm
+            // ReviewsButton
+            // 
+            this.ReviewsButton.Location = new System.Drawing.Point(251, 244);
+            this.ReviewsButton.Name = "ReviewsButton";
+            this.ReviewsButton.Size = new System.Drawing.Size(230, 33);
+            this.ReviewsButton.TabIndex = 36;
+            this.ReviewsButton.Text = "View reviews";
+            this.ReviewsButton.UseVisualStyleBackColor = true;
+            // 
+            // NannyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(520, 290);
+            this.Controls.Add(this.ReviewsButton);
             this.Controls.Add(this.UpdateAccountButton);
             this.Controls.Add(this.driversLicencePanel);
             this.Controls.Add(this.sickChildrenPanel);
@@ -461,7 +472,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.usernameTextbox);
             this.Controls.Add(this.label1);
-            this.Name = "CreateNannyForm";
+            this.Name = "NannyForm";
             this.Text = "Nanny";
             this.genderPanel.ResumeLayout(false);
             this.genderPanel.PerformLayout();
@@ -518,5 +529,6 @@
         private System.Windows.Forms.RadioButton radioButton9;
         private System.Windows.Forms.RadioButton radioButton10;
         private System.Windows.Forms.Button UpdateAccountButton;
+        private System.Windows.Forms.Button ReviewsButton;
     }
 }

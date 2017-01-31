@@ -43,7 +43,7 @@
             this.ParentNameTextBox = new System.Windows.Forms.TextBox();
             this.ParentContactTextBox = new System.Windows.Forms.TextBox();
             this.EndDateDateTime = new System.Windows.Forms.DateTimePicker();
-            this.BackToReviewButton = new System.Windows.Forms.Button();
+            this.ReviewButton = new System.Windows.Forms.Button();
             this.BackToCooperationsButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +69,7 @@
             this.tableLayoutPanel1.Controls.Add(this.ParentNameTextBox, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.ParentContactTextBox, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.EndDateDateTime, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.BackToReviewButton, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.ReviewButton, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.BackToCooperationsButton, 3, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -217,15 +217,15 @@
             this.EndDateDateTime.Size = new System.Drawing.Size(121, 20);
             this.EndDateDateTime.TabIndex = 13;
             // 
-            // BackToReviewButton
+            // ReviewButton
             // 
-            this.BackToReviewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.BackToReviewButton.Location = new System.Drawing.Point(257, 161);
-            this.BackToReviewButton.Name = "BackToReviewButton";
-            this.BackToReviewButton.Size = new System.Drawing.Size(121, 23);
-            this.BackToReviewButton.TabIndex = 14;
-            this.BackToReviewButton.Text = "Back to review";
-            this.BackToReviewButton.UseVisualStyleBackColor = true;
+            this.ReviewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ReviewButton.Location = new System.Drawing.Point(257, 161);
+            this.ReviewButton.Name = "ReviewButton";
+            this.ReviewButton.Size = new System.Drawing.Size(121, 23);
+            this.ReviewButton.TabIndex = 14;
+            this.ReviewButton.Text = "Review";
+            this.ReviewButton.UseVisualStyleBackColor = true;
             // 
             // BackToCooperationsButton
             // 
@@ -268,7 +268,7 @@
         private System.Windows.Forms.TextBox ParentNameTextBox;
         private System.Windows.Forms.TextBox ParentContactTextBox;
         private System.Windows.Forms.DateTimePicker EndDateDateTime;
-        private System.Windows.Forms.Button BackToReviewButton;
+        private System.Windows.Forms.Button ReviewButton;
         private System.Windows.Forms.Button BackToCooperationsButton;
     }
 }
