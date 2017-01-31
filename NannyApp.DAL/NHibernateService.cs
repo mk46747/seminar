@@ -40,7 +40,7 @@ namespace NannyApp.DAL
             ISessionFactory sessionFactory = null;
             try
             {
-                AppDomain.CurrentDomain.SetData("DataDirectory", "c:/");
+              //  AppDomain.CurrentDomain.SetData("DataDirectory", "c:/");
 
                 var nhConfig = Fluently.Configure()
                     .Database(SQLiteConfiguration.Standard

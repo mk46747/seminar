@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace NannyApp.BaseLib
 {
-    public interface ILoginView
+    public interface IParentView
     {
-        string GetUsername();
-        string GetPassword();
+        
 
+         string GetUsername();
+         void SetUsername(string Username);
     }
 }

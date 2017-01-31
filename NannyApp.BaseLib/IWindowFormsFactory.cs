@@ -14,6 +14,7 @@ namespace NannyApp.BaseLib
 
         IMainView CreateMainView(IMainFormController MainFormController);
 
+        IParentView CreateParentView(IMainFormController MainFormController);
         /*
         IAddNewAccountView CreateAddNewAccountView(List<string> inAccType);
         IEditAccountView CreateEditAccountView();

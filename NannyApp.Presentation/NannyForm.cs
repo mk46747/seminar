@@ -19,6 +19,7 @@ namespace NannyApp.Presentation
         {
             InitializeComponent();
         }
+        /*
         public string GetUsername()
         {
             return usernameTextbox.Text;
@@ -104,7 +105,7 @@ namespace NannyApp.Presentation
                 return true;
             }
             return false;
-        }
+        }*/
         public NannyForm(IMainFormController MainFormController)
         {
             this.MainFormController = MainFormController;
@@ -115,6 +116,7 @@ namespace NannyApp.Presentation
         {
             MainFormController.CreateNanny(this);
         }
+         
 
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -127,6 +129,195 @@ namespace NannyApp.Presentation
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public string Username
+        {
+            get
+            {
+                return usernameTextbox.Text;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return passwordTextbox.Text;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Surname
+        {
+            get
+            {
+                return surnameTextbox.Text;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Contact
+        {
+            get
+            {
+                return contactTextbox.Text;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Education
+        {
+            get
+            {
+                return educationTextbox.Text;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string ExtraQualification
+        {
+            get
+            {
+                return extraQualificationTextbox.Text;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string ExtraServices
+        {
+            get
+            {
+                return extraServicesTextbox.Text;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public bool Smoking
+        {
+            get
+            {
+                var checkedButton = smokingPanel.Controls.OfType<RadioButton>()
+                                                     .FirstOrDefault(r => r.Checked);
+                if (checkedButton.Name.Equals("Yes"))
+                {
+                    return true;
+                }
+                return false;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public bool Pets
+        {
+            get
+            {
+                var checkedButton = petsPanel.Controls.OfType<RadioButton>()
+                                                     .FirstOrDefault(r => r.Checked);
+                if (checkedButton.Name.Equals("Yes"))
+                {
+                    return true;
+                }
+                return false;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public bool SickChildren
+        {
+            get
+            {
+                var checkedButton = sickChildrenPanel.Controls.OfType<RadioButton>()
+                                                     .FirstOrDefault(r => r.Checked);
+                if (checkedButton.Name.Equals("Yes"))
+                {
+                    return true;
+                }
+                return false;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public bool DriversLicence
+        {
+            get
+            {
+                var checkedButton = driversLicencePanel.Controls.OfType<RadioButton>()
+                                                     .FirstOrDefault(r => r.Checked);
+                if (checkedButton.Name.Equals("Yes"))
+                {
+                    return true;
+                }
+                return false;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+
+        public string NannyName
+        {
+            get
+            {
+                return nameTextbox.Text;
+
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+
+        public Gender Gender
+        {
+            get
+            {
+                var checkedButton = genderPanel.Controls.OfType<RadioButton>()
+                                                      .FirstOrDefault(r => r.Checked);
+                if (checkedButton.Name.Equals("Male"))
+                {
+                    return Gender.MALE;
+                }
+                return Gender.FEMALE;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

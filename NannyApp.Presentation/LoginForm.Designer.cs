@@ -97,6 +97,7 @@
             this.createParentButton.TabIndex = 6;
             this.createParentButton.Text = "Create account as parent";
             this.createParentButton.UseVisualStyleBackColor = true;
+            this.createParentButton.Click += new System.EventHandler(this.CreateParent);
             // 
             // LoginForm
             // 

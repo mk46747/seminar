@@ -33,29 +33,37 @@ namespace NannyApp.Controllers
 
         public void ShowMainForm(User User)
         {
-            var MainForm = WindowFormsFactory.CreateMainView(this);
-            var form = (Form)MainForm;
+            if (User == null)
+            {
+                return;
+            }
+            var mainForm = WindowFormsFactory.CreateMainView(this);
+            mainForm.HideLoginButton();
+            mainForm.SetWelcomeLabel("Welcome " + User.Name);
+            mainForm.EnableMenu();
+            var form = (Form)mainForm;
             form.Show();
         }
 
-        public void ShowLoginForm(IStartView StartView)
+        public void ShowLoginForm(IMainView MainView)
         {
+            var frm = (Form)MainView;
+            frm.Hide();
+            frm.ShowInTaskbar = false;
             AccountController AccountController = new AccountController();
             var LoginView = WindowFormsFactory.CreateLoginView(this);
-            var form = (Form)StartView;
-            form.Hide();
-            form.ShowInTaskbar = false;
-            AccountController.ShowLoginForm(LoginView);
+           
+             AccountController.ShowLoginForm(LoginView);
             
             // LoginController.Login(UserRepository, LoginView, this);
         }
 
-        public void ShowCreateNannyForm()
+        public void ShowNannyForm(Form LoginView)
         {//ovdje dođem s create forme i trebao bih otići spremiti nanny i vratiti mainnannyform
             NannyController NannyController = new NannyController();
             var CreateNannyForm = WindowFormsFactory.CreateNannyView(this);
             NannyController.ShowCreateNannyForm(CreateNannyForm);
-
+            LoginView.Close();
             //nanycon umjesto
         }
         public void CreateNanny(INannyView CreateNannyForm)
@@ -64,16 +72,22 @@ namespace NannyApp.Controllers
             NannyController.CreateNanny(CreateNannyForm, UserRepository);
         }
 
-        public void CreateParent()
+        public void ShowParentForm(Form LoginView)
         {
+            ParentController ParentController = new ParentController();
+            ParentForm ParentForm = (ParentForm)WindowFormsFactory.CreateParentView(this);
+            ParentController.ShowParentForm(ParentForm);
+            LoginView.Close();
 
         }
 
         public void LoginUser(ILoginView LoginView)
         {
-            AccountController LoginController = new AccountController();
+            AccountController AccountController = new AccountController();
 
-            AccountController.Login(UserRepository, LoginView, this);
+            User User = AccountController.Login(UserRepository, LoginView, this);
+
+            ShowMainForm(User);
         }
         private void HideForm(Form form)
         {

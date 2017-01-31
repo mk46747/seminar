@@ -104,12 +104,6 @@
     <Compile Include="ReviewsForm.Designer.cs">
       <DependentUpon>ReviewsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StartForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StartForm.Designer.cs">
-      <DependentUpon>StartForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="WindowFormsFactory.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -152,9 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReviewsForm.resx">
       <DependentUpon>ReviewsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StartForm.resx">
-      <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

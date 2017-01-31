@@ -16,7 +16,7 @@ namespace NannyApp.Presentation
 		}
         public IMainView CreateMainView(IMainFormController MainFormController)
         {
-            var newFrm = new MainForm2(MainFormController);
+            var newFrm = new MainForm(MainFormController);
 
             return newFrm;
         }
@@ -24,6 +24,11 @@ namespace NannyApp.Presentation
         public INannyView CreateNannyView(IMainFormController MainFormController)
         {
             return new NannyForm(MainFormController);
+        }
+
+        public IParentView CreateParentView(IMainFormController MainFormController)
+        {
+            return new ParentForm(MainFormController);
         }
 		
     }

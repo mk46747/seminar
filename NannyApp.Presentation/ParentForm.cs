@@ -7,14 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NannyApp.BaseLib;
 
 namespace NannyApp.Presentation
 {
-    public partial class ParentForm : Form
+    public partial class ParentForm : Form, IParentView
     {
-        public ParentForm()
+        IMainFormController MainController;
+        public ParentForm(IMainFormController MainController)
         {
+            this.MainController = MainController;
             InitializeComponent();
+        }
+        public string GetUsername(){
+            return UserNameTextBox.Text;
+        }
+
+        public void SetUsername(string Username)
+        {
+            UserNameTextBox.Text = Username;
         }
     }
 }

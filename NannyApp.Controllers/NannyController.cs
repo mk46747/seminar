@@ -22,19 +22,20 @@ namespace NannyApp.Controllers
 
         public void CreateNanny(INannyView CreateNannyView, IUserRepository UserRepository)
         {
-            string Username = CreateNannyView.GetUsername();
-            string Password = CreateNannyView.GetPassword();
-            string Name = CreateNannyView.GetName();
-            string Surname = CreateNannyView.GetSurname();
-            string Contact = CreateNannyView.GetContact();
-            string Education = CreateNannyView.GetEducation();
-            Gender Gender = CreateNannyView.GetGender();
-            bool Smoking = CreateNannyView.GetSmoking();
-            bool Pets = CreateNannyView.GetPets();
-            bool SickChildren = CreateNannyView.GetSickChildren();
-            bool DriversLicence = CreateNannyView.GetDriversLicence();
-            string ExtraServices = CreateNannyView.GetExtraServices();
-            string ExtraQualification = CreateNannyView.GetExtraQualification();
+            string Username = CreateNannyView.Username;
+            string Password = CreateNannyView.Password;
+            string Name = CreateNannyView.NannyName;
+            string Surname = CreateNannyView.Surname;
+            string Contact = CreateNannyView.Contact;
+            string Education = CreateNannyView.Education;
+            Gender Gender = CreateNannyView.Gender;
+            bool Smoking = CreateNannyView.Smoking;
+            bool Pets = CreateNannyView.Pets;
+            bool SickChildren = CreateNannyView.SickChildren;
+            bool DriversLicence = CreateNannyView.DriversLicence;
+            string ExtraServices = CreateNannyView.ExtraServices;
+            string ExtraQualification = CreateNannyView.ExtraQualification;
+
             if(Username.Length == 0 || Password.Length == 0 || Name.Length == 0 || Surname.Length == 0
                 || Contact.Length == 0 || Education.Length == 0)
             {

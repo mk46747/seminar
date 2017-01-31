@@ -14,38 +14,46 @@ namespace NannyApp.Controllers
 {
     public class AccountController
     {
-
-        public static void Login(IUserRepository UserRepository, ILoginView LoginView, IMainFormController MainController)
+        IMainView MainView;
+        
+        public  User Login(IUserRepository UserRepository, ILoginView LoginView, IMainFormController MainController
+            )
         {
             string Username = LoginView.GetUsername();
             string Password = LoginView.GetPassword();
+
             if (Username.Length == 0 || Password.Length == 0)
             {
+
                 MessageBox.Show("Please fill all the fields");
-                return;
+                return null;
             }
+            var frm = (Form)LoginView;
             Admin Admin = UserRepository.GetAdmin(Username, Password);
             if (Admin != null)
             {
-                return;
+                return Admin;
               //  MainController.ShowAdminView()
             }
             Nanny Nanny = UserRepository.GetNanny(Username, Password);
             if (Nanny != null)
             {
-                MainController.ShowMainForm(Nanny);
-                return;
+                frm.Hide();
+                frm.ShowInTaskbar = false;
+                return Nanny;
             }
             
             Parent Parent = UserRepository.GetParent(Username, Password);
 
             if (Parent != null)
             {
-                MainController.ShowMainForm(Parent);
-                return;
+                frm.Hide();
+                frm.ShowInTaskbar = false;
+                return Parent;
             }
+
             MessageBox.Show("Invalid username or password, please try again.");
-            return;
+            return null;
 
 
         }

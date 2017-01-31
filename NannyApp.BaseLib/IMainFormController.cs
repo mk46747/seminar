@@ -4,18 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NannyApp.Model;
+using System.Windows.Forms;
 
 namespace NannyApp.BaseLib
 {
     public interface IMainFormController
     {
-        void ShowCreateNannyForm();
+        void ShowNannyForm(Form LoginView);
         void CreateNanny(INannyView CreateNannyView);
-        void ShowLoginForm(IStartView StartView);
+        void ShowLoginForm(IMainView MainView);
         void LoginUser(ILoginView LoginView);
         void ShowMainForm(User User);
+        
+        void ShowParentForm(Form LoginView);
         /*
-        void ShowCreateParentForm();
         void CreateParent(ICreatParentView CreateParentView);
         void ShowCreateNannyOfferForm();
         void CreateNannyOffer(ICreateNannyOfferView CreateNannyOfferView);
