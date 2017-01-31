@@ -19,6 +19,7 @@ namespace NannyApp.Model
             public ParentOffer()
             : base()
         {
+            //commit comment
 
     }
 
