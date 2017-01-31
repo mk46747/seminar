@@ -39,41 +39,91 @@
     <div class="flt1 rp_inner">
         <span class="flt rp_txtour">Giving <span style="color:#3F4534;">services</span></span>
         <span class="flt rp_weltxt">
-            Ovdje bi ispisali ponude dadilja - npr. 3 najnovije koje nemaju jos suradnju 
-            <br />
-            <h2>
-                @foreach (var item in Model)
-                {
-                    <p>
-                        @Html.DisplayFor(modelItem => item.NannyOffer.Nanny.Username) ,
-                        @Html.DisplayFor(modelItem => item.NannyOffer.City)
-
-                        <br />
-                        @Html.DisplayFor(modelItem => item.NannyOffer.ChildrenNumber)
-                        <br />
-                        @Html.DisplayFor(modelItem => item.NannyOffer.Price)
-                    </p>
-                }
-            </h2>
+            Ovdje bi ispisali ponude dadilja - npr. 3 najnovije koje nemaju jos suradnju
         </span> 
+            <br />  
+        <div class="table-style-1">
+            <table border="1" style="width:450px" color="#448CCB">
+                <thead>
+                    <th>Deadline</th>
+                    <th>Username</th>
+                    <th>City</th>
+                    <th>Price</th>
+                    <th>Details</th>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                        {
+                            if (item.Nanny != null)
+                            {
+                                <tr>
+                                    <td height="50" >
+                                        @Html.DisplayFor(modelItem => item.Deadline.Month)/
+                                        @Html.DisplayFor(modelItem => item.Deadline.Day)/
+                                        @Html.DisplayFor(modelItem => item.Deadline.Year) 
+                                    </td>
+                                    <td height="50" >
+                                        @Html.DisplayFor(modelItem => item.Nanny.Username)
+                                    </td>
+                                    <td height="50" >
+                                        @Html.DisplayFor(modelItem => item.City)
+                                    </td>
+                                    <td height="50">
+                                        @Html.DisplayFor(modelItem => item.Price)
+                                        </td>
+                                    <td>
+                                        <h3>@Html.ActionLink("Details", "Details", new { id = item.IdOffer })</h3>
+                                    </td>
+                                    </tr>
+                            }
+                            }
+                </tbody>
+            </table>
+        </div>
         <img src="@Url.Content("~/Content/mytemplate/")images/cp_line.gif" width="511" height="1" alt="" class="flt1 rp_line" /> 
         <span class="flt rp_txtour">Looking for <span style="color:#3F4534;">services</span></span> 
         <span class="flt rp_weltxt">
             Ovdje bi ispisali potražnje roditelja - npr. 3 najnovije koje nemaju jos suradnju
-            <h2>
-                @foreach (var item in Model)
-                {
-                    @Html.DisplayFor(modelItem => item.ParentOffer.Parent.Username)
-                    <br />
-                    @Html.DisplayFor(modelItem => item.ParentOffer.City)
-                    <br />
-                    @Html.DisplayFor(modelItem => item.ParentOffer.ChildrenNumber)
-                    <br />
-                    @Html.DisplayFor(modelItem => item.ParentOffer.Price)
-
-                }
-            </h2>
         </span>
+        <div class="table-style-1">
+            <table border="1" style="width:450px" color="#448CCB">
+                <thead>
+                <th>Deadline</th>
+                <th>Username</th>
+                <th>City</th>
+                <th>Price</th>
+                <th>Details</th>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        if (item.Parent != null)
+                        {
+                            <tr>
+                                <td height="50">
+                                    @Html.DisplayFor(modelItem => item.Deadline.Month)/
+                                    @Html.DisplayFor(modelItem => item.Deadline.Day)/
+                                    @Html.DisplayFor(modelItem => item.Deadline.Year)
+                                </td>
+                                <td height="50">
+                                    @Html.DisplayFor(modelItem => item.Parent.Username)
+                                </td>
+                                <td height="50">
+                                    @Html.DisplayFor(modelItem => item.City)
+                                </td>
+                                <td height="50">
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+                                <td>
+                                    <h3>@Html.ActionLink("Details", "Details", new { id = item.IdOffer })</h3>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
     </div>
     <img src="@Url.Content("~/Content/mytemplate/")images/rp_bottcorn.gif" width="560" height="14" alt="" class="flt1" />
 </div>

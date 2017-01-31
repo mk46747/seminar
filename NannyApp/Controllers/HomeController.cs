@@ -21,20 +21,36 @@ namespace NannyApp.Controllers
             List<OffersViewModel> offersList = new List<OffersViewModel>();
             IList<NannyOffer> nannyOffers = offers.GetAllNannyOffers();
             IList<ParentOffer> parentOffers = offers.GetAllParentOffers();
+
             foreach (var nannyOffer in nannyOffers)
             {
+                if(nannyOffer.Opened.Equals("true")){
                 offersList.Add(new OffersViewModel
                 {
-                    NannyOffer = nannyOffer
+                    IdOffer = nannyOffer.Id,
+                    Nanny = nannyOffer.Nanny,
+                    Price = nannyOffer.Price,
+                    City = nannyOffer.City,
+                    Deadline = nannyOffer.Deadline
                 });
             }
+            }
+
             foreach (var parentOffer in parentOffers)
             {
+                if (parentOffer.Opened.Equals("true"))
+                { 
                 offersList.Add(new OffersViewModel
                 {
-                    ParentOffer = parentOffer
+                    IdOffer = parentOffer.Id,
+                    Parent = parentOffer.Parent,
+                    Price = parentOffer.Price,
+                    City = parentOffer.City,
+                    Deadline = parentOffer.Deadline
                 });
+                }
             }
+
             return View(offersList);
             //return View();
         }

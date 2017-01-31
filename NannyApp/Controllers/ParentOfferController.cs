@@ -51,7 +51,7 @@ namespace NannyApp.Controllers
                 {
                     place = BabySittingPlace.PARENTS_PLACE;
                 }
-                ParentOffer newOffer = (ParentOffer)OfferFactory.CreateParentOffer(offer.Price, offer.Experience, place, offer.Notice, offer.StartTime, offer.EndTime, offer.City, offer.Address, offer.ChildrenNumber, offer.MinChildrenAge, offer.MaxChildrenAge, offer.Deadline, parent);
+                ParentOffer newOffer = (ParentOffer)OfferFactory.CreateParentOffer(offer.Price, offer.Experience, place, offer.Notice, offer.StartTime, offer.EndTime, offer.City, offer.Address, offer.ChildrenNumber, offer.MinChildrenAge, offer.MaxChildrenAge, offer.Deadline, offer.Opened, parent);
                 parent.AddOffer(newOffer);
                 UserRepository.UpdateUser(parent);
 

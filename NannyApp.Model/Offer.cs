@@ -27,7 +27,7 @@ namespace NannyApp.Model
 
         public Offer( double Price, string Experience, BabySittingPlace BabySittingPlace, string Notice,
         DateTime StartTime,  DateTime EndTime, string City, string Address, int ChildrenNumber,
-         int MinChildrenAge,  int MaxChildrenAge, DateTime Deadline)
+         int MinChildrenAge,  int MaxChildrenAge, DateTime Deadline, bool Opened)
         {
             this.Price = Price;
             this.Experience = Experience;
@@ -41,6 +41,8 @@ namespace NannyApp.Model
             this.MinChildrenAge = this.MinChildrenAge;
             this.MaxChildrenAge = MaxChildrenAge;
             this.Deadline = Deadline;
+            //dodajem opened i u NannyOffer i u ParentOffer, Marija
+            this.Opened = Opened;
         }
 
         public Offer()

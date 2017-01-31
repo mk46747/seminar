@@ -11,9 +11,10 @@ namespace NannyApp.Model
         public virtual Parent Parent { get; set; }
         public ParentOffer( double Price, string Experience, BabySittingPlace BabySittingPlace, string Notice,
         DateTime StartTime,  DateTime EndTime, string City, string Address, int ChildrenNumber,
-         int MinChildrenAge,  int MaxChildrenAge, DateTime Deadline, Parent Parent)   
+         int MinChildrenAge,  int MaxChildrenAge, DateTime Deadline, bool Opened, Parent Parent)   
             :base( Price,  Experience,  BabySittingPlace,  Notice, StartTime,   EndTime,
-            City,  Address,  ChildrenNumber, MinChildrenAge,   MaxChildrenAge,  Deadline){
+            City, Address, ChildrenNumber, MinChildrenAge, MaxChildrenAge, Deadline, Opened)
+        {
                 this.Parent = Parent;
             }
             public ParentOffer()

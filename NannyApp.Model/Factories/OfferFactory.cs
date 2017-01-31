@@ -10,17 +10,17 @@ namespace NannyApp.Model.Factories
     {
         public static Offer CreateNannyOffer( double Price, string Experience, BabySittingPlace BabySittingPlace, string Notice,
         DateTime StartTime,  DateTime EndTime, string City, string Address, int ChildrenNumber,
-         int MinChildrenAge, int MaxChildrenAge, DateTime Deadline, Nanny Nanny)
+         int MinChildrenAge, int MaxChildrenAge, DateTime Deadline, bool Opened, Nanny Nanny)
         {
             return new NannyOffer( Price,  Experience,  BabySittingPlace,  Notice, StartTime,   EndTime,
-            City,  Address,  ChildrenNumber, MinChildrenAge,   MaxChildrenAge,  Deadline, Nanny);
+            City, Address, ChildrenNumber, MinChildrenAge, MaxChildrenAge, Deadline, Opened, Nanny);
         }
 
         public static Offer CreateParentOffer( double Price, string Experience, BabySittingPlace BabySittingPlace, string Notice,
         DateTime StartTime,  DateTime EndTime, string City, string Address, int ChildrenNumber,
-         int MinChildrenAge,  int MaxChildrenAge, DateTime Deadline, Parent Parent)  { 
+         int MinChildrenAge,  int MaxChildrenAge, DateTime Deadline, bool Opened, Parent Parent)  { 
             return new ParentOffer( Price,  Experience,  BabySittingPlace,  Notice, StartTime,   EndTime,
-            City,  Address,  ChildrenNumber, MinChildrenAge,   MaxChildrenAge,  Deadline, Parent);
+            City, Address, ChildrenNumber, MinChildrenAge, MaxChildrenAge, Deadline, Opened, Parent);
         }
     }
 }

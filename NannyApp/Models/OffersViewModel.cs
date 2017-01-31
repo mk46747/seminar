@@ -13,7 +13,11 @@ namespace NannyApp.Models
 {
     public class OffersViewModel
     {
-        public NannyOffer NannyOffer { get; set; }
-        public ParentOffer ParentOffer { get; set; }
+        public int IdOffer { get; set; }
+        public Nanny Nanny { get; set; }
+        public Parent Parent{ get; set; }
+        public double Price { get; set; }
+        public string City { get; set; }
+        public DateTime Deadline { get; set; }
     }
 }

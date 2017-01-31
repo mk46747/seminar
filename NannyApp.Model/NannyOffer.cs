@@ -17,9 +17,9 @@ namespace NannyApp.Model
         }
         public NannyOffer( double Price, string Experience, BabySittingPlace BabySittingPlace, string Notice,
         DateTime StartTime,  DateTime EndTime, string City, string Address, int ChildrenNumber,
-         int MinChildrenAge,  int MaxChildrenAge, DateTime Deadline, Nanny Nanny)   
+         int MinChildrenAge,  int MaxChildrenAge, DateTime Deadline, bool Opened, Nanny Nanny)   
             :base( Price,  Experience,  BabySittingPlace,  Notice, StartTime,   EndTime,
-            City,  Address,  ChildrenNumber, MinChildrenAge,   MaxChildrenAge,  Deadline){
+            City,  Address,  ChildrenNumber, MinChildrenAge,   MaxChildrenAge,  Deadline, Opened){
                 this.Nanny = Nanny;
             }
     }

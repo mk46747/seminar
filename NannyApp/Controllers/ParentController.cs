@@ -53,7 +53,7 @@ namespace NannyApp.Controllers
                 Parent newParent = (Parent)UserFactory.CreateParent(user.Username, user.Password, user.Name, user.Surname, gender, user.Contact, type);
                 UserRepository.AddUser(newParent);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "User");
             }
             catch
             {
