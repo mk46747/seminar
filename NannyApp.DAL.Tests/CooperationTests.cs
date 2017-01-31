@@ -22,7 +22,7 @@ namespace NannyApp.DAL.Tests
             //the parent offers a job
             Offer parentOffer = new ParentOffer(100, "bachelor or higher", BabySittingPlace.PARENTS_PLACE, "smth", 
                 new DateTime(2017, 2, 5, 9, 0, 0), new DateTime(2017, 2, 5, 17, 0, 0), "Zagreb", "Branimirova 18",
-                2, 7, 9, new DateTime(2017, 1, 31), (Parent)parent);
+                2, 7, 9, new DateTime(2017, 1, 31), false, parent);
             parent.AddOffer((ParentOffer)parentOffer);
             //the nanny applies for the job, thus creating a cooperation
             Cooperation cooperation = CooperationFactory.CreateCooperation(nanny, parent, parentOffer);

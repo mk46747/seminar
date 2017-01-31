@@ -31,7 +31,8 @@ namespace NannyApp.Presentation
             return new ParentForm(MainFormController);
         }
 
-        public IOfferView CreateParentView(IMainFormController MainFormController)
+        //public IOfferView CreateParentView(IMainFormController MainFormController)
+        public IOfferView CreateOfferView(IMainFormController MainFormController)
         {
             return new OfferForm(MainFormController);
         }
