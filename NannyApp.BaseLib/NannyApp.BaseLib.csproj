@@ -42,6 +42,7 @@
     <Compile Include="ILoginView.cs" />
     <Compile Include="IMainFormController.cs" />
     <Compile Include="IMainView.cs" />
+    <Compile Include="IOfferView.cs" />
     <Compile Include="IParentView.cs" />
     <Compile Include="IStartView.cs" />
     <Compile Include="IWindowFormsFactory.cs" />
