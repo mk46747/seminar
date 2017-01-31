@@ -17,7 +17,10 @@ namespace NannyApp.Controllers
         // GET: ParentOffer
         public ActionResult Index()
         {
-            return View();
+            OfferRepository offers = new OfferRepository();
+            IList<ParentOffer> parentOffers = offers.GetAllParentOffers();
+
+            return View(parentOffers);
         }
 
         // GET: ParentOffer/Details/5

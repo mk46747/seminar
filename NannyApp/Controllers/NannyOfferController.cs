@@ -17,13 +17,30 @@ namespace NannyApp.Controllers
         // GET: Offer
         public ActionResult Index()
         {
-            return View();
+            OfferRepository offers = new OfferRepository();
+            IList<NannyOffer> nannyOffers = offers.GetAllNannyOffers();
+
+            return View(nannyOffers);
         }
 
         // GET: Offer/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int IdNanny, int IdOffer)
         {
-            return View();
+            Nanny nanny = new Nanny();
+            UserRepository UserRepository = new UserRepository();
+            int id = Convert.ToInt32(Session["Id"]);
+            nanny = UserRepository.GetNanny(IdNanny);
+            NannyOffer NannyOffer = new NannyOffer();
+
+            foreach (NannyOffer n in nanny.Offers)
+            {
+                if (n.Id.Equals(IdOffer))
+                {
+                    NannyOffer = n;
+                }
+            }
+
+            return View(NannyOffer);
         }
 
         public ActionResult Create()

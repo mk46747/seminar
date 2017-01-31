@@ -24,7 +24,7 @@ namespace NannyApp.Controllers
 
             foreach (var nannyOffer in nannyOffers)
             {
-                if(nannyOffer.Opened.Equals("true")){
+                //if(nannyOffer.Opened.Equals("true")){
                 offersList.Add(new OffersViewModel
                 {
                     IdOffer = nannyOffer.Id,
@@ -33,7 +33,7 @@ namespace NannyApp.Controllers
                     City = nannyOffer.City,
                     Deadline = nannyOffer.Deadline
                 });
-            }
+            //}
             }
 
             foreach (var parentOffer in parentOffers)
