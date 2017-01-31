@@ -39,8 +39,8 @@
             this.passwordTextbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.genderMaleRadio = new System.Windows.Forms.RadioButton();
-            this.genderFemaleRadio = new System.Windows.Forms.RadioButton();
+            this.genderMale = new System.Windows.Forms.RadioButton();
+            this.genderFemale = new System.Windows.Forms.RadioButton();
             this.educationTextbox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,17 +54,17 @@
             this.button1 = new System.Windows.Forms.Button();
             this.genderPanel = new System.Windows.Forms.Panel();
             this.smokingPanel = new System.Windows.Forms.Panel();
-            this.smoking = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.smokingYes = new System.Windows.Forms.RadioButton();
+            this.smokingNo = new System.Windows.Forms.RadioButton();
             this.petsPanel = new System.Windows.Forms.Panel();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.petsYes = new System.Windows.Forms.RadioButton();
+            this.petsNo = new System.Windows.Forms.RadioButton();
             this.sickChildrenPanel = new System.Windows.Forms.Panel();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.illChildrenYes = new System.Windows.Forms.RadioButton();
+            this.illChildrenNo = new System.Windows.Forms.RadioButton();
             this.driversLicencePanel = new System.Windows.Forms.Panel();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.driversLicenceYes = new System.Windows.Forms.RadioButton();
+            this.driversLicenceNo = new System.Windows.Forms.RadioButton();
             this.UpdateAccountButton = new System.Windows.Forms.Button();
             this.ReviewsButton = new System.Windows.Forms.Button();
             this.genderPanel.SuspendLayout();
@@ -163,29 +163,29 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Gender";
             // 
-            // genderMaleRadio
+            // genderMale
             // 
-            this.genderMaleRadio.AutoSize = true;
-            this.genderMaleRadio.Checked = true;
-            this.genderMaleRadio.Location = new System.Drawing.Point(3, 4);
-            this.genderMaleRadio.Name = "genderMaleRadio";
-            this.genderMaleRadio.Size = new System.Drawing.Size(48, 17);
-            this.genderMaleRadio.TabIndex = 11;
-            this.genderMaleRadio.TabStop = true;
-            this.genderMaleRadio.Text = "Male";
-            this.genderMaleRadio.UseVisualStyleBackColor = true;
+            this.genderMale.AutoSize = true;
+            this.genderMale.Checked = true;
+            this.genderMale.Location = new System.Drawing.Point(3, 4);
+            this.genderMale.Name = "genderMale";
+            this.genderMale.Size = new System.Drawing.Size(48, 17);
+            this.genderMale.TabIndex = 11;
+            this.genderMale.TabStop = true;
+            this.genderMale.Text = "Male";
+            this.genderMale.UseVisualStyleBackColor = true;
             // 
-            // genderFemaleRadio
+            // genderFemale
             // 
-            this.genderFemaleRadio.AutoSize = true;
-            this.genderFemaleRadio.Location = new System.Drawing.Point(53, 5);
-            this.genderFemaleRadio.Name = "genderFemaleRadio";
-            this.genderFemaleRadio.Size = new System.Drawing.Size(59, 17);
-            this.genderFemaleRadio.TabIndex = 12;
-            this.genderFemaleRadio.TabStop = true;
-            this.genderFemaleRadio.Text = "Female";
-            this.genderFemaleRadio.UseVisualStyleBackColor = true;
-            this.genderFemaleRadio.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.genderFemale.AutoSize = true;
+            this.genderFemale.Location = new System.Drawing.Point(53, 5);
+            this.genderFemale.Name = "genderFemale";
+            this.genderFemale.Size = new System.Drawing.Size(59, 17);
+            this.genderFemale.TabIndex = 12;
+            this.genderFemale.TabStop = true;
+            this.genderFemale.Text = "Female";
+            this.genderFemale.UseVisualStyleBackColor = true;
+            this.genderFemale.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // educationTextbox
             // 
@@ -285,8 +285,8 @@
             // 
             // genderPanel
             // 
-            this.genderPanel.Controls.Add(this.genderMaleRadio);
-            this.genderPanel.Controls.Add(this.genderFemaleRadio);
+            this.genderPanel.Controls.Add(this.genderMale);
+            this.genderPanel.Controls.Add(this.genderFemale);
             this.genderPanel.Location = new System.Drawing.Point(103, 123);
             this.genderPanel.Name = "genderPanel";
             this.genderPanel.Size = new System.Drawing.Size(115, 26);
@@ -294,131 +294,131 @@
             // 
             // smokingPanel
             // 
-            this.smokingPanel.Controls.Add(this.smoking);
-            this.smokingPanel.Controls.Add(this.radioButton4);
+            this.smokingPanel.Controls.Add(this.smokingYes);
+            this.smokingPanel.Controls.Add(this.smokingNo);
             this.smokingPanel.Location = new System.Drawing.Point(393, 12);
             this.smokingPanel.Name = "smokingPanel";
             this.smokingPanel.Size = new System.Drawing.Size(115, 28);
             this.smokingPanel.TabIndex = 33;
             // 
-            // smoking
+            // smokingYes
             // 
-            this.smoking.AutoSize = true;
-            this.smoking.Location = new System.Drawing.Point(9, 7);
-            this.smoking.Name = "smoking";
-            this.smoking.Size = new System.Drawing.Size(43, 17);
-            this.smoking.TabIndex = 11;
-            this.smoking.TabStop = true;
-            this.smoking.Text = "Yes";
-            this.smoking.UseVisualStyleBackColor = true;
+            this.smokingYes.AutoSize = true;
+            this.smokingYes.Location = new System.Drawing.Point(9, 7);
+            this.smokingYes.Name = "smokingYes";
+            this.smokingYes.Size = new System.Drawing.Size(43, 17);
+            this.smokingYes.TabIndex = 11;
+            this.smokingYes.TabStop = true;
+            this.smokingYes.Text = "Yes";
+            this.smokingYes.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // smokingNo
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Checked = true;
-            this.radioButton4.Location = new System.Drawing.Point(58, 7);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(39, 17);
-            this.radioButton4.TabIndex = 12;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "No";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.smokingNo.AutoSize = true;
+            this.smokingNo.Checked = true;
+            this.smokingNo.Location = new System.Drawing.Point(58, 7);
+            this.smokingNo.Name = "smokingNo";
+            this.smokingNo.Size = new System.Drawing.Size(39, 17);
+            this.smokingNo.TabIndex = 12;
+            this.smokingNo.TabStop = true;
+            this.smokingNo.Text = "No";
+            this.smokingNo.UseVisualStyleBackColor = true;
             // 
             // petsPanel
             // 
-            this.petsPanel.Controls.Add(this.radioButton5);
-            this.petsPanel.Controls.Add(this.radioButton6);
+            this.petsPanel.Controls.Add(this.petsYes);
+            this.petsPanel.Controls.Add(this.petsNo);
             this.petsPanel.Location = new System.Drawing.Point(393, 42);
             this.petsPanel.Name = "petsPanel";
             this.petsPanel.Size = new System.Drawing.Size(115, 28);
             this.petsPanel.TabIndex = 34;
             // 
-            // radioButton5
+            // petsYes
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(9, 7);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(43, 17);
-            this.radioButton5.TabIndex = 11;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Yes";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.petsYes.AutoSize = true;
+            this.petsYes.Location = new System.Drawing.Point(9, 7);
+            this.petsYes.Name = "petsYes";
+            this.petsYes.Size = new System.Drawing.Size(43, 17);
+            this.petsYes.TabIndex = 11;
+            this.petsYes.TabStop = true;
+            this.petsYes.Text = "Yes";
+            this.petsYes.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // petsNo
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Checked = true;
-            this.radioButton6.Location = new System.Drawing.Point(58, 7);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(39, 17);
-            this.radioButton6.TabIndex = 12;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "No";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.petsNo.AutoSize = true;
+            this.petsNo.Checked = true;
+            this.petsNo.Location = new System.Drawing.Point(58, 7);
+            this.petsNo.Name = "petsNo";
+            this.petsNo.Size = new System.Drawing.Size(39, 17);
+            this.petsNo.TabIndex = 12;
+            this.petsNo.TabStop = true;
+            this.petsNo.Text = "No";
+            this.petsNo.UseVisualStyleBackColor = true;
             // 
             // sickChildrenPanel
             // 
-            this.sickChildrenPanel.Controls.Add(this.radioButton7);
-            this.sickChildrenPanel.Controls.Add(this.radioButton8);
+            this.sickChildrenPanel.Controls.Add(this.illChildrenYes);
+            this.sickChildrenPanel.Controls.Add(this.illChildrenNo);
             this.sickChildrenPanel.Location = new System.Drawing.Point(393, 72);
             this.sickChildrenPanel.Name = "sickChildrenPanel";
             this.sickChildrenPanel.Size = new System.Drawing.Size(115, 28);
             this.sickChildrenPanel.TabIndex = 34;
             // 
-            // radioButton7
+            // illChildrenYes
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(9, 7);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(43, 17);
-            this.radioButton7.TabIndex = 11;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Yes";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.illChildrenYes.AutoSize = true;
+            this.illChildrenYes.Location = new System.Drawing.Point(9, 7);
+            this.illChildrenYes.Name = "illChildrenYes";
+            this.illChildrenYes.Size = new System.Drawing.Size(43, 17);
+            this.illChildrenYes.TabIndex = 11;
+            this.illChildrenYes.TabStop = true;
+            this.illChildrenYes.Text = "Yes";
+            this.illChildrenYes.UseVisualStyleBackColor = true;
             // 
-            // radioButton8
+            // illChildrenNo
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Checked = true;
-            this.radioButton8.Location = new System.Drawing.Point(58, 7);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(39, 17);
-            this.radioButton8.TabIndex = 12;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "No";
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.illChildrenNo.AutoSize = true;
+            this.illChildrenNo.Checked = true;
+            this.illChildrenNo.Location = new System.Drawing.Point(58, 7);
+            this.illChildrenNo.Name = "illChildrenNo";
+            this.illChildrenNo.Size = new System.Drawing.Size(39, 17);
+            this.illChildrenNo.TabIndex = 12;
+            this.illChildrenNo.TabStop = true;
+            this.illChildrenNo.Text = "No";
+            this.illChildrenNo.UseVisualStyleBackColor = true;
             // 
             // driversLicencePanel
             // 
-            this.driversLicencePanel.Controls.Add(this.radioButton9);
-            this.driversLicencePanel.Controls.Add(this.radioButton10);
+            this.driversLicencePanel.Controls.Add(this.driversLicenceYes);
+            this.driversLicencePanel.Controls.Add(this.driversLicenceNo);
             this.driversLicencePanel.Location = new System.Drawing.Point(393, 102);
             this.driversLicencePanel.Name = "driversLicencePanel";
             this.driversLicencePanel.Size = new System.Drawing.Size(115, 28);
             this.driversLicencePanel.TabIndex = 34;
             // 
-            // radioButton9
+            // driversLicenceYes
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(9, 7);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(43, 17);
-            this.radioButton9.TabIndex = 11;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Yes";
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.driversLicenceYes.AutoSize = true;
+            this.driversLicenceYes.Location = new System.Drawing.Point(9, 7);
+            this.driversLicenceYes.Name = "driversLicenceYes";
+            this.driversLicenceYes.Size = new System.Drawing.Size(43, 17);
+            this.driversLicenceYes.TabIndex = 11;
+            this.driversLicenceYes.TabStop = true;
+            this.driversLicenceYes.Text = "Yes";
+            this.driversLicenceYes.UseVisualStyleBackColor = true;
             // 
-            // radioButton10
+            // driversLicenceNo
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Checked = true;
-            this.radioButton10.Location = new System.Drawing.Point(58, 7);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(39, 17);
-            this.radioButton10.TabIndex = 12;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "No";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.driversLicenceNo.AutoSize = true;
+            this.driversLicenceNo.Checked = true;
+            this.driversLicenceNo.Location = new System.Drawing.Point(58, 7);
+            this.driversLicenceNo.Name = "driversLicenceNo";
+            this.driversLicenceNo.Size = new System.Drawing.Size(39, 17);
+            this.driversLicenceNo.TabIndex = 12;
+            this.driversLicenceNo.TabStop = true;
+            this.driversLicenceNo.Text = "No";
+            this.driversLicenceNo.UseVisualStyleBackColor = true;
             // 
             // UpdateAccountButton
             // 
@@ -502,8 +502,8 @@
         private System.Windows.Forms.TextBox passwordTextbox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton genderMaleRadio;
-        private System.Windows.Forms.RadioButton genderFemaleRadio;
+        private System.Windows.Forms.RadioButton genderMale;
+        private System.Windows.Forms.RadioButton genderFemale;
         private System.Windows.Forms.TextBox educationTextbox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -517,17 +517,17 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel genderPanel;
         private System.Windows.Forms.Panel smokingPanel;
-        private System.Windows.Forms.RadioButton smoking;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton smokingYes;
+        private System.Windows.Forms.RadioButton smokingNo;
         private System.Windows.Forms.Panel petsPanel;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton petsYes;
+        private System.Windows.Forms.RadioButton petsNo;
         private System.Windows.Forms.Panel sickChildrenPanel;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.RadioButton illChildrenYes;
+        private System.Windows.Forms.RadioButton illChildrenNo;
         private System.Windows.Forms.Panel driversLicencePanel;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton driversLicenceYes;
+        private System.Windows.Forms.RadioButton driversLicenceNo;
         private System.Windows.Forms.Button UpdateAccountButton;
         private System.Windows.Forms.Button ReviewsButton;
     }
