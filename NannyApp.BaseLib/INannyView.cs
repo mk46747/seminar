@@ -25,6 +25,9 @@ namespace NannyApp.BaseLib
          bool GetSickChildren();
          bool GetDriversLicence();*/
 
+        void HideUpdateButton();
+        void HideViewReviewsButton();
+
         string Username { get; set; }
         string Password { get; set; }
         string NannyName { get; set; }

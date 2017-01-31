@@ -139,7 +139,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                throw new NotImplementedException();
+                usernameTextbox.Text = Username ;
             }
         }
 
@@ -151,7 +151,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                throw new NotImplementedException();
+                passwordTextbox.Text = Password;
             }
         }
 
@@ -163,7 +163,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                throw new NotImplementedException();
+                surnameTextbox.Text = Surname;
             }
         }
 
@@ -175,7 +175,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                throw new NotImplementedException();
+                contactTextbox.Text = Contact;
             }
         }
 
@@ -187,7 +187,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                throw new NotImplementedException();
+                educationTextbox.Text = Education;
             }
         }
 
@@ -199,7 +199,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                throw new NotImplementedException();
+                extraQualificationTextbox.Text = ExtraQualification ;
             }
         }
 
@@ -211,7 +211,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                throw new NotImplementedException();
+                extraServicesTextbox.Text = ExtraServices;
             }
         }
 
@@ -229,7 +229,17 @@ namespace NannyApp.Presentation
             }
             set
             {
-                throw new NotImplementedException();
+                if (Smoking == true)
+                {
+                    smokingYes.Checked = true;
+                    smokingNo.Checked = false;
+                }
+                else
+                {
+                    smokingYes.Checked = false;
+                    smokingNo.Checked = true;
+
+                }
             }
         }
 
@@ -247,7 +257,17 @@ namespace NannyApp.Presentation
             }
             set
             {
-                throw new NotImplementedException();
+                if (Pets == true)
+                {
+                    petsYes.Checked = true;
+                    petsNo.Checked = false;
+                }
+                else
+                {
+                    petsYes.Checked = false;
+                    petsNo.Checked = true;
+
+                }
             }
         }
 
@@ -265,7 +285,17 @@ namespace NannyApp.Presentation
             }
             set
             {
-                throw new NotImplementedException();
+                if (SickChildren == true)
+                {
+                    illChildrenYes.Checked = true;
+                    illChildrenNo.Checked = false;
+                }
+                else
+                {
+                    illChildrenYes.Checked = false;
+                    illChildrenNo.Checked = true;
+
+                }
             }
         }
 
@@ -283,7 +313,17 @@ namespace NannyApp.Presentation
             }
             set
             {
-                throw new NotImplementedException();
+                if (DriversLicence == true)
+                {
+                    driversLicenceYes.Checked = true;
+                    driversLicenceNo.Checked = false;
+                }
+                else
+                {
+                    driversLicenceYes.Checked = false;
+                    driversLicenceNo.Checked = true;
+
+                }
             }
         }
 
@@ -297,7 +337,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                throw new NotImplementedException();
+                nameTextbox.Text = Name;
             }
         }
 
@@ -316,8 +356,28 @@ namespace NannyApp.Presentation
             }
             set
             {
-                throw new NotImplementedException();
+                if (Gender == Gender.MALE)
+                {
+                    genderMale.Checked = true;
+                    genderFemale.Checked = false;
+                }
+                else
+                {
+                    genderMale.Checked = false;
+                    genderFemale.Checked = true; 
+
+                }
             }
         }
+
+        public void HideUpdateButton()
+        {
+            UpdateAccountButton.Hide();
+        }
+
+        public void HideViewReviewsButton()
+        {
+            ReviewsButton.Hide();
+         }
     }
 }

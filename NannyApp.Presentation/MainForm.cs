@@ -58,5 +58,29 @@ namespace NannyApp.Presentation
         {
             menu.Enabled = true;
         }
+
+        public List<NannyOffer> NannyOffers
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+               //
+            }
+        }
+
+        public List<ParentOffer> ParentOffers
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
