@@ -23,7 +23,7 @@ namespace NannyApp.Presentation
 
         public ICreateNannyView CreateNannyView(IMainFormController MainFormController)
         {
-            return new CreateNannyForm(MainFormController);
+            return new NannyForm(MainFormController);
         }
 		
     }

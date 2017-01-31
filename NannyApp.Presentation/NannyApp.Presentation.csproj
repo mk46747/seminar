@@ -44,11 +44,11 @@
     <Compile Include="CooperationForm.Designer.cs">
       <DependentUpon>CooperationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateNannyForm.cs">
+    <Compile Include="NannyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateNannyForm.Designer.cs">
-      <DependentUpon>CreateNannyForm.cs</DependentUpon>
+    <Compile Include="NannyForm.Designer.cs">
+      <DependentUpon>NannyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateOfferForm.cs">
       <SubType>Form</SubType>
@@ -56,11 +56,11 @@
     <Compile Include="CreateOfferForm.Designer.cs">
       <DependentUpon>CreateOfferForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateParentForm.cs">
+    <Compile Include="ParentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateParentForm.Designer.cs">
-      <DependentUpon>CreateParentForm.cs</DependentUpon>
+    <Compile Include="ParentForm.Designer.cs">
+      <DependentUpon>ParentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -79,6 +79,12 @@
     </Compile>
     <Compile Include="OfferForm.Designer.cs">
       <DependentUpon>OfferForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OffersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OffersForm.Designer.cs">
+      <DependentUpon>OffersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StartForm.cs">
       <SubType>Form</SubType>
@@ -99,14 +105,14 @@
     <EmbeddedResource Include="CooperationForm.resx">
       <DependentUpon>CooperationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateNannyForm.resx">
-      <DependentUpon>CreateNannyForm.cs</DependentUpon>
+    <EmbeddedResource Include="NannyForm.resx">
+      <DependentUpon>NannyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateOfferForm.resx">
       <DependentUpon>CreateOfferForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateParentForm.resx">
-      <DependentUpon>CreateParentForm.cs</DependentUpon>
+    <EmbeddedResource Include="ParentForm.resx">
+      <DependentUpon>ParentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OfferForm.resx">
       <DependentUpon>OfferForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OffersForm.resx">
+      <DependentUpon>OffersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace NannyApp.Presentation
 {
-    partial class CreateParentForm
+    partial class ParentForm
     {
         /// <summary>
         /// Required designer variable.

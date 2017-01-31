@@ -12,10 +12,10 @@ using NannyApp.Model;
 
 namespace NannyApp.Presentation
 {
-    public partial class CreateNannyForm : Form, ICreateNannyView
+    public partial class NannyForm : Form, ICreateNannyView
     {
         IMainFormController MainFormController;
-        public CreateNannyForm()
+        public NannyForm()
         {
             InitializeComponent();
         }
@@ -105,7 +105,7 @@ namespace NannyApp.Presentation
             }
             return false;
         }
-        public CreateNannyForm(IMainFormController MainFormController)
+        public NannyForm(IMainFormController MainFormController)
         {
             this.MainFormController = MainFormController;
             InitializeComponent();
