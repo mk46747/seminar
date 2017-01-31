@@ -18,7 +18,7 @@ namespace NannyApp.DAL.Tests
                 new List<ParentOffer>(), new List<Cooperation>());
             Offer parentOffer = new ParentOffer(200, "viša stručna sprema", BabySittingPlace.PARENTS_PLACE, "notice", 
                 new DateTime(2017, 2, 1, 10, 0, 0), new DateTime(2017, 2, 1, 18, 0, 0), "Zagreb", "Mihanovićeva 7", 2, 8, 10, 
-                new DateTime(2017, 1, 30), (Parent)parent);
+                new DateTime(2017, 1, 30), false, parent);
             parent.AddOffer((ParentOffer)parentOffer);
 
             UserRepository repository = new UserRepository();
@@ -35,7 +35,7 @@ namespace NannyApp.DAL.Tests
                 "Bachelor of philosophy", true, false, true, null, null, new List<NannyOffer>(), new List<Cooperation>());
             Offer nannyOffer = new NannyOffer(50, "2 years of caregiving", BabySittingPlace.NANNYS_PLACE, null, 
                 new DateTime(2017, 2, 1, 8, 0, 0), new DateTime(2017, 2, 1, 20, 0, 0), "Zagreb", null, 3, 6, 11,
-                new DateTime(2017, 1, 30), nanny);
+                new DateTime(2017, 1, 30), false, nanny);
             nanny.AddOffer((NannyOffer)nannyOffer);
 
             UserRepository repository = new UserRepository();
