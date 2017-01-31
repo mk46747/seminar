@@ -12,7 +12,7 @@ using NannyApp.Model;
 
 namespace NannyApp.Presentation
 {
-    public partial class NannyForm : Form, ICreateNannyView
+    public partial class NannyForm : Form, INannyView
     {
         IMainFormController MainFormController;
         public NannyForm()

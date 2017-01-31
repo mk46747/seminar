@@ -40,10 +40,12 @@ namespace NannyApp.DAL
             ISessionFactory sessionFactory = null;
             try
             {
+                AppDomain.CurrentDomain.SetData("DataDirectory", "c:/");
 
                 var nhConfig = Fluently.Configure()
                     .Database(SQLiteConfiguration.Standard
                           .ConnectionString("data source=|DataDirectory|test.db;")
+                     //   .ConnectionString("data source=c:/(localdb)baza.db;")
                         .AdoNetBatchSize(100))
                     .Mappings(mappings => mappings.FluentMappings.AddFromAssemblyOf<UserMap>())
                     .BuildConfiguration();

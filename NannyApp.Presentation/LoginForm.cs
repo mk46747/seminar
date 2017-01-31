@@ -42,7 +42,7 @@ namespace NannyApp.Presentation
         }
         public void CreateParent(object sender, EventArgs e)
         {
-            controller.CreateParent();
+         //   controller.CreateParent();
         }
     }
 }

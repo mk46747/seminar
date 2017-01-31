@@ -58,7 +58,7 @@ namespace NannyApp.Controllers
 
             //nanycon umjesto
         }
-        public void CreateNanny(ICreateNannyView CreateNannyForm)
+        public void CreateNanny(INannyView CreateNannyForm)
         {
             NannyController NannyController = new NannyController();
             NannyController.CreateNanny(CreateNannyForm, UserRepository);

@@ -38,7 +38,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICreateNannyView.cs" />
+    <Compile Include="INannyView.cs" />
     <Compile Include="ILoginView.cs" />
     <Compile Include="IMainFormController.cs" />
     <Compile Include="IMainView.cs" />
