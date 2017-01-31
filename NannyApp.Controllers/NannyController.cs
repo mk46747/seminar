@@ -13,14 +13,14 @@ namespace NannyApp.Controllers
 {
     class NannyController
     {
-        public void ShowCreateNannyForm(ICreateNannyView CreateNannyView)
+        public void ShowCreateNannyForm(INannyView CreateNannyView)
         {
             var form =  (Form) CreateNannyView;
             form.Show();
            
         }
 
-        public void CreateNanny(ICreateNannyView CreateNannyView, IUserRepository UserRepository)
+        public void CreateNanny(INannyView CreateNannyView, IUserRepository UserRepository)
         {
             string Username = CreateNannyView.GetUsername();
             string Password = CreateNannyView.GetPassword();

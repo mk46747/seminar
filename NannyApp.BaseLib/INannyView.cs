@@ -7,7 +7,7 @@ using NannyApp.Model;
 
 namespace NannyApp.BaseLib
 {
-    public interface ICreateNannyView
+    public interface INannyView
     {
 
        string GetUsername();

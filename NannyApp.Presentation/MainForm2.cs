@@ -12,31 +12,16 @@ using NannyApp.Model;
 
 namespace NannyApp.Presentation
 {
-    public partial class StartForm : Form, IStartView
+    public partial class MainForm2 : Form, IMainView
     {
         private IMainFormController MainController;
 
-        public StartForm(IMainFormController MainController)
+        public MainForm2(IMainFormController MainController)
         {
             this.MainController = MainController;
             InitializeComponent();
         }
 
-        public List<NannyOffer> GetNannyOffers()
-        {
-            return null;
-        }
-        public List<ParentOffer> GetParentOffers()
-        {
-            return null;
-        }
-
-        public void ShowLoginForm(object sender, EventArgs e)
-        {
-            MainController.ShowLoginForm(this);
-        }
-
-
-      
+        public User User { get; set; } //???
     }
 }

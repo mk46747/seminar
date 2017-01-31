@@ -10,7 +10,7 @@ namespace NannyApp.BaseLib
     {
      //   IAddNannyView CreateNannyView();
         ILoginView CreateLoginView(IMainFormController MainFormController);
-        ICreateNannyView CreateNannyView(IMainFormController MainFormController);
+        INannyView CreateNannyView(IMainFormController MainFormController);
 
         IMainView CreateMainView(IMainFormController MainFormController);
 
