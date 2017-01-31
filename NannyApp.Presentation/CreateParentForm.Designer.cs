@@ -44,6 +44,7 @@
             this.MaleRadio = new System.Windows.Forms.RadioButton();
             this.ContactTextBox = new System.Windows.Forms.TextBox();
             this.CreateParentButton = new System.Windows.Forms.Button();
+            this.UpdateParentOffer = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +69,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.ContactTextBox, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.CreateParentButton, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.UpdateParentOffer, 3, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -229,6 +231,16 @@
             this.CreateParentButton.Text = "Create Account";
             this.CreateParentButton.UseVisualStyleBackColor = true;
             // 
+            // UpdateParentOffer
+            // 
+            this.UpdateParentOffer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.UpdateParentOffer.Location = new System.Drawing.Point(298, 108);
+            this.UpdateParentOffer.Name = "UpdateParentOffer";
+            this.UpdateParentOffer.Size = new System.Drawing.Size(155, 23);
+            this.UpdateParentOffer.TabIndex = 13;
+            this.UpdateParentOffer.Text = "Update Account";
+            this.UpdateParentOffer.UseVisualStyleBackColor = true;
+            // 
             // CreateParentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,5 +275,6 @@
         private System.Windows.Forms.RadioButton MaleRadio;
         private System.Windows.Forms.TextBox ContactTextBox;
         private System.Windows.Forms.Button CreateParentButton;
+        private System.Windows.Forms.Button UpdateParentOffer;
     }
 }

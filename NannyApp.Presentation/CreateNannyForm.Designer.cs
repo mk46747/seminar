@@ -65,6 +65,7 @@
             this.driversLicencePanel = new System.Windows.Forms.Panel();
             this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.UpdateAccountButton = new System.Windows.Forms.Button();
             this.genderPanel.SuspendLayout();
             this.smokingPanel.SuspendLayout();
             this.petsPanel.SuspendLayout();
@@ -418,11 +419,21 @@
             this.radioButton10.Text = "No";
             this.radioButton10.UseVisualStyleBackColor = true;
             // 
+            // UpdateAccountButton
+            // 
+            this.UpdateAccountButton.Location = new System.Drawing.Point(45, 244);
+            this.UpdateAccountButton.Name = "UpdateAccountButton";
+            this.UpdateAccountButton.Size = new System.Drawing.Size(173, 34);
+            this.UpdateAccountButton.TabIndex = 35;
+            this.UpdateAccountButton.Text = "Update Account";
+            this.UpdateAccountButton.UseVisualStyleBackColor = true;
+            // 
             // CreateNannyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 261);
+            this.ClientSize = new System.Drawing.Size(520, 290);
+            this.Controls.Add(this.UpdateAccountButton);
             this.Controls.Add(this.driversLicencePanel);
             this.Controls.Add(this.sickChildrenPanel);
             this.Controls.Add(this.petsPanel);
@@ -506,5 +517,6 @@
         private System.Windows.Forms.Panel driversLicencePanel;
         private System.Windows.Forms.RadioButton radioButton9;
         private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.Button UpdateAccountButton;
     }
 }
