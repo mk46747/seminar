@@ -38,12 +38,16 @@ namespace NannyApp.Controllers
             form.Show();
         }
 
-        public void ShowLoginForm()
+        public void ShowLoginForm(IStartView StartView)
         {
             AccountController AccountController = new AccountController();
             var LoginView = WindowFormsFactory.CreateLoginView(this);
+            var form = (Form)StartView;
+            form.Hide();
+            form.ShowInTaskbar = false;
             AccountController.ShowLoginForm(LoginView);
-           // LoginController.Login(UserRepository, LoginView, this);
+            
+            // LoginController.Login(UserRepository, LoginView, this);
         }
 
         public void ShowCreateNannyForm()
@@ -70,6 +74,10 @@ namespace NannyApp.Controllers
             AccountController LoginController = new AccountController();
 
             AccountController.Login(UserRepository, LoginView, this);
+        }
+        private void HideForm(Form form)
+        {
+
         }
     }
 }
