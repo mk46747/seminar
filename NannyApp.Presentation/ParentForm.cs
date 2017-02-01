@@ -20,6 +20,11 @@ namespace NannyApp.Presentation
             this.MainController = MainController;
             InitializeComponent();
         }
+
+        private void CreateParent(object sender, EventArgs e)
+        {
+            MainController.CreateParent(this);
+        }
         
         public string Username
         {
