@@ -9,5 +9,6 @@ namespace NannyApp.Model.Repositories
     public interface ICooperationRepository
     {
         IList<Cooperation> GetAllCooperations();
+        bool AddCooperation(Cooperation Cooperation);
     }
 }

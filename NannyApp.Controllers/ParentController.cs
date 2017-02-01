@@ -11,7 +11,7 @@ using NannyApp.Model.Factories;
 
 namespace NannyApp.Controllers
 {
-    class ParentController
+    public class ParentController
     {
         public void ShowParentForm(IParentView ParentView)
         {
