@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NannyApp.Controllers", "Nan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NannyApp.Presentation", "NannyApp.Presentation\NannyApp.Presentation.csproj", "{28F80353-CC15-4E67-8DF0-F1B5C51EA522}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NannyApp.Presentation.Tests", "UnitTestProject1\NannyApp.Presentation.Tests.csproj", "{6A51B6FE-3B9C-42D3-80EC-CF9AC0803769}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{28F80353-CC15-4E67-8DF0-F1B5C51EA522}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28F80353-CC15-4E67-8DF0-F1B5C51EA522}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28F80353-CC15-4E67-8DF0-F1B5C51EA522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A51B6FE-3B9C-42D3-80EC-CF9AC0803769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A51B6FE-3B9C-42D3-80EC-CF9AC0803769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A51B6FE-3B9C-42D3-80EC-CF9AC0803769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A51B6FE-3B9C-42D3-80EC-CF9AC0803769}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

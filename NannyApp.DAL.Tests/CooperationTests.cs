@@ -17,7 +17,7 @@ namespace NannyApp.DAL.Tests
             Parent parent = new Parent("DSeric", "6768", "Dario", "Šerić", Gender.MALE, "01 624 580", UserType.PARENT,
                 new List<ParentOffer>(), new List<Cooperation>());
             Nanny nanny = new Nanny("IJovic", "09876", "Ivana", "Jović", Gender.FEMALE, "091 542 106",
-                UserType.NANNY, "Bachelor of english", false, false, true, null, null,
+                UserType.NANNY, "Bachelor of english", false, false, true, "", "",
                 new List<NannyOffer>(), new List<Cooperation>());
             //the parent offers a job
             Offer parentOffer = new ParentOffer(100, "bachelor or higher", BabySittingPlace.PARENTS_PLACE, "smth", 
@@ -36,8 +36,10 @@ namespace NannyApp.DAL.Tests
             repository.AddUser(nanny);
 
             CooperationRepository coopRepository = new CooperationRepository();
+            //coopRepository.AddCooperation(cooperation);
+
             Cooperation fetchedCooperation = coopRepository.GetAllCooperations()[0];
-            Debug.Assert(fetchedCooperation == cooperation);
+            Debug.Assert(fetchedCooperation == cooperation);//*/
         }
     }
 }

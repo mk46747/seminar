@@ -33,7 +33,28 @@ namespace NannyApp.DAL.Repositories
                 }
             }
             return Cooperations;
+        }
 
+        public bool AddCooperation (Cooperation Cooperation)
+        {
+            using (var session = NHibernateService.OpenSession())
+            {
+                try
+                {
+                    using (var transaction = session.BeginTransaction())
+                    {
+                        session.Save(Cooperation);
+                        transaction.Commit();
+                    }
+                }
+
+                catch (Exception e)
+                {
+                    Logger.Log(e);
+                    return false;
+                }
+            }
+            return true;            
         }
 
     }
