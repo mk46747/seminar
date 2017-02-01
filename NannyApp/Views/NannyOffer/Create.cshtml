@@ -42,53 +42,51 @@
                 @Html.LabelFor(model => model.BabySittingPlace, "Select babysitting place")
                 @Html.DropDownListFor(model => model.BabySittingPlace, listItems, "-- Select --")            
             </tr>
-            <br />
             <tr>
-                @Html.LabelFor(model => model.ChildrenNumber, "Select max number of children that you can take care for")
-            </tr><br />
-            <tr>
-                @Html.RadioButtonFor(model => model.ChildrenNumber, 1) 1
-                @Html.RadioButtonFor(model => model.ChildrenNumber, 2) 2
-                @Html.RadioButtonFor(model => model.ChildrenNumber, 3) 3
-                @Html.RadioButtonFor(model => model.ChildrenNumber, 4) 4
-                @Html.RadioButtonFor(model => model.ChildrenNumber, 5) 5
-                @Html.RadioButtonFor(model => model.ChildrenNumber, 6) 6
+                @{
+                    List<SelectListItem> number = new List<SelectListItem>();
+                    number.Add(new SelectListItem { Text = "1", Value = "1", Selected = true });
+                    number.Add(new SelectListItem { Text = "2", Value = "2" });
+                    number.Add(new SelectListItem { Text = "3", Value = "3" });
+                    number.Add(new SelectListItem { Text = "4", Value = "4" });
+                    number.Add(new SelectListItem { Text = "5", Value = "5" });
+                }
+                @Html.LabelFor(model => model.ChildrenNumber, "Select number of children")
+                @Html.DropDownListFor(model => model.ChildrenNumber, number, "-- Select --")
             </tr>
-            <br /><br />
             <tr>
+                @{
+                    List<SelectListItem> minAge = new List<SelectListItem>();
+                    minAge.Add(new SelectListItem { Text = "0", Value = "0", Selected = true });
+                    minAge.Add(new SelectListItem { Text = "1", Value = "1" });
+                    minAge.Add(new SelectListItem { Text = "2", Value = "2" });
+                    minAge.Add(new SelectListItem { Text = "3", Value = "3" });
+                    minAge.Add(new SelectListItem { Text = "4", Value = "4" });
+                    minAge.Add(new SelectListItem { Text = "5", Value = "5" });
+                }
                 @Html.LabelFor(model => model.MinChildrenAge, "Select min children age that you can take for")
+                @Html.DropDownListFor(model => model.MinChildrenAge, minAge, "-- Select --")
             </tr>
-            <br />
             <tr>
-                @Html.RadioButtonFor(model => model.MinChildrenAge, 0) 0
-                @Html.RadioButtonFor(model => model.MinChildrenAge, 1) 1
-                @Html.RadioButtonFor(model => model.MinChildrenAge, 2) 2
-                @Html.RadioButtonFor(model => model.MinChildrenAge, 3) 3
-                @Html.RadioButtonFor(model => model.MinChildrenAge, 4) 4
-                @Html.RadioButtonFor(model => model.MinChildrenAge, 5) 5
-                @Html.RadioButtonFor(model => model.MinChildrenAge, 6) 6
-            </tr>
-            <br /><br />
-            <tr>
+                @{
+                    List<SelectListItem> maxAge = new List<SelectListItem>();
+                    maxAge.Add(new SelectListItem { Text = "1", Value = "1", Selected = true });
+                    maxAge.Add(new SelectListItem { Text = "2", Value = "2" });
+                    maxAge.Add(new SelectListItem { Text = "3", Value = "3" });
+                    maxAge.Add(new SelectListItem { Text = "4", Value = "4" });
+                    maxAge.Add(new SelectListItem { Text = "5", Value = "5" });
+                    maxAge.Add(new SelectListItem { Text = "6", Value = "6" });
+                    maxAge.Add(new SelectListItem { Text = "7", Value = "7" });
+                    maxAge.Add(new SelectListItem { Text = "8", Value = "8" });
+                    maxAge.Add(new SelectListItem { Text = "9", Value = "9" });
+                    maxAge.Add(new SelectListItem { Text = "10", Value = "10" });
+                    maxAge.Add(new SelectListItem { Text = "11", Value = "11" });
+                    maxAge.Add(new SelectListItem { Text = "12", Value = "12" });
+                    maxAge.Add(new SelectListItem { Text = "13", Value = "13" });
+                }
                 @Html.LabelFor(model => model.MaxChildrenAge, "Select max children age that you can take for")
+                @Html.DropDownListFor(model => model.MaxChildrenAge, maxAge, "-- Select --")
             </tr>
-            <br />
-            <tr>
-                @Html.RadioButtonFor(model => model.MaxChildrenAge, 1) 1
-                @Html.RadioButtonFor(model => model.MaxChildrenAge, 2) 2
-                @Html.RadioButtonFor(model => model.MaxChildrenAge, 3) 3
-                @Html.RadioButtonFor(model => model.MaxChildrenAge, 4) 4
-                @Html.RadioButtonFor(model => model.MaxChildrenAge, 5) 5
-                @Html.RadioButtonFor(model => model.MaxChildrenAge, 6) 6
-                @Html.RadioButtonFor(model => model.MaxChildrenAge, 7) 7
-                @Html.RadioButtonFor(model => model.MaxChildrenAge, 8) 8
-                @Html.RadioButtonFor(model => model.MaxChildrenAge, 9) 9
-                @Html.RadioButtonFor(model => model.MaxChildrenAge, 10) 10
-                @Html.RadioButtonFor(model => model.MaxChildrenAge, 11) 11
-                @Html.RadioButtonFor(model => model.MaxChildrenAge, 12) 12
-                @Html.RadioButtonFor(model => model.MaxChildrenAge, 13) 13
-            </tr>
-            <br /><br />
            <tr>
                 @Html.LabelFor(model => model.Price, "Write price per hour (in $)")
                 @Html.EditorFor(model => model.Price)

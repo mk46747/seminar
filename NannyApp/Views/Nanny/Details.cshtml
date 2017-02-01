@@ -5,14 +5,10 @@
 }
 <div class="form-style-8">
     <table>
-        <h2>Parent - @Model.Name @Model.Surname</h2>
-        <tr>
-            <td width="150px">
-                <h3>@Html.DisplayNameFor(model => model.Username):</h3>
-            </td>
-            <td width="300px" align="center">
-                @Html.DisplayFor(model => model.Username)
-            </td>
+        <h2>Nanny - @Model.Name @Model.Surname as @Html.DisplayNameFor(model => model.Username) </h2>
+    </table>
+    <table>
+        <tr>        
             <td width="150px">
                 <h3>Contact:</h3>
             </td>
@@ -20,7 +16,64 @@
                 @Html.DisplayFor(model => model.Contact)
             </td>
         </tr>
+        <tr>
+            <td height="50">
+                <h3>@Html.DisplayNameFor(model => model.Education):</h3>
+            </td>
+            <th>
+                @Html.DisplayFor(model => model.Education)
+            </th>
+        </tr>
+        <tr>
+            <td height="50">
+                <h3>Extra qualifications that nanny has:</h3>
+            </td>
+            <th>
+                @Html.DisplayFor(model => model.ExtraQualification)
+            </th>
+        </tr>
+        <tr>
+            <td height="50">
+                <h3>Extra services that nanny can do:</h3>
+            </td>
+            <th>
+                @Html.DisplayFor(model => model.ExtraServices)
+            </th>
+        </tr>
+        <tr>
+            <td height="50">
+                <h3>Does nanny smoke?:</h3>
+            </td>
+            <th>
+                @((bool)Model.Smoking ? "Yes" : "No")
+            </th>
+        </tr>
+        <tr>
+            <td height="50" width="300">
+                <h3>Can nanny handle pets?:</h3>
+            </td>
+            <th>
+                @((bool)Model.Pets ? "Yes" : "No")
+            </th>
+        </tr>
+        <tr>
+            <td height="50">
+                <h3>Can nanny take care of ill child?:</h3>
+            </td>
+            <th>
+                @((bool)Model.SickChildern ? "Yes" : "No")
+            </th>
+        </tr>
+        <tr>
+            <td height="50">
+                <h3>Does nanny have drivers licencse?:</h3>
+            </td>
+            <th>
+                @((bool)Model.Car ? "Yes" : "No")
+            </th>
+        </tr>
     </table>
+
     <br /><br />
     <hr />
     <table>

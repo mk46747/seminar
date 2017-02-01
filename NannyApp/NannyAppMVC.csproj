@@ -284,6 +284,8 @@
     <Content Include="Views\NannyOffer\Delete.cshtml" />
     <Content Include="Views\Parent\Details.cshtml" />
     <Content Include="Views\Nanny\Details.cshtml" />
+    <Content Include="Views\NannyOffer\MyOffers.cshtml" />
+    <Content Include="Views\ParentOffer\MyOffers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

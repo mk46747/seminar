@@ -5,36 +5,32 @@
 }
 <div class="form-style-8">
     <table>
-        <h2>Parent - @Model.Name @Model.Surname</h2>
+        <h2>Nanny - @Model.Name @Model.Surname as @Html.DisplayNameFor(model => model.Username) </h2>
+    </table>
+    <table>
         <tr>
-            <td width="150px">
-                <h3>@Html.DisplayNameFor(model => model.Username):</h3>
-            </td>
-            <td width="300px" align="center">
-                @Html.DisplayFor(model => model.Username)
-            </td>
             <td width="150px">
                 <h3>Contact:</h3>
             </td>
             <td width="300px" align="center">
                 @Html.DisplayFor(model => model.Contact)
-            </td>            
+            </td>
         </tr>
     </table>
-    <br /><br />
     <hr />
+    <br />
     <table>
         <tr>
             <td width="350px" align="center">
-                <input type="button" value="Cooperations" onclick=" location.href='@Url.Action("Details", "Nanny")' " />
+                <input type="button" value="Cooperations" onclick=" location.href='@Url.Action("Details", "Parent")' " />
             </td>
         </tr>
         <tr>
             <td width="350px" align="center">
-                <input type="button" value="Offers" onclick=" location.href='@Url.Action("Details", "Nanny")' " />
+                <input type="button" value="Offers" onclick=" location.href='@Url.Action("Details", "Parent")' " />
             </td>
         </tr>
     </table>
 
-    </div>
+</div>
 

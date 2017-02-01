@@ -83,9 +83,9 @@ namespace NannyApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                UserRepository UserRepository = new UserRepository();
-                UserRepository.UpdateUser(nanny);
-                return RedirectToAction("Index");
+                //UserRepository UserRepository = new UserRepository();
+                //UserRepository.UpdateUser(nanny);
+                //return RedirectToAction("Index");
             }
             
             return View(nanny);

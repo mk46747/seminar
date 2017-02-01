@@ -33,13 +33,13 @@ namespace NannyApp.Controllers
                     City = nannyOffer.City,
                     Deadline = nannyOffer.Deadline
                 });
-            //}
+                //}
             }
 
             foreach (var parentOffer in parentOffers)
             {
-                //if (parentOffer.Opened.Equals("true"))
-                //{ 
+                if (parentOffer.Opened.Equals("true"))
+                { 
                 offersList.Add(new OffersViewModel
                 {
                     IdOffer = parentOffer.Id,
@@ -48,11 +48,10 @@ namespace NannyApp.Controllers
                     City = parentOffer.City,
                     Deadline = parentOffer.Deadline
                 });
-                //}
+                }
             }
 
             return View(offersList);
-            //return View();
         }
 
 
