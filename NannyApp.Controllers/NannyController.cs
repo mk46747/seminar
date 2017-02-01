@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace NannyApp.Controllers
 {
-    class NannyController
+    public class NannyController
     {
         public void ShowNannyForm(INannyView NannyView)
         {
