@@ -24,14 +24,6 @@ namespace NannyApp.Presentation
 
         }
 
-        public List<NannyOffer> GetNannyOffers()
-        {
-            return null;
-        }
-        public List<ParentOffer> GetParentOffers()
-        {
-            return null;
-        }
 
         public void ShowLoginForm(object sender, EventArgs e)
         {
@@ -67,7 +59,8 @@ namespace NannyApp.Presentation
             }
             set
             {
-               //
+               
+                
             }
         }
 
