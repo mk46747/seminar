@@ -57,22 +57,22 @@
                             if (item.Nanny != null)
                             {
                                 <tr>
-                                    <td height="50" >
+                                    <td height="50" align="center">
                                         @Html.DisplayFor(modelItem => item.Deadline.Month)/
                                         @Html.DisplayFor(modelItem => item.Deadline.Day)/
-                                        @Html.DisplayFor(modelItem => item.Deadline.Year) 
+                                        @Html.DisplayFor(modelItem => item.Deadline.Year)
                                     </td>
-                                    <td height="50" >
+                                    <td height="50" align="center">
                                         @Html.DisplayFor(modelItem => item.Nanny.Username)
                                     </td>
-                                    <td height="50" >
+                                    <td height="50" align="center">
                                         @Html.DisplayFor(modelItem => item.City)
                                     </td>
-                                    <td height="50">
+                                    <td height="50" align="center">
                                         @Html.DisplayFor(modelItem => item.Price)
-                                        </td>
+                                    </td>
                                     <td>
-                                        <h3>@Html.ActionLink("Details", "Details", "NannyOffer", new { IdNanny = item.Nanny.Id, IdOffer = item.IdOffer })</h3>
+                                        <h3>@Html.ActionLink("Details", "Details", "NannyOffer", new {IdOffer = item.IdOffer }, null)</h3>
                                     </td>
                                     </tr>
                             }
@@ -100,22 +100,22 @@
                         if (item.Parent != null)
                         {
                             <tr>
-                                <td height="50">
+                                <td height="50" align="center">
                                     @Html.DisplayFor(modelItem => item.Deadline.Month)/
                                     @Html.DisplayFor(modelItem => item.Deadline.Day)/
                                     @Html.DisplayFor(modelItem => item.Deadline.Year)
                                 </td>
-                                <td height="50">
+                                <td height="50" align="center">
                                     @Html.DisplayFor(modelItem => item.Parent.Username)
                                 </td>
-                                <td height="50">
+                                <td height="50" align="center">
                                     @Html.DisplayFor(modelItem => item.City)
                                 </td>
-                                <td height="50">
+                                <td height="50" align="center">
                                     @Html.DisplayFor(modelItem => item.Price)
                                 </td>
                                 <td>
-                                    <h3>@Html.ActionLink("Details", "Details", new { id = item.Parent.Id })</h3>
+                                    <h3>@Html.ActionLink("Details", "Details", "ParentOffer", new { IdOffer = item.IdOffer }, null)</h3>
                                 </td>
                             </tr>
                         }

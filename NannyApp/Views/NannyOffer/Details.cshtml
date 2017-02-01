@@ -1,0 +1,71 @@
+﻿@model NannyApp.Model.NannyOffer
+
+@{
+    ViewBag.Title = "Detaiils";
+    Layout = "~/Views/Shared/_mytemplate_nanny.cshtml";
+
+    string user = Convert.ToString(Session["UserType"]);
+    if (user.Equals("NANNY"))
+    {
+        //nece mu se pokzati gumb prijavi se
+    }
+}
+<div class="form-style-8">
+            <table>
+                <h2>Giving services details</h2>
+                <tr>
+                    <td width="150px">
+                        <h3>@Html.DisplayNameFor(model => model.Deadline):</h3>
+                    </td>
+                    <td width="150px">
+                        @Html.DisplayFor(model => model.Deadline.Month)/@Html.DisplayFor(model => model.Deadline.Day)
+                        /@Html.DisplayFor(model => model.Deadline.Year)
+                    </td>
+                </tr>
+                <tr>
+                    <td height="50">
+                        <h3>Nanny:</h3>
+                    </td>
+                    <td height="50">
+                        @Html.DisplayFor(model => model.Nanny.Username)
+                    </td>
+                </tr>
+                <tr>
+                    <td width="150px">
+                        <h3>@Html.DisplayNameFor(model => model.Price):</h3>
+                    </td>
+                    <td width="150px">
+                        @Html.DisplayFor(model => model.Price)
+                    </td>
+                </tr>
+                <tr>
+                    <td width="150px">
+                        <h3>@Html.DisplayNameFor(model => model.StartTime):</h3>
+                    </td>
+                    <td width="150px">
+                        @Html.DisplayFor(model => model.StartTime)
+                    </td>
+                </tr>
+                <tr>
+                    <td width="150px">
+                        <h3>@Html.DisplayNameFor(model => model.EndTime):</h3>
+                    </td>
+                    <td width="150px">
+                        @Html.DisplayFor(model => model.EndTime)
+                    </td>
+                </tr>
+                <tr>
+                    <td width="150px">
+                        <h3>@Html.DisplayNameFor(model => model.BabySittingPlace):</h3>
+                    </td>
+                    <td width="150px">
+                        @Html.DisplayFor(model => model.BabySittingPlace)
+                    </td>
+                </tr>
+            </table>
+
+
+            <br /><br />
+            <h3>@Html.ActionLink("Accept", "Edit")</h3>
+            <br><br><br><br>
+</div>

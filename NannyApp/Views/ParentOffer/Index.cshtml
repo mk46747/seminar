@@ -1,0 +1,45 @@
+﻿@model IEnumerable<NannyApp.Model.ParentOffer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mytemplate_nanny.cshtml";
+}
+<div class="form-style-8">
+    <table border="1" style="width:450px" color="#448CCB">
+        <h2>Looking for services</h2>
+        <thead>
+        <th>Deadline</th>
+        <th>Username</th>
+        <th>City</th>
+        <th>Price</th>
+        <th>Details</th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (item.Parent != null)
+                {
+                    <tr>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.Deadline.Month)/
+                            @Html.DisplayFor(modelItem => item.Deadline.Day)/
+                            @Html.DisplayFor(modelItem => item.Deadline.Year)
+                        </td>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.Parent.Username)
+                        </td>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.City)
+                        </td>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            <h3>@Html.ActionLink("Details", "Details", "ParentOffer", new { IdParent = item.Parent.Id, IdOffer = item.Id }, null)</h3>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

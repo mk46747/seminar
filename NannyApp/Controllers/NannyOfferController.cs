@@ -24,21 +24,11 @@ namespace NannyApp.Controllers
         }
 
         // GET: Offer/Details/5
-        public ActionResult Details(int IdNanny, int IdOffer)
+        public ActionResult Details(int IdOffer)
         {
-            Nanny nanny = new Nanny();
-            UserRepository UserRepository = new UserRepository();
-            int id = Convert.ToInt32(Session["Id"]);
-            nanny = UserRepository.GetNanny(IdNanny);
+            OfferRepository offer = new OfferRepository();
             NannyOffer NannyOffer = new NannyOffer();
-
-            foreach (NannyOffer n in nanny.Offers)
-            {
-                if (n.Id.Equals(IdOffer))
-                {
-                    NannyOffer = n;
-                }
-            }
+            NannyOffer = offer.GetNannyOffer(IdOffer);
 
             return View(NannyOffer);
         }

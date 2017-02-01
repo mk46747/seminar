@@ -11,5 +11,8 @@ namespace NannyApp.Model.Repositories
         IList<NannyOffer> GetAllNannyOffers();
 
         IList<ParentOffer> GetAllParentOffers();
+
+        NannyOffer GetNannyOffer(int Id);
+        ParentOffer GetParentOffer(int Id);
     }
 }

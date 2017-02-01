@@ -23,10 +23,13 @@ namespace NannyApp.Controllers
             return View(parentOffers);
         }
 
-        // GET: ParentOffer/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int IdOffer)
         {
-            return View();
+            OfferRepository offer = new OfferRepository();
+            ParentOffer ParentOffer = new ParentOffer();
+            ParentOffer = offer.GetParentOffer(IdOffer);
+
+            return View(ParentOffer);
         }
 
         // GET: ParentOffer/Create

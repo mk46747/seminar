@@ -274,6 +274,9 @@
     <Content Include="Views\Parent\Index.cshtml" />
     <Content Include="Views\Nanny\Edit.cshtml" />
     <Content Include="Views\Parent\Edit.cshtml" />
+    <Content Include="Views\NannyOffer\Details.cshtml" />
+    <Content Include="Views\ParentOffer\Index.cshtml" />
+    <Content Include="Views\NannyOffer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

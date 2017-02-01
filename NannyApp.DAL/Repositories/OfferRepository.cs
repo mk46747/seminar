@@ -45,5 +45,41 @@ namespace NannyApp.DAL.Repositories
            return getAllOffers<ParentOffer>();
 
        }
+    
+
+        public NannyOffer GetNannyOffer(int Id)
+        {
+            return GetOffer<NannyOffer>(Id);
+        }
+        public ParentOffer GetParentOffer(int Id)
+        {
+            return GetOffer<ParentOffer>(Id);
+        }
+        private T GetOffer<T>(int Id) where T : Offer
+        {
+            T Offer = default(T);
+            using (var session = NHibernateService.OpenSession())
+            {
+                try
+                {
+                    using (var transaction = session.BeginTransaction())
+                    {
+                       // User = session.QueryOver<User>().Where(c => c.Id == Id)
+                        //    .And(c => c is T).SingleOrDefault();
+                        Offer = (T) session.Get(typeof(T), Id);
+                        transaction.Commit();
+                    }
+                    session.Clear();
+                    //session.Close();
+
+               }
+                catch (Exception e)
+                {
+                    Logger.Log(e);
+                    return Offer;
+                }
+            }
+            return  Offer;
+        }
     }
 }
