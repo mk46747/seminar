@@ -112,8 +112,9 @@
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
+
                     <input type="submit" value="Yes, delete offer" />    
                 <input type="button" value="No" onclick="location.href='@Url.Action("Index", "ParentOffer")'" />
-    <input type="button" value="Edit offer" onclick="location.href='@Url.Action("Edit", "ParentOffer", new { id = Model.Id })'" />
+                <input type="button" value="Edit offer" onclick="location.href='@Url.Action("Edit", "ParentOffer", new { id = Model.Id })'" />
             }
         </div>

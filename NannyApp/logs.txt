@@ -288,3 +288,87 @@ NHibernate
    at NHibernate.Event.SaveOrUpdateEvent..ctor(String entityName, Object original, IEventSource source)
    at NHibernate.Impl.SessionImpl.Update(Object obj)
    at NannyApp.DAL.Repositories.UserRepository.UpdateUser(User User) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 224
+[1.1.0001. 0:00:00] attempt to create saveOrUpdate event with null entity
+Parameter name: entity 
+NHibernate
+    at NHibernate.Event.SaveOrUpdateEvent..ctor(Object entity, IEventSource source)
+   at NHibernate.Event.SaveOrUpdateEvent..ctor(String entityName, Object original, IEventSource source)
+   at NHibernate.Impl.SessionImpl.Update(Object obj)
+   at NannyApp.DAL.Repositories.UserRepository.UpdateUser(User User) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 224
+[1.1.0001. 0:00:00] Begin failed with SQL exception 
+NHibernate
+    at NHibernate.Transaction.AdoTransaction.Begin(IsolationLevel isolationLevel)
+   at NHibernate.Transaction.AdoTransaction.Begin()
+   at NHibernate.AdoNet.ConnectionManager.BeginTransaction()
+   at NHibernate.Impl.SessionImpl.BeginTransaction()
+   at NannyApp.DAL.Repositories.OfferRepository.getAllOffers[T]() in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\OfferRepository.cs:line 20
+[1.1.0001. 0:00:00] Begin failed with SQL exception 
+NHibernate
+    at NHibernate.Transaction.AdoTransaction.Begin(IsolationLevel isolationLevel)
+   at NHibernate.Transaction.AdoTransaction.Begin()
+   at NHibernate.AdoNet.ConnectionManager.BeginTransaction()
+   at NHibernate.Impl.SessionImpl.BeginTransaction()
+   at NannyApp.DAL.Repositories.OfferRepository.getAllOffers[T]() in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\OfferRepository.cs:line 20
+[1.1.0001. 0:00:00] Begin failed with SQL exception 
+NHibernate
+    at NHibernate.Transaction.AdoTransaction.Begin(IsolationLevel isolationLevel)
+   at NHibernate.Transaction.AdoTransaction.Begin()
+   at NHibernate.AdoNet.ConnectionManager.BeginTransaction()
+   at NHibernate.Impl.SessionImpl.BeginTransaction()
+   at NannyApp.DAL.Repositories.UserRepository.GetUser[T](String Username, String Password) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 161
+[1.1.0001. 0:00:00] Begin failed with SQL exception 
+NHibernate
+    at NHibernate.Transaction.AdoTransaction.Begin(IsolationLevel isolationLevel)
+   at NHibernate.Transaction.AdoTransaction.Begin()
+   at NHibernate.AdoNet.ConnectionManager.BeginTransaction()
+   at NHibernate.Impl.SessionImpl.BeginTransaction()
+   at NannyApp.DAL.Repositories.OfferRepository.getAllOffers[T]() in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\OfferRepository.cs:line 20
+[1.1.0001. 0:00:00] Begin failed with SQL exception 
+NHibernate
+    at NHibernate.Transaction.AdoTransaction.Begin(IsolationLevel isolationLevel)
+   at NHibernate.Transaction.AdoTransaction.Begin()
+   at NHibernate.AdoNet.ConnectionManager.BeginTransaction()
+   at NHibernate.Impl.SessionImpl.BeginTransaction()
+   at NannyApp.DAL.Repositories.OfferRepository.getAllOffers[T]() in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\OfferRepository.cs:line 20
+[1.1.0001. 0:00:00] Begin failed with SQL exception 
+NHibernate
+    at NHibernate.Transaction.AdoTransaction.Begin(IsolationLevel isolationLevel)
+   at NHibernate.Transaction.AdoTransaction.Begin()
+   at NHibernate.AdoNet.ConnectionManager.BeginTransaction()
+   at NHibernate.Impl.SessionImpl.BeginTransaction()
+   at NannyApp.DAL.Repositories.UserRepository.GetUser[T](String Username, String Password) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 161
+[1.1.0001. 0:00:00] Begin failed with SQL exception 
+NHibernate
+    at NHibernate.Transaction.AdoTransaction.Begin(IsolationLevel isolationLevel)
+   at NHibernate.Transaction.AdoTransaction.Begin()
+   at NHibernate.AdoNet.ConnectionManager.BeginTransaction()
+   at NHibernate.Impl.SessionImpl.BeginTransaction()
+   at NannyApp.DAL.Repositories.OfferRepository.getAllOffers[T]() in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\OfferRepository.cs:line 20
+[1.1.0001. 0:00:00] Begin failed with SQL exception 
+NHibernate
+    at NHibernate.Transaction.AdoTransaction.Begin(IsolationLevel isolationLevel)
+   at NHibernate.Transaction.AdoTransaction.Begin()
+   at NHibernate.AdoNet.ConnectionManager.BeginTransaction()
+   at NHibernate.Impl.SessionImpl.BeginTransaction()
+   at NannyApp.DAL.Repositories.UserRepository.GetUser[T](String Username, String Password) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 161
+[1.1.0001. 0:00:00] Begin failed with SQL exception 
+NHibernate
+    at NHibernate.Transaction.AdoTransaction.Begin(IsolationLevel isolationLevel)
+   at NHibernate.Transaction.AdoTransaction.Begin()
+   at NHibernate.AdoNet.ConnectionManager.BeginTransaction()
+   at NHibernate.Impl.SessionImpl.BeginTransaction()
+   at NannyApp.DAL.Repositories.UserRepository.GetUser[T](String Username, String Password) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 161
+[1.1.0001. 0:00:00] Begin failed with SQL exception 
+NHibernate
+    at NHibernate.Transaction.AdoTransaction.Begin(IsolationLevel isolationLevel)
+   at NHibernate.Transaction.AdoTransaction.Begin()
+   at NHibernate.AdoNet.ConnectionManager.BeginTransaction()
+   at NHibernate.Impl.SessionImpl.BeginTransaction()
+   at NannyApp.DAL.Repositories.UserRepository.GetUser[T](String Username, String Password) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 161
+[1.1.0001. 0:00:00] Begin failed with SQL exception 
+NHibernate
+    at NHibernate.Transaction.AdoTransaction.Begin(IsolationLevel isolationLevel)
+   at NHibernate.Transaction.AdoTransaction.Begin()
+   at NHibernate.AdoNet.ConnectionManager.BeginTransaction()
+   at NHibernate.Impl.SessionImpl.BeginTransaction()
+   at NannyApp.DAL.Repositories.UserRepository.AddUser(User User) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 25

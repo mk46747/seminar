@@ -61,7 +61,7 @@ namespace NannyApp.Controllers
                 parent.AddOffer(newOffer);
                 UserRepository.UpdateUser(parent);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Details", new { IdOffer = newOffer.Id});
             }
             catch
             {
@@ -69,41 +69,11 @@ namespace NannyApp.Controllers
             }
         }
 
-        // GET: ParentOffer/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int IdOffer)
         {
             OfferRepository OfferRepository = new OfferRepository();
             ParentOffer ParentOffer = new ParentOffer();
-            ParentOffer = OfferRepository.GetParentOffer(id);
-            if (ParentOffer == null)
-            {
-                return HttpNotFound();
-            }
-
-            return View(ParentOffer);
-        }
-
-        // POST: ParentOffer/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        public ActionResult Delete(int id)
-        {
-            OfferRepository OfferRepository = new OfferRepository();
-            ParentOffer ParentOffer = new ParentOffer();
-            ParentOffer = OfferRepository.GetParentOffer(id);
+            ParentOffer = OfferRepository.GetParentOffer(IdOffer);
             if (ParentOffer == null)
             {
                 return HttpNotFound();
@@ -113,16 +83,94 @@ namespace NannyApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(int id, ParentOffer ParentOffer)
+        public ActionResult Edit(int IdOffer, ParentOffer offer)
         {
-            Parent Parent = new Parent();
+            if (ModelState.IsValid)
+            {
+                UserRepository UserRepository = new UserRepository();
+                int IdParent = Convert.ToInt32(Session["Id"]);
+                Parent parent = UserRepository.GetParent(IdParent);
+                ParentOffer ParentOffer = GetParentOffer(parent.Offers, offer.Id);
+
+                ParentOffer.Address = offer.Address;
+                ParentOffer.BabySittingPlace = offer.BabySittingPlace;
+                ParentOffer.ChildrenNumber = offer.ChildrenNumber;
+                ParentOffer.City = offer.City;
+                ParentOffer.Deadline = offer.Deadline;
+                ParentOffer.EndTime = offer.EndTime;
+                ParentOffer.Experience = offer.Experience;
+                ParentOffer.Id = offer.Id;
+                ParentOffer.MaxChildrenAge = offer.MaxChildrenAge;
+                ParentOffer.MinChildrenAge = offer.MinChildrenAge;
+                ParentOffer.Parent = parent;
+                ParentOffer.Notice = offer.Notice;
+                ParentOffer.Opened = offer.Opened;
+                ParentOffer.Price = offer.Price;
+                ParentOffer.StartTime = offer.StartTime;
+
+                UserRepository.UpdateUser(parent);
+
+                return RedirectToAction("Details", new { IdOffer = offer.Id });
+            }
+            return View(offer);
+        }
+
+        private ParentOffer GetParentOffer(IList<ParentOffer> Offers, int id)
+        {
+            foreach (var o in Offers)
+            {
+                if (o.Id.Equals(id))
+                {
+                    return o;
+                }
+            }
+            return null;
+        }
+        public ActionResult Delete(int IdOffer)
+        {
+            OfferRepository OfferRepository = new OfferRepository();
+            ParentOffer ParentOffer = new ParentOffer();
+            ParentOffer = OfferRepository.GetParentOffer(IdOffer);
+            if (ParentOffer == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(ParentOffer);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int IdOffer, ParentOffer offer)
+        {
+            if (ModelState.IsValid)
+            {
+                Parent parent = new Parent();
+                UserRepository UserRepository = new UserRepository();
+                int id = Convert.ToInt32(Session["Id"]);
+                parent = UserRepository.GetParent(id);
+                ParentOffer ParentOffer = GetParentOffer(parent.Offers, offer.Id);
+                parent.RemoveOffer(ParentOffer);
+
+                UserRepository.UpdateUser(parent);
+
+                return RedirectToAction("MyOffers");
+            }
+            return View(offer);
+        }
+
+        public ActionResult MyOffers()
+        {
             UserRepository UserRepository = new UserRepository();
-            Parent = UserRepository.GetParent(ParentOffer.Parent.Id);
-
-            Parent.AddOffer(ParentOffer);
-            UserRepository.UpdateUser(Parent);
-
-            return RedirectToAction("Index", "Parent");
+            if (Session["Id"] != null)
+            {
+                int IdParent = Convert.ToInt32(Session["Id"]);
+                Parent Parent = UserRepository.GetParent(IdParent);
+                return View(Parent.Offers);
+            }
+            else
+            {
+                return RedirectToAction("Login", "User");
+            }
         }
     }
 }

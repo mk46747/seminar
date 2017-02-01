@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.NannyOffersList = new System.Windows.Forms.ListView();
             this.username = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.city = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -78,19 +78,19 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Looking for services";
             // 
-            // listView1
+            // NannyOffersList
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.NannyOffersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.username,
             this.city,
             this.Price,
             this.deadline});
-            this.listView1.Location = new System.Drawing.Point(27, 85);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(305, 203);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.NannyOffersList.Location = new System.Drawing.Point(27, 85);
+            this.NannyOffersList.Name = "NannyOffersList";
+            this.NannyOffersList.Size = new System.Drawing.Size(305, 203);
+            this.NannyOffersList.TabIndex = 3;
+            this.NannyOffersList.UseCompatibleStateImageBehavior = false;
+            this.NannyOffersList.View = System.Windows.Forms.View.Details;
             // 
             // username
             // 
@@ -270,7 +270,7 @@
             this.Controls.Add(this.menu);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.listView2);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.NannyOffersList);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "MainForm";
@@ -286,7 +286,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView NannyOffersList;
         private System.Windows.Forms.ColumnHeader username;
         private System.Windows.Forms.ColumnHeader city;
         private System.Windows.Forms.ColumnHeader Price;
