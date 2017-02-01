@@ -1,0 +1,101 @@
+﻿@model IEnumerable<NannyApp.Model.ParentOffer>
+
+@{
+    ViewBag.Title = "MyOffers";
+    Layout = "~/Views/Shared/_mytemplate_nanny.cshtml";
+}
+
+<div class="form-style-8">
+    <table border="1" style="width:600px" color="#448CCB">
+        <h2>MyOffers - active</h2>
+        <thead>
+        <th>Deadline</th>
+        <th>Username</th>
+        <th>City</th>
+        <th>Price</th>
+        <th>Details</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (item.Opened)
+                {
+                    <tr>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.Deadline.Month)/
+                            @Html.DisplayFor(modelItem => item.Deadline.Day)/
+                            @Html.DisplayFor(modelItem => item.Deadline.Year)
+                        </td>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.Parent.Username)
+                        </td>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.City)
+                        </td>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td height="50" align="center">
+                            <h3>@Html.ActionLink("Details", "Details", "ParentOffer", new { IdOffer = item.Id }, null)</h3>
+                        </td>
+                        <td height="50" align="center">
+                            <h3>@Html.ActionLink("Edit", "Edit", "ParentOffer", new { IdOffer = item.Id }, null)</h3>
+                        </td>
+                        <td height="50" align="center">
+                            <h3>@Html.ActionLink("Delete", "Delete", "ParentOffer", new { IdOffer = item.Id }, null)</h3>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<div class="form-style-8">
+    <table border="1" style="width:600px" color="#448CCB">
+        <h2>MyOffers - inactive</h2>
+        <thead>
+        <th>Deadline</th>
+        <th>Username</th>
+        <th>City</th>
+        <th>Price</th>
+        <th>Details</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (!item.Opened)
+                {
+                    <tr>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.Deadline.Month)/
+                            @Html.DisplayFor(modelItem => item.Deadline.Day)/
+                            @Html.DisplayFor(modelItem => item.Deadline.Year)
+                        </td>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.Parent.Username)
+                        </td>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.City)
+                        </td>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td height="50" align="center">
+                            <h3>@Html.ActionLink("Details", "Details", "ParentOffer", new { IdOffer = item.Id }, null)</h3>
+                        </td>
+                        <td height="50" align="center">
+                            <h3>@Html.ActionLink("Edit", "Edit", "ParentOffer", new { IdOffer = item.Id }, null)</h3>
+                        </td>
+                        <td height="50" align="center">
+                            <h3>@Html.ActionLink("Delete", "Delete", "ParentOffer", new { IdOffer = item.Id, offer = item }, null)</h3>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

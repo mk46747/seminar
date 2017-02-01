@@ -493,6 +493,7 @@
             this.CreateOfferButton.TabIndex = 33;
             this.CreateOfferButton.Text = "Create offer";
             this.CreateOfferButton.UseVisualStyleBackColor = true;
+            this.CreateOfferButton.Click += new System.EventHandler(this.CreateOffer);
             // 
             // OfferForm
             // 

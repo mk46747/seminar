@@ -30,8 +30,10 @@ namespace NannyApp.Presentation
              MainController.ShowLoginForm(this);
         }
 
-
-
+        public void ShowOfferForm(object sender, EventArgs e)
+        {
+            MainController.ShowOfferForm();
+        }
 
         public void HideLoginButton()
         {
