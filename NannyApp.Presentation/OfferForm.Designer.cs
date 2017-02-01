@@ -250,7 +250,6 @@
             this.ParentsPlaceRadio.Name = "ParentsPlaceRadio";
             this.ParentsPlaceRadio.Size = new System.Drawing.Size(63, 17);
             this.ParentsPlaceRadio.TabIndex = 1;
-            this.ParentsPlaceRadio.TabStop = true;
             this.ParentsPlaceRadio.Text = "Parent\'s";
             this.ParentsPlaceRadio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ParentsPlaceRadio.UseVisualStyleBackColor = true;
@@ -259,6 +258,7 @@
             // 
             this.NannysPlaceRadio.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.NannysPlaceRadio.AutoSize = true;
+            this.NannysPlaceRadio.Checked = true;
             this.NannysPlaceRadio.Location = new System.Drawing.Point(3, 6);
             this.NannysPlaceRadio.Name = "NannysPlaceRadio";
             this.NannysPlaceRadio.Size = new System.Drawing.Size(63, 17);

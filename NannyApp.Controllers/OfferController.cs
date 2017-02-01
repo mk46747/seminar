@@ -52,7 +52,7 @@ namespace NannyApp.Controllers
                 nanny.AddOffer((NannyOffer)Offer);
                 UserRepository.UpdateUser(nanny);
             }
-            else
+            else if (CurrentUser.UserType == UserType.PARENT)
             {
                 Offer Offer = OfferFactory.CreateParentOffer(Price, Experience, BabySittingPlace, Notice,
                     StartTime, EndTime, City, Address, ChildrenNumber, MinChildrenAge, MaxChildrenAge,
