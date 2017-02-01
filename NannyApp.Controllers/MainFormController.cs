@@ -17,6 +17,8 @@ namespace NannyApp.Controllers
     {
         private bool DefaultModelLoaded = false;
 
+        private User CurrentUser;
+
         private readonly IWindowFormsFactory WindowFormsFactory = null;
         private readonly IUserRepository UserRepository = null;
         private readonly IOfferRepository OfferRepository = null;
@@ -31,15 +33,16 @@ namespace NannyApp.Controllers
             this.CooperationRepository = CooperationRepository;
         }
 
-        public void ShowMainForm(User User)
+        public void ShowMainForm()
         {
-            if (User == null)
+            if (CurrentUser == null)
             {
                 return;
             }
+
             var mainForm = WindowFormsFactory.CreateMainView(this);
             mainForm.HideLoginButton();
-            mainForm.SetWelcomeLabel("Welcome " + User.Name);
+            mainForm.SetWelcomeLabel("Welcome " + CurrentUser.Name);
             mainForm.EnableMenu();
             var form = (Form)mainForm;
             form.Show();
@@ -63,23 +66,37 @@ namespace NannyApp.Controllers
         {//ovdje dođem s create forme i trebao bih otići spremiti nanny i vratiti mainnannyform
             NannyController NannyController = new NannyController();
             var CreateNannyForm = WindowFormsFactory.CreateNannyView(this);
-            NannyController.ShowCreateNannyForm(CreateNannyForm);
+            NannyController.ShowNannyForm(CreateNannyForm);
             CreateNannyForm.HideUpdateButton();
             CreateNannyForm.HideViewReviewsButton();
             LoginView.Close();
             //nanycon umjesto
         }
-        public void CreateNanny(INannyView CreateNannyForm)
+        public void CreateNanny(INannyView NannyForm)
         {
             NannyController NannyController = new NannyController();
-            User User = NannyController.CreateNanny(CreateNannyForm, UserRepository);
+            User User = NannyController.CreateNanny(NannyForm, UserRepository);
             if (User == null)
             {
                 return;
             }
-            var frm = (Form)CreateNannyForm;
+            var frm = (Form)NannyForm;
             frm.Close();
-            ShowMainForm(User);
+            CurrentUser = User;
+            ShowMainForm();
+        }
+
+        public void CreateOffer(IOfferView OfferForm)
+        {
+            OfferController OfferController = new OfferController();
+            OfferController.CreateOffer(OfferForm, UserRepository, CurrentUser);
+        }
+
+        public void ShowOfferForm()
+        {
+            OfferController OfferController = new OfferController();
+            OfferForm OfferForm = (OfferForm)WindowFormsFactory.CreateOfferView(this);
+            OfferController.ShowOfferForm(OfferForm);
         }
 
         public void ShowParentForm(Form LoginView)
@@ -91,14 +108,35 @@ namespace NannyApp.Controllers
 
         }
 
+        public void CreateParent(IParentView ParentForm)
+        {
+            ParentController ParentController = new ParentController();
+            User User = ParentController.CreateParent(ParentForm, UserRepository);
+            if (User == null)
+            {
+                return;
+            }
+            var frm = (Form)ParentForm;
+            frm.Close();
+            CurrentUser = User;
+            ShowMainForm();
+        }
+
         public void LoginUser(ILoginView LoginView)
         {
             AccountController AccountController = new AccountController();
 
             User User = AccountController.Login(UserRepository, LoginView, this);
 
-            ShowMainForm(User);
+            CurrentUser = User;
+            ShowMainForm();
         }
+
+        public void LogoutUser()
+        {
+            CurrentUser = null;
+        }
+
         public void ShowCreateOfferForm()
         {
             OfferController OfferController = new OfferController();

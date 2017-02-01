@@ -14,16 +14,21 @@ namespace NannyApp.Presentation
 {
     public partial class OfferForm : Form, IOfferView
     {
-        IMainFormController MainController;
-        public OfferForm(IMainFormController MainController)
+        IMainFormController MainFormController;
+        public OfferForm(IMainFormController MainFormController)
         {
-            this.MainController = MainController;
+            this.MainFormController = MainFormController;
             InitializeComponent();
         }
 
         public OfferForm()
         {
             InitializeComponent();
+        }
+
+        private void CreateOffer(object sender, EventArgs e)
+        {
+            MainFormController.CreateOffer(this);
         }
 
         public double Price

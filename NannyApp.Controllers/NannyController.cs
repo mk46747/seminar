@@ -13,28 +13,28 @@ namespace NannyApp.Controllers
 {
     class NannyController
     {
-        public void ShowCreateNannyForm(INannyView CreateNannyView)
+        public void ShowNannyForm(INannyView NannyView)
         {
-            var form =  (Form) CreateNannyView;
+            var form =  (Form) NannyView;
             form.Show();
            
         }
 
-        public User  CreateNanny(INannyView CreateNannyView, IUserRepository UserRepository)
+        public User  CreateNanny(INannyView NannyView, IUserRepository UserRepository)
         {
-            string Username = CreateNannyView.Username;
-            string Password = CreateNannyView.Password;
-            string Name = CreateNannyView.NannyName;
-            string Surname = CreateNannyView.Surname;
-            string Contact = CreateNannyView.Contact;
-            string Education = CreateNannyView.Education;
-            Gender Gender = CreateNannyView.Gender;
-            bool Smoking = CreateNannyView.Smoking;
-            bool Pets = CreateNannyView.Pets;
-            bool SickChildren = CreateNannyView.SickChildren;
-            bool DriversLicence = CreateNannyView.DriversLicence;
-            string ExtraServices = CreateNannyView.ExtraServices;
-            string ExtraQualification = CreateNannyView.ExtraQualification;
+            string Username = NannyView.Username;
+            string Password = NannyView.Password;
+            string Name = NannyView.NannyName;
+            string Surname = NannyView.Surname;
+            string Contact = NannyView.Contact;
+            string Education = NannyView.Education;
+            Gender Gender = NannyView.Gender;
+            bool Smoking = NannyView.Smoking;
+            bool Pets = NannyView.Pets;
+            bool SickChildren = NannyView.SickChildren;
+            bool DriversLicence = NannyView.DriversLicence;
+            string ExtraServices = NannyView.ExtraServices;
+            string ExtraQualification = NannyView.ExtraQualification;
 
             if(Username.Length == 0 || Password.Length == 0 || Name.Length == 0 || Surname.Length == 0
                 || Contact.Length == 0 || Education.Length == 0)

@@ -180,13 +180,13 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loginToolStripMenuItem.Text = "My profile";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // offersToolStripMenuItem
@@ -223,6 +223,7 @@
             this.addOfferToolStripMenuItem.Name = "addOfferToolStripMenuItem";
             this.addOfferToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.addOfferToolStripMenuItem.Text = "Add offer";
+            this.addOfferToolStripMenuItem.Click += new System.EventHandler(this.ShowOfferForm);
             // 
             // cooperationsToolStripMenuItem
             // 

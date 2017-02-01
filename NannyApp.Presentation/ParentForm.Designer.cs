@@ -230,6 +230,7 @@
             this.CreateParentButton.TabIndex = 12;
             this.CreateParentButton.Text = "Create Account";
             this.CreateParentButton.UseVisualStyleBackColor = true;
+            this.CreateParentButton.Click += new System.EventHandler(this.CreateParent);
             // 
             // UpdateParentOffer
             // 
@@ -241,13 +242,13 @@
             this.UpdateParentOffer.Text = "Update Account";
             this.UpdateParentOffer.UseVisualStyleBackColor = true;
             // 
-            // CreateParentForm
+            // ParentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 138);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "CreateParentForm";
+            this.Name = "ParentForm";
             this.Text = "Parent";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
