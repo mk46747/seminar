@@ -277,6 +277,13 @@
     <Content Include="Views\NannyOffer\Details.cshtml" />
     <Content Include="Views\ParentOffer\Index.cshtml" />
     <Content Include="Views\NannyOffer\Index.cshtml" />
+    <Content Include="Views\ParentOffer\Details.cshtml" />
+    <Content Include="Views\NannyOffer\Edit.cshtml" />
+    <Content Include="Views\ParentOffer\Edit.cshtml" />
+    <Content Include="Views\ParentOffer\Delete.cshtml" />
+    <Content Include="Views\NannyOffer\Delete.cshtml" />
+    <Content Include="Views\Parent\Details.cshtml" />
+    <Content Include="Views\Nanny\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -72,7 +72,15 @@ namespace NannyApp.Controllers
         // GET: ParentOffer/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            OfferRepository OfferRepository = new OfferRepository();
+            ParentOffer ParentOffer = new ParentOffer();
+            ParentOffer = OfferRepository.GetParentOffer(id);
+            if (ParentOffer == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(ParentOffer);
         }
 
         // POST: ParentOffer/Edit/5
@@ -91,26 +99,30 @@ namespace NannyApp.Controllers
             }
         }
 
-        // GET: ParentOffer/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            OfferRepository OfferRepository = new OfferRepository();
+            ParentOffer ParentOffer = new ParentOffer();
+            ParentOffer = OfferRepository.GetParentOffer(id);
+            if (ParentOffer == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(ParentOffer);
         }
 
-        // POST: ParentOffer/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, ParentOffer ParentOffer)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            Parent Parent = new Parent();
+            UserRepository UserRepository = new UserRepository();
+            Parent = UserRepository.GetParent(ParentOffer.Parent.Id);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            Parent.AddOffer(ParentOffer);
+            UserRepository.UpdateUser(Parent);
+
+            return RedirectToAction("Index", "Parent");
         }
     }
 }

@@ -1,0 +1,131 @@
+﻿@model NannyApp.Model.ParentOffer
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_mytemplate_nanny.cshtml";
+}
+
+<div class="form-style-8">
+    <h2>Edit your offer - giving services</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.City)
+                    @Html.EditorFor(model => model.City)
+                </td>
+                <td>
+                    @Html.LabelFor(model => model.Address)
+                    @Html.EditorFor(model => model.Address)
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                @{
+        List<SelectListItem> listItems = new List<SelectListItem>();
+        listItems.Add(new SelectListItem
+                {
+                    Text = "My place",
+                    Value = "PARENTS_PLACE"
+                });
+        listItems.Add(new SelectListItem
+                {
+                    Text = "Nanny's place",
+                    Value = "NANNYS_PLACE",
+                    Selected = true
+                });
+                }
+                @Html.LabelFor(model => model.BabySittingPlace, "Select babysitting place")
+                @Html.DropDownListFor(model => model.BabySittingPlace, listItems, "-- Select --")
+            </tr>
+            <br />
+            <tr>
+                @Html.LabelFor(model => model.ChildrenNumber, "Select number of children")
+            </tr>
+            <br />
+            <tr>
+                @Html.RadioButtonFor(model => model.ChildrenNumber, 1) 1
+                @Html.RadioButtonFor(model => model.ChildrenNumber, 2) 2
+                @Html.RadioButtonFor(model => model.ChildrenNumber, 3) 3
+                @Html.RadioButtonFor(model => model.ChildrenNumber, 4) 4
+                @Html.RadioButtonFor(model => model.ChildrenNumber, 5) 5
+                @Html.RadioButtonFor(model => model.ChildrenNumber, 6) 6
+            </tr>
+            <br />
+            <br />
+            <tr>
+                @Html.LabelFor(model => model.MinChildrenAge, "Select min children age that nanny needs to take for")
+            </tr>
+            <br />
+            <tr>
+                @Html.RadioButtonFor(model => model.MinChildrenAge, 0) 0
+                @Html.RadioButtonFor(model => model.MinChildrenAge, 1) 1
+                @Html.RadioButtonFor(model => model.MinChildrenAge, 2) 2
+                @Html.RadioButtonFor(model => model.MinChildrenAge, 3) 3
+                @Html.RadioButtonFor(model => model.MinChildrenAge, 4) 4
+                @Html.RadioButtonFor(model => model.MinChildrenAge, 5) 5
+                @Html.RadioButtonFor(model => model.MinChildrenAge, 6) 6
+            </tr>
+            <br />
+            <br />
+            <tr>
+                @Html.LabelFor(model => model.MaxChildrenAge, "Select max children age that nanny needs to take for")
+            </tr>
+            <br />
+            <tr>
+                @Html.RadioButtonFor(model => model.MaxChildrenAge, 1) 1
+                @Html.RadioButtonFor(model => model.MaxChildrenAge, 2) 2
+                @Html.RadioButtonFor(model => model.MaxChildrenAge, 3) 3
+                @Html.RadioButtonFor(model => model.MaxChildrenAge, 4) 4
+                @Html.RadioButtonFor(model => model.MaxChildrenAge, 5) 5
+                @Html.RadioButtonFor(model => model.MaxChildrenAge, 6) 6
+                @Html.RadioButtonFor(model => model.MaxChildrenAge, 7) 7
+                @Html.RadioButtonFor(model => model.MaxChildrenAge, 8) 8
+                @Html.RadioButtonFor(model => model.MaxChildrenAge, 9) 9
+                @Html.RadioButtonFor(model => model.MaxChildrenAge, 10) 10
+                @Html.RadioButtonFor(model => model.MaxChildrenAge, 11) 11
+                @Html.RadioButtonFor(model => model.MaxChildrenAge, 12) 12
+                @Html.RadioButtonFor(model => model.MaxChildrenAge, 13) 13
+            </tr>
+            <br />
+            <br />
+            <tr>
+                @Html.LabelFor(model => model.Price, "Write price per hour (in $)")
+                @Html.EditorFor(model => model.Price)
+            </tr>
+            <tr>
+                @Html.LabelFor(model => model.StartTime, "Select date when you need that nanny start")
+                @Html.TextBoxFor(model => model.StartTime, new { type = "date" })
+            </tr>
+            <tr>
+                @Html.LabelFor(model => model.EndTime, "Select date until when you need nanny")
+                @Html.TextBoxFor(model => model.EndTime, new { type = "date" })
+            </tr>
+            <tr>
+                @Html.LabelFor(model => model.Experience, "Write which experience you ask from nanny")
+                @Html.EditorFor(model => model.Experience)
+            </tr>
+            <tr>
+                @Html.LabelFor(model => model.Notice, "Write notice if you have something to add")
+                @Html.EditorFor(model => model.Notice)
+            </tr>
+            @Html.HiddenFor(model => model.Opened, new { Value = "true" })
+            <tr>
+                @Html.LabelFor(model => model.Deadline, "Select date until when nanny can apply for your offer (DL for your offer)")
+                @Html.TextBoxFor(model => model.Deadline, new { type = "date" })
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Save your offer" /></td>
+            </tr>
+        </table>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

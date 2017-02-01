@@ -15,17 +15,19 @@ namespace NannyApp.Controllers
 {
     public class NannyController : Controller
     {
-        // GET: Nanny
         public ActionResult Index()
         {
             UserRepository nannies = new UserRepository();
             return View(nannies.GetAllNannies());
         }
 
-        // GET: Nanny/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            UserRepository UserRepository = new UserRepository();
+            Nanny Nanny = new Nanny();
+            Nanny = UserRepository.GetNanny(id);
+
+            return View(Nanny);
         }
 
         public ActionResult CreateNanny()

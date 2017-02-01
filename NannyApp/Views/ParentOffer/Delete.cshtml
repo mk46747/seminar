@@ -1,0 +1,119 @@
+﻿@model NannyApp.Model.ParentOffer
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_mytemplate_nanny.cshtml";
+}
+
+<div class="form-style-8">
+    <table>
+        <h2>Are you sure you want to delete this?</h2>
+                <tr>
+                    <td width="150px">
+                        <h3>@Html.DisplayNameFor(model => model.Deadline):</h3>
+                    </td>
+                    <td width="300px" align="center">
+                        @Html.DisplayFor(model => model.Deadline.Month)/@Html.DisplayFor(model => model.Deadline.Day)
+                        /@Html.DisplayFor(model => model.Deadline.Year)
+                    </td>
+                    <td width="150px">
+                        <h3>Nanny:</h3>
+                    </td>
+                    <td width="300px" align="center">
+                        @Html.DisplayFor(model => model.Parent.Username)
+                    </td>
+                    <td width="150px">
+                        <h3>@Html.DisplayNameFor(model => model.Price):</h3>
+                    </td>
+                    <td width="300px" align="center">
+                        @Html.DisplayFor(model => model.Price)
+                    </td>
+                </tr>
+            </table>
+            <hr />
+            <table>
+                <tr>
+                    <td width="300px">
+                        <h3>Parent needs that nanny start:</h3>
+                    </td>
+                    <td width="300px" align="center">
+                        @Html.DisplayFor(model => model.StartTime.Day).@Html.DisplayFor(model => model.StartTime.Month).@Html.DisplayFor(model => model.StartTime.Year)
+                    </td>
+                    <td width="300px">
+                        <h3>Parent needs nanny until:</h3>
+                    </td>
+                    <td width="300px" align="center">
+                        @Html.DisplayFor(model => model.EndTime.Day).@Html.DisplayFor(model => model.EndTime.Month).@Html.DisplayFor(model => model.EndTime.Year)
+                    </td>
+                </tr>
+            </table>
+            <hr />
+            <table>
+                <tr>
+                    <td width="150px">
+                        <h3>City:</h3>
+                    </td>
+                    <td width="300px" align="center">
+                        @Html.DisplayFor(model => model.City)
+                    </td>
+                    <td width="300px">
+                        <h3>Nanny's address:</h3>
+                    </td>
+                    <td width="300px" align="center">
+                        @Html.DisplayFor(model => model.Address)
+                    </td>
+                </tr>
+            </table>
+            <hr />
+            <table>
+                <tr>
+                    <td width="150px">
+                        <h3>Babysitting place:</h3>
+                    </td>
+                    <td width="300px" align="center">
+                        @Html.DisplayFor(model => model.BabySittingPlace)
+                    </td>
+                </tr>
+                <tr>
+                    <td width="150px">
+                        <h3>Number of children:</h3>
+                    </td>
+                    <td width="300px" align="center">
+                        @Html.DisplayFor(model => model.ChildrenNumber)
+                    </td>
+                </tr>
+                <tr>
+                    <td width="300px">
+                        <h3>Children age that nanny needs to take for:</h3>
+                    </td>
+                    <td width="300px" align="center">
+                        @Html.DisplayFor(model => model.MinChildrenAge) - @Html.DisplayFor(model => model.MaxChildrenAge) years
+                    </td>
+                </tr>
+                <tr>
+                    <td width="300px">
+                        <h3>Experience that parent ask from nanny:</h3>
+                    </td>
+                    <td width="300px" align="center">
+                        @Html.DisplayFor(model => model.Experience)
+                    </td>
+                </tr>
+                <tr>
+                    <td width="300px">
+                        <h3>Notice:</h3>
+                    </td>
+                    <td width="300px" align="center">
+                        @Html.DisplayFor(model => model.Notice)
+                    </td>
+                </tr>
+            </table>
+            <hr />
+            <br />
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                    <input type="submit" value="Yes, delete offer" />    
+                <input type="button" value="No" onclick="location.href='@Url.Action("Index", "ParentOffer")'" />
+    <input type="button" value="Edit offer" onclick="location.href='@Url.Action("Edit", "ParentOffer", new { id = Model.Id })'" />
+            }
+        </div>

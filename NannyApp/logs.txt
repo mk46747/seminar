@@ -281,3 +281,10 @@ NHibernate
    at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
    at NHibernate.Impl.SessionImpl.Save(Object obj)
    at NannyApp.DAL.Repositories.UserRepository.AddUser(User User) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 28
+[1.1.0001. 0:00:00] attempt to create saveOrUpdate event with null entity
+Parameter name: entity 
+NHibernate
+    at NHibernate.Event.SaveOrUpdateEvent..ctor(Object entity, IEventSource source)
+   at NHibernate.Event.SaveOrUpdateEvent..ctor(String entityName, Object original, IEventSource source)
+   at NHibernate.Impl.SessionImpl.Update(Object obj)
+   at NannyApp.DAL.Repositories.UserRepository.UpdateUser(User User) in c:\Users\Marija\Desktop\OOBLseminar\seminar\NannyApp.DAL\Repositories\UserRepository.cs:line 224

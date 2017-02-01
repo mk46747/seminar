@@ -14,7 +14,6 @@ namespace NannyApp.Controllers
 {
     public class NannyOfferController : Controller
     {
-        // GET: Offer
         public ActionResult Index()
         {
             OfferRepository offers = new OfferRepository();
@@ -23,7 +22,6 @@ namespace NannyApp.Controllers
             return View(nannyOffers);
         }
 
-        // GET: Offer/Details/5
         public ActionResult Details(int IdOffer)
         {
             OfferRepository offer = new OfferRepository();
@@ -69,48 +67,56 @@ namespace NannyApp.Controllers
             }
         }
 
-        // GET: Offer/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            OfferRepository OfferRepository = new OfferRepository();
+            NannyOffer NannyOffer = new NannyOffer();
+            NannyOffer = OfferRepository.GetNannyOffer(id);
+            if (NannyOffer == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(NannyOffer);
         }
 
-        // POST: Offer/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, NannyOffer offer)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            //if (ModelState.IsValid)
+            //{
+            //    OfferRepository OfferRepository = new OfferRepository();
+            //    OfferRepository.UpdateNannyOffer(offer);
+            //    return RedirectToAction("Index");
+            //}
+            //ovo izgleda ne radi, ne update-a nanny?
+            return View(offer);
         }
 
-        // GET: Offer/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            OfferRepository OfferRepository = new OfferRepository();
+            NannyOffer NannyOffer = new NannyOffer();
+            NannyOffer = OfferRepository.GetNannyOffer(id);
+            if (NannyOffer == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(NannyOffer);
         }
 
-        // POST: Offer/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, NannyOffer NannyOffer)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            Nanny nanny = new Nanny();
+            UserRepository UserRepository = new UserRepository();
+            nanny = UserRepository.GetNanny(NannyOffer.Nanny.Id);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            nanny.AddOffer(NannyOffer);
+            UserRepository.UpdateUser(nanny);
+
+            return RedirectToAction("Index", "Nanny");
         }
     }
 }
