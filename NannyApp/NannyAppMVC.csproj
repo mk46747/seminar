@@ -188,7 +188,6 @@
     <Compile Include="Controllers\NannyOfferController.cs" />
     <Compile Include="Controllers\ParentController.cs" />
     <Compile Include="Controllers\ParentOfferController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\NannyController.cs" />
     <Compile Include="Global.asax.cs">
@@ -286,10 +285,11 @@
     <Content Include="Views\Nanny\Details.cshtml" />
     <Content Include="Views\NannyOffer\MyOffers.cshtml" />
     <Content Include="Views\ParentOffer\MyOffers.cshtml" />
+    <Content Include="Views\Cooperation\Create.cshtml" />
+    <Content Include="Views\Cooperation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Cooperation\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

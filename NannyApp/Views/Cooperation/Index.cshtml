@@ -1,0 +1,51 @@
+﻿@model IEnumerable<NannyApp.Model.Cooperation>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mytemplate_nanny.cshtml";
+}
+
+<div class="form-style-8">
+    <table border="1" style="width:450px" color="#448CCB">
+        <thead>
+        <th>Initiator</th>
+        <th>Acceptee</th>
+        <th>Time period</th>
+        <th>Status</th>
+        <th>Details</th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.CooperationInitiator.Name) 
+                            @Html.DisplayFor(modelItem => item.CooperationInitiator.Surname) as
+                            @Html.DisplayFor(modelItem => item.CooperationInitiator.Username)
+                        </td>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.CooperationAcceptee.Name)
+                            @Html.DisplayFor(modelItem => item.CooperationAcceptee.Surname) as
+                            @Html.DisplayFor(modelItem => item.CooperationAcceptee.Username)
+                        </td>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.Offer.StartTime.Month)/
+                            @Html.DisplayFor(modelItem => item.Offer.StartTime.Day)/
+                            @Html.DisplayFor(modelItem => item.Offer.StartTime.Year) - 
+                            @Html.DisplayFor(modelItem => item.Offer.EndTime.Month)/
+                            @Html.DisplayFor(modelItem => item.Offer.EndTime.Day)/
+                            @Html.DisplayFor(modelItem => item.Offer.EndTime.Year)
+                        </td>
+                        <td height="50" align="center">
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            <h3>@Html.ActionLink("Details", "Details", "Cooperation", new { IdCooperation = item.Id }, null)</h3>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+
