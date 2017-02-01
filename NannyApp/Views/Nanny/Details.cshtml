@@ -79,12 +79,7 @@
     <table>
         <tr>
             <td width="350px" align="center">
-                <input type="button" value="Cooperations" onclick=" location.href='@Url.Action("Details", "Nanny")' " />
-            </td>
-        </tr>
-        <tr>
-            <td width="350px" align="center">
-                <input type="button" value="Services" onclick=" location.href='@Url.Action("Details", "Nanny")' " />
+                <input type="button" value="Cooperations" onclick=" location.href='@Url.Action("Index", "Cooperation", new { id = Model.Id })' " />
             </td>
         </tr>
     </table>
