@@ -17,6 +17,8 @@ namespace NannyApp.Controllers
     {
         private bool DefaultModelLoaded = false;
 
+        private User CurrentUser;
+
         private readonly IWindowFormsFactory WindowFormsFactory = null;
         private readonly IUserRepository UserRepository = null;
         private readonly IOfferRepository OfferRepository = null;
@@ -31,15 +33,16 @@ namespace NannyApp.Controllers
             this.CooperationRepository = CooperationRepository;
         }
 
-        public void ShowMainForm(User User)
+        public void ShowMainForm()
         {
-            if (User == null)
+            if (CurrentUser == null)
             {
                 return;
             }
+
             var mainForm = WindowFormsFactory.CreateMainView(this);
             mainForm.HideLoginButton();
-            mainForm.SetWelcomeLabel("Welcome " + User.Name);
+            mainForm.SetWelcomeLabel("Welcome " + CurrentUser.Name);
             mainForm.EnableMenu();
             var form = (Form)mainForm;
             form.Show();
@@ -79,7 +82,21 @@ namespace NannyApp.Controllers
             }
             var frm = (Form)NannyForm;
             frm.Close();
-            ShowMainForm(User);
+            CurrentUser = User;
+            ShowMainForm();
+        }
+
+        public void CreateOffer(IOfferView OfferForm)
+        {
+            OfferController OfferController = new OfferController();
+            OfferController.CreateOffer(OfferForm, UserRepository, CurrentUser);
+        }
+
+        public void ShowOfferForm()
+        {
+            OfferController OfferController = new OfferController();
+            OfferForm OfferForm = (OfferForm)WindowFormsFactory.CreateOfferView(this);
+            OfferController.ShowOfferForm(OfferForm);
         }
 
         public void ShowParentForm(Form LoginView)
@@ -101,7 +118,8 @@ namespace NannyApp.Controllers
             }
             var frm = (Form)ParentForm;
             frm.Close();
-            ShowMainForm(User);
+            CurrentUser = User;
+            ShowMainForm();
         }
 
         public void LoginUser(ILoginView LoginView)
@@ -110,8 +128,15 @@ namespace NannyApp.Controllers
 
             User User = AccountController.Login(UserRepository, LoginView, this);
 
-            ShowMainForm(User);
+            CurrentUser = User;
+            ShowMainForm();
         }
+
+        public void LogoutUser()
+        {
+            CurrentUser = null;
+        }
+
         public void ShowCreateOfferForm()
         {
             OfferController OfferController = new OfferController();

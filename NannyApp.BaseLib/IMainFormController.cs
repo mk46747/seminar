@@ -14,14 +14,13 @@ namespace NannyApp.BaseLib
         void CreateNanny(INannyView NannyView);
         void ShowLoginForm(IMainView MainView);
         void LoginUser(ILoginView LoginView);
-        void ShowMainForm(User User);
+        void ShowMainForm();
         
         void ShowParentForm(Form LoginView);
         void CreateParent(IParentView ParentView);
+        void ShowOfferForm();
+        void CreateOffer(IOfferView OfferView);
         /*
-        void CreateParent(ICreatParentView CreateParentView);
-        void ShowCreateNannyOfferForm();
-        void CreateNannyOffer(ICreateNannyOfferView CreateNannyOfferView);
         void ShowCreateParentOfferForm();
         void CreateParentOffer(ICreateParentOfferView CreateParentOfferView);
         void ShowOffersForm();
