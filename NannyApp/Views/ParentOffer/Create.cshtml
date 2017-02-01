@@ -107,15 +107,16 @@
                 @Html.LabelFor(model => model.Notice, "Write notice if you have something to add")
                 @Html.EditorFor(model => model.Notice)
             </tr>
-            @Html.HiddenFor(model => model.Opened, new { Value = "true" })
             <tr>
                 @Html.LabelFor(model => model.Deadline, "Select date until when nanny can apply for your offer (DL for your offer)")
                 @Html.TextBoxFor(model => model.Deadline, new { type = "date" })
             </tr>
+            @Html.HiddenFor(model => model.Opened, new { Value = "true" })
             <tr>
                 <td></td>
                 <td><input type="submit" value="Create new offer" /></td>
             </tr>
+
         </table>
     }
 </div>

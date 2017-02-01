@@ -32,7 +32,7 @@
                         <a href="@Url.Content("~/ParentOffer/MyOffers")" class="flt tp_home">My offers</a> <img src="@Url.Content("~/Content/mytemplate/")images/tp_pipe.gif" width="3" height="18" alt="" class="flt tp_pipe" />
                     }
 }
-                <a href="#" class="flt tp_home">Cooperations</a>
+                <a href="@Url.Content("~/Cooperation/Index?" + Convert.ToInt32(Session["Id"]))" class="flt tp_home">Cooperations</a>
         </div>
         <!-- top panel ends here -->
         <!-- content panel starts here -->

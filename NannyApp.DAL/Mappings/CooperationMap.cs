@@ -15,11 +15,11 @@ namespace NannyApp.DAL.Mappings
             Table("Cooperation");
             Id(b => b.Id).Column("Id").CustomType("Int32").GeneratedBy.Native();
 
-            References(b => b.CooperationInitiator).Column("CooperationInitiatorId").Cascade.All();
-            References(b => b.CooperationAcceptee).Column("CooperationAccepteeId").Cascade.All();
-            References(b => b.Offer).Column("OfferId").Cascade.All();
+            References(b => b.CooperationInitiator).Column("CooperationInitiatorId").Not.LazyLoad().Cascade.All();
+            References(b => b.CooperationAcceptee).Column("CooperationAccepteeId").Not.LazyLoad().Cascade.All();
+            References(b => b.Offer).Column("OfferId").Not.LazyLoad().Cascade.All();
             Map(b => b.Status).Column("StatusId").CustomType<CooperationStatus>().Not.Nullable();
-            References(b => b.Review).Column("ReviewId").Cascade.All();
+            References(b => b.Review).Column("ReviewId").Not.LazyLoad().Cascade.All();
         }
     }
 }

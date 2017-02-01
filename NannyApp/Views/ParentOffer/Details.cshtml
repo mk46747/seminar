@@ -109,10 +109,7 @@
     <hr />
     <br />
     @{
-        string user = Convert.ToString(Session["UserType"]);
-        if (!user.Equals("PARENT"))
-        {
-            <input type="button" value="Apply for this offer" onclick="location.href='@Url.Action("Create", "Cooperation")'" />
+            <input type="button" value="Apply for this offer" onclick="location.href='@Url.Action("Create", "Cooperation", new { IdNanny = Convert.ToInt32(Session["Username"]), ParentOffer = Model })'" />
         }
     }
     <input type="button" value="Back to list" onclick="location.href='@Url.Action("Index", "ParentOffer")'" />
