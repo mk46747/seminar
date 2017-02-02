@@ -117,7 +117,8 @@
     }
     else
     {
-        <input type="button" value="Apply for this offer" onclick="location.href='@Url.Action("Create", "Cooperation", new { IdNanny = id, ParentOffer = Model })'" />
+        //CreateForParentOffer(int IdNanny, ParentOffer ParentOffer)
+        <input type="button" value="Apply for this offer" onclick="location.href='@Url.Action("CreateForParentOffer", "Cooperation", new { IdParentOffer = Model.Id })'" />
     }
     <br /><br />
     <hr />
