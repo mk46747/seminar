@@ -51,7 +51,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.extraQualificationTextbox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CreateAccountButton = new System.Windows.Forms.Button();
             this.genderPanel = new System.Windows.Forms.Panel();
             this.smokingPanel = new System.Windows.Forms.Panel();
             this.smokingYes = new System.Windows.Forms.RadioButton();
@@ -67,6 +67,7 @@
             this.driversLicenceNo = new System.Windows.Forms.RadioButton();
             this.UpdateAccountButton = new System.Windows.Forms.Button();
             this.ReviewsButton = new System.Windows.Forms.Button();
+            this.nannyId = new System.Windows.Forms.Label();
             this.genderPanel.SuspendLayout();
             this.smokingPanel.SuspendLayout();
             this.petsPanel.SuspendLayout();
@@ -273,15 +274,15 @@
             this.label13.TabIndex = 29;
             this.label13.Text = "Write extra qualifications that you have (not required)";
             // 
-            // button1
+            // CreateAccountButton
             // 
-            this.button1.Location = new System.Drawing.Point(44, 202);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 35);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Create Account";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.CreateNanny);
+            this.CreateAccountButton.Location = new System.Drawing.Point(44, 202);
+            this.CreateAccountButton.Name = "CreateAccountButton";
+            this.CreateAccountButton.Size = new System.Drawing.Size(174, 35);
+            this.CreateAccountButton.TabIndex = 31;
+            this.CreateAccountButton.Text = "Create Account";
+            this.CreateAccountButton.UseVisualStyleBackColor = true;
+            this.CreateAccountButton.Click += new System.EventHandler(this.CreateNanny);
             // 
             // genderPanel
             // 
@@ -437,12 +438,22 @@
             this.ReviewsButton.TabIndex = 36;
             this.ReviewsButton.Text = "View reviews";
             this.ReviewsButton.UseVisualStyleBackColor = true;
+            this.ReviewsButton.Click += new System.EventHandler(this.ShowReviews);
+            // 
+            // nannyId
+            // 
+            this.nannyId.AutoSize = true;
+            this.nannyId.Location = new System.Drawing.Point(0, 0);
+            this.nannyId.Name = "nannyId";
+            this.nannyId.Size = new System.Drawing.Size(0, 13);
+            this.nannyId.TabIndex = 37;
             // 
             // NannyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(520, 290);
+            this.Controls.Add(this.nannyId);
             this.Controls.Add(this.ReviewsButton);
             this.Controls.Add(this.UpdateAccountButton);
             this.Controls.Add(this.driversLicencePanel);
@@ -450,7 +461,7 @@
             this.Controls.Add(this.petsPanel);
             this.Controls.Add(this.smokingPanel);
             this.Controls.Add(this.genderPanel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CreateAccountButton);
             this.Controls.Add(this.extraQualificationTextbox);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.extraServicesTextbox);
@@ -514,7 +525,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox extraQualificationTextbox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CreateAccountButton;
         private System.Windows.Forms.Panel genderPanel;
         private System.Windows.Forms.Panel smokingPanel;
         private System.Windows.Forms.RadioButton smokingYes;
@@ -530,5 +541,6 @@
         private System.Windows.Forms.RadioButton driversLicenceNo;
         private System.Windows.Forms.Button UpdateAccountButton;
         private System.Windows.Forms.Button ReviewsButton;
+        private System.Windows.Forms.Label nannyId;
     }
 }

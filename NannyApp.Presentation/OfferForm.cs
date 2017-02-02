@@ -25,11 +25,25 @@ namespace NannyApp.Presentation
         {
             InitializeComponent();
         }
-
+        private void ShowOwner(object sender, EventArgs e)
+        {
+            MainFormController.ShowOwner(this);
+        }
         private void CreateOffer(object sender, EventArgs e)
         {
             MainFormController.CreateOffer(this);
         }
+        private void UpdateOffer(object sender, EventArgs e)
+        {
+           // MainFormController.CreateOffer(this);
+        }
+        private void ApplyToOffer(object sender, EventArgs e)
+        {
+            MainFormController.ApplyToOffer(this.OfferId);
+            this.Hide();
+        }
+
+        
 
         public double Price
         {
@@ -40,7 +54,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                priceNumeric.Value = (decimal)Price;
+                priceNumeric.Value = (decimal)value;
             }
         }
 
@@ -62,13 +76,13 @@ namespace NannyApp.Presentation
             }
             set
             {
-                if (BabySittingPlace == BabySittingPlace.NANNYS_PLACE)
+                if (value == BabySittingPlace.NANNYS_PLACE)
                 {
                     NannysPlaceRadio.Checked = true;
                     ParentsPlaceRadio.Checked = false;
                 }
 
-                else if (BabySittingPlace == BabySittingPlace.PARENTS_PLACE)
+                else if (value == BabySittingPlace.PARENTS_PLACE)
                 {
                     NannysPlaceRadio.Checked = false;
                     ParentsPlaceRadio.Checked = true;
@@ -85,7 +99,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                experienceTextBox.Text = Experience;
+                experienceTextBox.Text = value;
             }
         }
 
@@ -98,7 +112,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                NoticeTextBox.Text = Notice;
+                NoticeTextBox.Text = value;
             }
         }
 
@@ -111,7 +125,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                StartingTimeDateTime.Value = StartTime;
+                StartingTimeDateTime.Value = value;
             }
         }
 
@@ -124,7 +138,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                EndTimeDateTimePicker.Value = EndTime;
+                EndTimeDateTimePicker.Value = value;
             }
         }
 
@@ -152,21 +166,21 @@ namespace NannyApp.Presentation
 
             set
             {
-                if (CooperationStatus == CooperationStatus.PENDING)
+                if (value == CooperationStatus.PENDING)
                 {
                     PendingRadio.Checked = true;
                     AcceptedRadio.Checked = false;
                     DeclinedRadio.Checked = false;
                 }
 
-                else if (CooperationStatus == CooperationStatus.ACCEPTED)
+                else if (value == CooperationStatus.ACCEPTED)
                 {
                     PendingRadio.Checked = false;
                     AcceptedRadio.Checked = true;
                     DeclinedRadio.Checked = false;
                 }
 
-                else if (CooperationStatus == CooperationStatus.DECLINED)
+                else if (value == CooperationStatus.DECLINED)
                 {
                     PendingRadio.Checked = false;
                     AcceptedRadio.Checked = false;
@@ -184,7 +198,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                CityTextBox.Text = City;
+                CityTextBox.Text = value;
             }
         }
 
@@ -197,7 +211,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                AddressTextBox.Text = Address;
+                AddressTextBox.Text = value;
             }
         }
 
@@ -210,7 +224,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                NumChildrenNumeric.Value = (decimal)ChildrenNumber;
+                NumChildrenNumeric.Value = (decimal)value;
             }
         }
 
@@ -223,7 +237,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                MinAgeNumeric.Value = (decimal)MinChildrenAge;
+                MinAgeNumeric.Value = (decimal)value;
             }
         }
 
@@ -236,7 +250,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                MaxAgeNumeric.Value = (decimal)MaxChildrenAge;
+                MaxAgeNumeric.Value = (decimal)value;
             }
         }
 
@@ -249,8 +263,48 @@ namespace NannyApp.Presentation
 
             set
             {
-                DeadLineDateTime.Value = DeadLine;
+                DeadLineDateTime.Value = value;
             }
+        }
+
+        public int OfferId
+        {
+            get
+            {
+                return (int)Int32.Parse(offerId.Text);
+            }
+
+            set
+            {
+                offerId.Text = value.ToString();
+            }
+        }
+
+        public void AdjustCreateView()
+        {
+            ApplyToOfferButton.Hide();
+            ViewOwnerDetailsButton.Hide();
+            UpdateOfferButton.Hide();
+         }
+
+        public void AdjustEditView()
+        {
+            ApplyToOfferButton.Hide();
+            CreateOfferButton.Hide();
+        }
+
+        public void AdjustApplyYesView()
+        {
+            CreateOfferButton.Hide();
+            UpdateOfferButton.Hide();
+
+        }
+
+        public void AdjustApplyNoView()
+        {
+            CreateOfferButton.Hide();
+            UpdateOfferButton.Hide();
+            ApplyToOfferButton.Hide();
         }
     }
 }

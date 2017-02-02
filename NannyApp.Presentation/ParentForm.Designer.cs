@@ -44,7 +44,7 @@
             this.MaleRadio = new System.Windows.Forms.RadioButton();
             this.ContactTextBox = new System.Windows.Forms.TextBox();
             this.CreateParentButton = new System.Windows.Forms.Button();
-            this.UpdateParentOffer = new System.Windows.Forms.Button();
+            this.UpdateParentButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +69,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.ContactTextBox, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.CreateParentButton, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.UpdateParentOffer, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.UpdateParentButton, 3, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -78,7 +78,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(456, 138);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(522, 138);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -87,7 +87,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -98,7 +98,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,7 +109,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Name:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -118,9 +118,9 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(230, 10);
+            this.label4.Location = new System.Drawing.Point(263, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Surname:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -129,9 +129,9 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(230, 44);
+            this.label5.Location = new System.Drawing.Point(263, 44);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Gender:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -140,9 +140,9 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(230, 78);
+            this.label6.Location = new System.Drawing.Point(263, 78);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.Size = new System.Drawing.Size(72, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Contact:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -150,33 +150,33 @@
             // UserNameTextBox
             // 
             this.UserNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.UserNameTextBox.Location = new System.Drawing.Point(71, 7);
+            this.UserNameTextBox.Location = new System.Drawing.Point(81, 7);
             this.UserNameTextBox.Name = "UserNameTextBox";
-            this.UserNameTextBox.Size = new System.Drawing.Size(153, 20);
+            this.UserNameTextBox.Size = new System.Drawing.Size(176, 20);
             this.UserNameTextBox.TabIndex = 6;
             // 
             // PasswordTextBox
             // 
             this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordTextBox.Location = new System.Drawing.Point(71, 41);
+            this.PasswordTextBox.Location = new System.Drawing.Point(81, 41);
             this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(153, 20);
+            this.PasswordTextBox.Size = new System.Drawing.Size(176, 20);
             this.PasswordTextBox.TabIndex = 7;
             // 
             // NameTextBox
             // 
             this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameTextBox.Location = new System.Drawing.Point(71, 75);
+            this.NameTextBox.Location = new System.Drawing.Point(81, 75);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(153, 20);
+            this.NameTextBox.Size = new System.Drawing.Size(176, 20);
             this.NameTextBox.TabIndex = 8;
             // 
             // SurnameTextBox
             // 
             this.SurnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.SurnameTextBox.Location = new System.Drawing.Point(298, 7);
+            this.SurnameTextBox.Location = new System.Drawing.Point(341, 7);
             this.SurnameTextBox.Name = "SurnameTextBox";
-            this.SurnameTextBox.Size = new System.Drawing.Size(155, 20);
+            this.SurnameTextBox.Size = new System.Drawing.Size(178, 20);
             this.SurnameTextBox.TabIndex = 9;
             // 
             // panel1
@@ -184,16 +184,16 @@
             this.panel1.Controls.Add(this.FemaleRadio);
             this.panel1.Controls.Add(this.MaleRadio);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(298, 37);
+            this.panel1.Location = new System.Drawing.Point(341, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(155, 28);
+            this.panel1.Size = new System.Drawing.Size(178, 28);
             this.panel1.TabIndex = 10;
             // 
             // FemaleRadio
             // 
             this.FemaleRadio.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.FemaleRadio.AutoSize = true;
-            this.FemaleRadio.Location = new System.Drawing.Point(86, 4);
+            this.FemaleRadio.Location = new System.Drawing.Point(109, 4);
             this.FemaleRadio.Name = "FemaleRadio";
             this.FemaleRadio.Size = new System.Drawing.Size(59, 17);
             this.FemaleRadio.TabIndex = 1;
@@ -216,37 +216,37 @@
             // ContactTextBox
             // 
             this.ContactTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.ContactTextBox.Location = new System.Drawing.Point(298, 75);
+            this.ContactTextBox.Location = new System.Drawing.Point(341, 75);
             this.ContactTextBox.Name = "ContactTextBox";
-            this.ContactTextBox.Size = new System.Drawing.Size(155, 20);
+            this.ContactTextBox.Size = new System.Drawing.Size(178, 20);
             this.ContactTextBox.TabIndex = 11;
             // 
             // CreateParentButton
             // 
             this.CreateParentButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CreateParentButton.Location = new System.Drawing.Point(71, 108);
+            this.CreateParentButton.Location = new System.Drawing.Point(81, 108);
             this.CreateParentButton.Name = "CreateParentButton";
-            this.CreateParentButton.Size = new System.Drawing.Size(153, 23);
+            this.CreateParentButton.Size = new System.Drawing.Size(176, 23);
             this.CreateParentButton.TabIndex = 12;
             this.CreateParentButton.Text = "Create Account";
             this.CreateParentButton.UseVisualStyleBackColor = true;
             this.CreateParentButton.Click += new System.EventHandler(this.CreateParent);
             // 
-            // UpdateParentOffer
+            // UpdateParentButton
             // 
-            this.UpdateParentOffer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.UpdateParentOffer.Location = new System.Drawing.Point(298, 108);
-            this.UpdateParentOffer.Name = "UpdateParentOffer";
-            this.UpdateParentOffer.Size = new System.Drawing.Size(155, 23);
-            this.UpdateParentOffer.TabIndex = 13;
-            this.UpdateParentOffer.Text = "Update Account";
-            this.UpdateParentOffer.UseVisualStyleBackColor = true;
+            this.UpdateParentButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.UpdateParentButton.Location = new System.Drawing.Point(341, 108);
+            this.UpdateParentButton.Name = "UpdateParentButton";
+            this.UpdateParentButton.Size = new System.Drawing.Size(178, 23);
+            this.UpdateParentButton.TabIndex = 13;
+            this.UpdateParentButton.Text = "Update Account";
+            this.UpdateParentButton.UseVisualStyleBackColor = true;
             // 
             // ParentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 138);
+            this.ClientSize = new System.Drawing.Size(522, 138);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ParentForm";
             this.Text = "Parent";
@@ -276,6 +276,6 @@
         private System.Windows.Forms.RadioButton MaleRadio;
         private System.Windows.Forms.TextBox ContactTextBox;
         private System.Windows.Forms.Button CreateParentButton;
-        private System.Windows.Forms.Button UpdateParentOffer;
+        private System.Windows.Forms.Button UpdateParentButton;
     }
 }

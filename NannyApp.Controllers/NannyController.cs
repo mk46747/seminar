@@ -19,6 +19,26 @@ namespace NannyApp.Controllers
             form.Show();
            
         }
+        public void ShowMyProfile(INannyView NannyView, Nanny Nanny)
+        {
+            NannyView.NannyId = Nanny.Id;
+            NannyView.Username = Nanny.Username;
+            NannyView.Password = Nanny.Password;
+            NannyView.NannyName = Nanny.Name;
+            NannyView.Surname = Nanny.Surname;
+            NannyView.Contact = Nanny.Contact;
+            NannyView.Education = Nanny.Education;
+            NannyView.ExtraQualification = Nanny.ExtraQualification;
+            NannyView.ExtraServices = Nanny.ExtraServices;
+            NannyView.Gender = Nanny.Gender;
+            NannyView.Smoking = Nanny.Smoking;
+            NannyView.Pets = Nanny.Pets;
+            NannyView.SickChildren = Nanny.SickChildern;
+            NannyView.DriversLicence = Nanny.Car;
+
+            var frm = (Form)NannyView;
+            frm.Show();
+        }
 
         public User  CreateNanny(INannyView NannyView, IUserRepository UserRepository)
         {

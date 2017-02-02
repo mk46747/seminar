@@ -19,93 +19,24 @@ namespace NannyApp.Presentation
         {
             InitializeComponent();
         }
-        /*
-        public string GetUsername()
+        public void AdjustCreateView()
         {
-            return usernameTextbox.Text;
+            UpdateAccountButton.Hide();
+            ReviewsButton.Hide();
         }
-        public string GetPassword()
+        public void AdjustEditView()
         {
-            return passwordTextbox.Text;
+            CreateAccountButton.Hide();
         }
-        public string GetName()
+        public void AdjustOuterView()
         {
-            return nameTextbox.Text;
-        }
-        public string GetSurname()
-        {
-            return surnameTextbox.Text;
-        }
-        public string GetContact()
-        {
-            return contactTextbox.Text;
-        }
-        public string GetEducation()
-        {
-            return educationTextbox.Text;
-        }
-       
-        public string GetExtraServices()
-        {
-            return extraServicesTextbox.Text;
-        }
-        public string GetExtraQualification()
-        {
-            return extraQualificationTextbox.Text;
+            UpdateAccountButton.Hide();
+            //ReviewsButton.Hide();
+            CreateAccountButton.Hide();
+
         }
 
-        public Gender GetGender()
-        {
-            var checkedButton = genderPanel.Controls.OfType<RadioButton>()
-                                      .FirstOrDefault(r => r.Checked);
-            if (checkedButton.Name.Equals("Male"))
-            {
-                return Gender.MALE;
-            }
-            return Gender.FEMALE;
-        }
-        public bool GetSmoking()
-        {
-            var checkedButton = smokingPanel.Controls.OfType<RadioButton>()
-                                      .FirstOrDefault(r => r.Checked);
-            if (checkedButton.Name.Equals("Yes"))
-            {
-                return true;
-            }
-            return false;
-        }
-        public bool GetPets()
-        {
-            var checkedButton = petsPanel.Controls.OfType<RadioButton>()
-                                      .FirstOrDefault(r => r.Checked);
-            if (checkedButton.Name.Equals("Yes"))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public bool GetSickChildren()
-        {
-            var checkedButton = sickChildrenPanel.Controls.OfType<RadioButton>()
-                                      .FirstOrDefault(r => r.Checked);
-            if (checkedButton.Name.Equals("Yes"))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public bool GetDriversLicence()
-        {
-            var checkedButton = driversLicencePanel.Controls.OfType<RadioButton>()
-                                      .FirstOrDefault(r => r.Checked);
-            if (checkedButton.Name.Equals("Yes"))
-            {
-                return true;
-            }
-            return false;
-        }*/
+        
         public NannyForm(IMainFormController MainFormController)
         {
             this.MainFormController = MainFormController;
@@ -115,6 +46,10 @@ namespace NannyApp.Presentation
         private void CreateNanny(object sender, EventArgs e)
         {
             MainFormController.CreateNanny(this);
+        }
+        private void ShowReviews(object sender, EventArgs e)
+        {
+            MainFormController.ShowReviews(this.NannyId);
         }
          
 
@@ -139,7 +74,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                usernameTextbox.Text = Username ;
+                usernameTextbox.Text = value ;
             }
         }
 
@@ -151,7 +86,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                passwordTextbox.Text = Password;
+                passwordTextbox.Text = value;
             }
         }
 
@@ -163,7 +98,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                surnameTextbox.Text = Surname;
+                surnameTextbox.Text = value;
             }
         }
 
@@ -175,7 +110,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                contactTextbox.Text = Contact;
+                contactTextbox.Text = value;
             }
         }
 
@@ -187,7 +122,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                educationTextbox.Text = Education;
+                educationTextbox.Text = value;
             }
         }
 
@@ -199,7 +134,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                extraQualificationTextbox.Text = ExtraQualification ;
+                extraQualificationTextbox.Text = value;
             }
         }
 
@@ -211,7 +146,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                extraServicesTextbox.Text = ExtraServices;
+                extraServicesTextbox.Text = value;
             }
         }
 
@@ -229,7 +164,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                if (Smoking == true)
+                if (value == true)
                 {
                     smokingYes.Checked = true;
                     smokingNo.Checked = false;
@@ -257,7 +192,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                if (Pets == true)
+                if (value == true)
                 {
                     petsYes.Checked = true;
                     petsNo.Checked = false;
@@ -285,7 +220,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                if (SickChildren == true)
+                if (value == true)
                 {
                     illChildrenYes.Checked = true;
                     illChildrenNo.Checked = false;
@@ -313,7 +248,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                if (DriversLicence == true)
+                if (value == true)
                 {
                     driversLicenceYes.Checked = true;
                     driversLicenceNo.Checked = false;
@@ -337,7 +272,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                nameTextbox.Text = Name;
+                nameTextbox.Text = value;
             }
         }
 
@@ -356,7 +291,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                if (Gender == Gender.MALE)
+                if (value == Gender.MALE)
                 {
                     genderMale.Checked = true;
                     genderFemale.Checked = false;
@@ -367,6 +302,19 @@ namespace NannyApp.Presentation
                     genderFemale.Checked = true; 
 
                 }
+            }
+        }
+
+        public int NannyId
+        {
+            get
+            {
+                return (int)Int32.Parse(nannyId.Text);
+            }
+
+            set
+            {
+                nannyId.Text = value.ToString();
             }
         }
 

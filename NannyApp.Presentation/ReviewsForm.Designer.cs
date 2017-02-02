@@ -76,13 +76,13 @@
             // 
             // ParentColumnHeader
             // 
-            this.ParentColumnHeader.Text = "Author";
+            this.ParentColumnHeader.Text = "Grade";
             this.ParentColumnHeader.Width = 88;
             // 
             // ReviewScoreColumnHeader
             // 
-            this.ReviewScoreColumnHeader.Text = "Score";
-            this.ReviewScoreColumnHeader.Width = 101;
+            this.ReviewScoreColumnHeader.Text = "Review";
+            this.ReviewScoreColumnHeader.Width = 342;
             // 
             // ReviewsForm
             // 

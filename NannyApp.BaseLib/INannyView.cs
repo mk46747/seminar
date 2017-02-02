@@ -9,21 +9,11 @@ namespace NannyApp.BaseLib
 {
     public interface INannyView
     {
-        /*
-            string GetUsername();
-         string GetPassword();
-         string GetName();
-         string GetSurname();
-         string GetContact();
-         string GetEducation();
-        
-        string GetExtraServices();
-         string GetExtraQualification();
-         Gender GetGender();
-         bool GetSmoking();
-         bool GetPets();
-         bool GetSickChildren();
-         bool GetDriversLicence();*/
+       
+        int NannyId {get; set;}
+        void AdjustCreateView();
+        void AdjustEditView();
+        void AdjustOuterView();
 
         void HideUpdateButton();
         void HideViewReviewsButton();

@@ -35,7 +35,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                UserNameTextBox.Text = Username;
+                UserNameTextBox.Text = value;
             }
         }
 
@@ -48,7 +48,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                PasswordTextBox.Text = Password;
+                PasswordTextBox.Text = value;
             }
         }
 
@@ -61,7 +61,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                NameTextBox.Text = Name;
+                NameTextBox.Text = value;
             }
         }
 
@@ -74,7 +74,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                SurnameTextBox.Text = Surname;
+                SurnameTextBox.Text = value;
             }
         }
 
@@ -97,13 +97,13 @@ namespace NannyApp.Presentation
 
             set
             {
-                if (Gender == Gender.MALE)
+                if (value == Gender.MALE)
                 {
                     MaleRadio.Checked = true;
                     FemaleRadio.Checked = false; 
                 }
 
-                else if (Gender == Gender.FEMALE)
+                else if (value == Gender.FEMALE)
                 {
                     MaleRadio.Checked = false;
                     FemaleRadio.Checked = true;
@@ -120,8 +120,26 @@ namespace NannyApp.Presentation
 
             set
             {
-                ContactTextBox.Text = Contact;
+                ContactTextBox.Text = value;
             }
+        }
+
+
+        public void AdjustCreateView()
+        {
+            UpdateParentButton.Hide();
+         }
+
+        public void AdjustEditView()
+        {
+            CreateParentButton.Hide();
+        }
+
+        public void AdjustOuterView()
+        {
+            UpdateParentButton.Hide();
+            CreateParentButton.Hide();
+
         }
     }
 }

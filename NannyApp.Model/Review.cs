@@ -12,5 +12,14 @@ namespace NannyApp.Model
         public virtual string ReviewText { get; set; }
         public virtual int Grade { get; set; }
 
+        public Review()
+        {
+
+        }
+        public Review(int Grade, string ReviewText)
+        {
+            this.Grade = Grade;
+            this.ReviewText = ReviewText;
+        }
     }
 }

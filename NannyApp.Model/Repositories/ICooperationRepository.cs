@@ -10,5 +10,7 @@ namespace NannyApp.Model.Repositories
     {
         IList<Cooperation> GetAllCooperations();
         bool AddCooperation(Cooperation Cooperation);
+
+        Cooperation GetCooperation(int Id);
     }
 }

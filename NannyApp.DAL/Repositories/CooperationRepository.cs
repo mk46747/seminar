@@ -35,7 +35,7 @@ namespace NannyApp.DAL.Repositories
             return Cooperations;
         }
 
-        public bool AddCooperation (Cooperation Cooperation)
+        public bool AddCooperation(Cooperation Cooperation)
         {
             using (var session = NHibernateService.OpenSession())
             {
@@ -45,6 +45,7 @@ namespace NannyApp.DAL.Repositories
                     {
                         session.Save(Cooperation);
                         transaction.Commit();
+                        session.Clear();
                     }
                 }
 
@@ -54,7 +55,29 @@ namespace NannyApp.DAL.Repositories
                     return false;
                 }
             }
-            return true;            
+            return true;
+        }
+        public Cooperation GetCooperation(int Id)
+        {
+            Cooperation Cooperation = null;
+            using (var session = NHibernateService.OpenSession())
+            {
+                try
+                {
+                    using (var transaction = session.BeginTransaction())
+                    {
+                        Cooperation = session.Get<Cooperation>(Id);
+                        transaction.Commit();
+                    }
+                }
+
+                catch (Exception e)
+                {
+                    Logger.Log(e);
+                    return null;
+                }
+            }
+            return Cooperation;
         }
 
     }

@@ -9,6 +9,11 @@ namespace NannyApp.BaseLib
 {
     public interface IOfferView
     {
+        void AdjustCreateView();
+        void AdjustEditView();
+        void AdjustApplyYesView();
+        void AdjustApplyNoView();
+        
         double Price { get; set; }
         string Experience { get; set; }
         BabySittingPlace BabySittingPlace { get; set; }
@@ -22,5 +27,7 @@ namespace NannyApp.BaseLib
         int MinChildrenAge { get; set; }
         int MaxChildrenAge { get; set; }
         DateTime DeadLine { get; set; }
+
+        int OfferId { get; set; }
     }
 }

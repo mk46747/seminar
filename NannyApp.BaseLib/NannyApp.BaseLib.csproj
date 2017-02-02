@@ -38,6 +38,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICooperationsView.cs" />
     <Compile Include="ICooperationView.cs" />
     <Compile Include="INannyView.cs" />
     <Compile Include="ILoginView.cs" />
@@ -45,6 +46,7 @@
     <Compile Include="IMainView.cs" />
     <Compile Include="IOfferView.cs" />
     <Compile Include="IParentView.cs" />
+    <Compile Include="IReviewsView.cs" />
     <Compile Include="IReviewView.cs" />
     <Compile Include="IStartView.cs" />
     <Compile Include="IWindowFormsFactory.cs" />

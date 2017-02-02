@@ -41,10 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountController.cs" />
+    <Compile Include="CooperationController.cs" />
     <Compile Include="MainFormController.cs" />
     <Compile Include="NannyController.cs" />
     <Compile Include="OfferController.cs" />
     <Compile Include="ParentController.cs" />
+    <Compile Include="ReviewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -99,10 +101,6 @@
     <ProjectReference Include="..\NannyApp.Presentation\NannyApp.Presentation.csproj">
       <Project>{28f80353-cc15-4e67-8df0-f1b5c51ea522}</Project>
       <Name>NannyApp.Presentation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NannyApp\NannyAppMVC.csproj">
-      <Project>{635e7e33-3f8e-43cf-bdc3-fd880af42a5e}</Project>
-      <Name>NannyAppMVC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

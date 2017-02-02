@@ -15,5 +15,9 @@ namespace NannyApp.BaseLib
         string Surname { get; set; }
         Gender Gender { get; set; }
         string Contact { get; set; }
+
+        void AdjustCreateView();
+        void AdjustEditView();
+        void AdjustOuterView();
     }
 }

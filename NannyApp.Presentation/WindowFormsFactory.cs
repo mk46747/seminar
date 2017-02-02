@@ -20,6 +20,30 @@ namespace NannyApp.Presentation
 
             return newFrm;
         }
+        public IReviewsView CreateReviewsView(IMainFormController MainFormController)
+        {
+            var newFrm = new ReviewsForm(MainFormController);
+
+            return newFrm;
+        }
+        public IReviewView CreateReviewView(IMainFormController MainFormController)
+        {
+            var newFrm = new ReviewForm(MainFormController);
+
+            return newFrm;
+        }
+        public ICooperationView CreateCooperationView(IMainFormController MainFormController)
+        {
+            var newFrm = new CooperationForm(MainFormController);
+
+            return newFrm;
+        }
+        public ICooperationsView CreateCooperationsView(IMainFormController MainFormController)
+        {
+            var newFrm = new CooperationsForm(MainFormController);
+
+            return newFrm;
+        }
 
         public INannyView CreateNannyView(IMainFormController MainFormController)
         {

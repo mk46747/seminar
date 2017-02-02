@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ApplyToOfferButton = new System.Windows.Forms.Button();
+            this.offerId = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,11 +62,9 @@
             this.DeclinedRadio = new System.Windows.Forms.RadioButton();
             this.AcceptedRadio = new System.Windows.Forms.RadioButton();
             this.PendingRadio = new System.Windows.Forms.RadioButton();
-            this.GoToCooperationButton = new System.Windows.Forms.Button();
             this.UpdateOfferButton = new System.Windows.Forms.Button();
-            this.AcceptOfferButton = new System.Windows.Forms.Button();
-            this.BackToOffersButton = new System.Windows.Forms.Button();
             this.CreateOfferButton = new System.Windows.Forms.Button();
+            this.ViewOwnerDetailsButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.priceNumeric)).BeginInit();
             this.panel1.SuspendLayout();
@@ -81,6 +81,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.ApplyToOfferButton, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.offerId, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
@@ -107,11 +109,9 @@
             this.tableLayoutPanel1.Controls.Add(this.DeadLineDateTime, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.label13, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.AnchorStatusPanel, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.GoToCooperationButton, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.UpdateOfferButton, 3, 7);
-            this.tableLayoutPanel1.Controls.Add(this.AcceptOfferButton, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.BackToOffersButton, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.CreateOfferButton, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.ViewOwnerDetailsButton, 1, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -126,6 +126,27 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(587, 264);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // ApplyToOfferButton
+            // 
+            this.ApplyToOfferButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ApplyToOfferButton.Location = new System.Drawing.Point(149, 236);
+            this.ApplyToOfferButton.Name = "ApplyToOfferButton";
+            this.ApplyToOfferButton.Size = new System.Drawing.Size(140, 23);
+            this.ApplyToOfferButton.TabIndex = 35;
+            this.ApplyToOfferButton.Text = "Apply to offer";
+            this.ApplyToOfferButton.UseVisualStyleBackColor = true;
+            this.ApplyToOfferButton.Click += new System.EventHandler(this.ApplyToOffer);
+            // 
+            // offerId
+            // 
+            this.offerId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.offerId.Location = new System.Drawing.Point(3, 236);
+            this.offerId.Name = "offerId";
+            this.offerId.Size = new System.Drawing.Size(140, 23);
+            this.offerId.TabIndex = 34;
+            this.offerId.UseVisualStyleBackColor = true;
+            this.offerId.Visible = false;
             // 
             // label1
             // 
@@ -444,16 +465,6 @@
             this.PendingRadio.Text = "Pending";
             this.PendingRadio.UseVisualStyleBackColor = true;
             // 
-            // GoToCooperationButton
-            // 
-            this.GoToCooperationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.GoToCooperationButton.Location = new System.Drawing.Point(3, 236);
-            this.GoToCooperationButton.Name = "GoToCooperationButton";
-            this.GoToCooperationButton.Size = new System.Drawing.Size(140, 23);
-            this.GoToCooperationButton.TabIndex = 30;
-            this.GoToCooperationButton.Text = "Go to cooperation";
-            this.GoToCooperationButton.UseVisualStyleBackColor = true;
-            // 
             // UpdateOfferButton
             // 
             this.UpdateOfferButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -463,26 +474,6 @@
             this.UpdateOfferButton.TabIndex = 25;
             this.UpdateOfferButton.Text = "Update offer info";
             this.UpdateOfferButton.UseVisualStyleBackColor = true;
-            // 
-            // AcceptOfferButton
-            // 
-            this.AcceptOfferButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.AcceptOfferButton.Location = new System.Drawing.Point(295, 236);
-            this.AcceptOfferButton.Name = "AcceptOfferButton";
-            this.AcceptOfferButton.Size = new System.Drawing.Size(140, 23);
-            this.AcceptOfferButton.TabIndex = 31;
-            this.AcceptOfferButton.Text = "Accept offer";
-            this.AcceptOfferButton.UseVisualStyleBackColor = true;
-            // 
-            // BackToOffersButton
-            // 
-            this.BackToOffersButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.BackToOffersButton.Location = new System.Drawing.Point(149, 236);
-            this.BackToOffersButton.Name = "BackToOffersButton";
-            this.BackToOffersButton.Size = new System.Drawing.Size(140, 23);
-            this.BackToOffersButton.TabIndex = 32;
-            this.BackToOffersButton.Text = "Back to offers";
-            this.BackToOffersButton.UseVisualStyleBackColor = true;
             // 
             // CreateOfferButton
             // 
@@ -494,6 +485,17 @@
             this.CreateOfferButton.Text = "Create offer";
             this.CreateOfferButton.UseVisualStyleBackColor = true;
             this.CreateOfferButton.Click += new System.EventHandler(this.CreateOffer);
+            // 
+            // ViewOwnerDetailsButton
+            // 
+            this.ViewOwnerDetailsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ViewOwnerDetailsButton.Location = new System.Drawing.Point(295, 236);
+            this.ViewOwnerDetailsButton.Name = "ViewOwnerDetailsButton";
+            this.ViewOwnerDetailsButton.Size = new System.Drawing.Size(140, 23);
+            this.ViewOwnerDetailsButton.TabIndex = 31;
+            this.ViewOwnerDetailsButton.Text = "View offer owner details";
+            this.ViewOwnerDetailsButton.UseVisualStyleBackColor = true;
+            this.ViewOwnerDetailsButton.Click += new System.EventHandler(this.ShowOwner);
             // 
             // OfferForm
             // 
@@ -552,9 +554,9 @@
         private System.Windows.Forms.RadioButton AcceptedRadio;
         private System.Windows.Forms.RadioButton PendingRadio;
         private System.Windows.Forms.RadioButton DeclinedRadio;
-        private System.Windows.Forms.Button GoToCooperationButton;
-        private System.Windows.Forms.Button AcceptOfferButton;
-        private System.Windows.Forms.Button BackToOffersButton;
+        private System.Windows.Forms.Button ViewOwnerDetailsButton;
         private System.Windows.Forms.Button CreateOfferButton;
+        private System.Windows.Forms.Button offerId;
+        private System.Windows.Forms.Button ApplyToOfferButton;
     }
 }

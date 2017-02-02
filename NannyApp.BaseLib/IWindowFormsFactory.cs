@@ -8,18 +8,15 @@ namespace NannyApp.BaseLib
 {
     public interface IWindowFormsFactory
     {
-     //   IAddNannyView CreateNannyView();
         ILoginView CreateLoginView(IMainFormController MainFormController);
         INannyView CreateNannyView(IMainFormController MainFormController);
-
         IMainView CreateMainView(IMainFormController MainFormController);
-
         IParentView CreateParentView(IMainFormController MainFormController);
         IOfferView CreateOfferView(IMainFormController MainFormController);
-        /*
-        IAddNewAccountView CreateAddNewAccountView(List<string> inAccType);
-        IEditAccountView CreateEditAccountView();
-        IShowAccountsListView CreateShowAccountsListView();
-         */
+        IReviewView CreateReviewView(IMainFormController MainFormController);
+        IReviewsView CreateReviewsView(IMainFormController MainFormController);
+        ICooperationView CreateCooperationView(IMainFormController MainFormController);
+        ICooperationsView CreateCooperationsView(IMainFormController MainFormController);
+        
     }
 }

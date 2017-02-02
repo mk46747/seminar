@@ -14,10 +14,12 @@ namespace NannyApp.BaseLib
        List<NannyOffer> NannyOffers { get; set; }
        List<ParentOffer> ParentOffers { get; set; }
 
+       void ShowLoginButton();
        void HideLoginButton();
        void SetWelcomeLabel(string text);
 
        void EnableMenu();
+       void DisableMenu();
 
 
     }

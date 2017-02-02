@@ -13,20 +13,37 @@ namespace NannyApp.Presentation
 {
     public partial class ReviewForm : Form, IReviewView
     {
-        public ReviewForm()
+       private IMainFormController MainFormController;
+        public ReviewForm(IMainFormController MainFormController)
         {
+            this.MainFormController = MainFormController;
             InitializeComponent();
         }
-
-        public double ReviewScore
+        private void SaveReview(object sender, EventArgs e)
+        {
+            MainFormController.SaveReview(this);
+        }
+       
+        public int ReviewScore
         {
             get
             {
-                return (double)ReviewScoreNumeric.Value;
+                return (int)ReviewScoreNumeric.Value;
             }
             set
             {
-                ReviewScoreNumeric.Value = (decimal)ReviewScore;
+                ReviewScoreNumeric.Value = (decimal)value;
+            }
+        }
+        public int CooperationId
+        {
+            get
+            {
+                return Int32.Parse(cooperationId.Text);
+            }
+            set
+            {
+                cooperationId.Text = value.ToString();
             }
         }
 
@@ -39,7 +56,7 @@ namespace NannyApp.Presentation
 
             set
             {
-                ReviewCommentTextBox.Text = Comment;
+                ReviewCommentTextBox.Text = value;
             }
         }
     }

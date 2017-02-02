@@ -19,6 +19,19 @@ namespace NannyApp.Controllers
             form.Show();
         }
 
+        public void ShowMyProfile(IParentView ParentView, Parent Parent)
+        {
+            ParentView.Username = Parent.Username;
+            ParentView.Password = Parent.Password;
+            ParentView.Name = Parent.Name;
+            ParentView.Surname = Parent.Surname;
+            ParentView.Contact = Parent.Contact;
+
+            ParentView.Gender = Parent.Gender;
+            var frm = (Form)ParentView;
+            frm.Show();
+        }
+
         public User CreateParent(IParentView ParentView, IUserRepository UserRepository)
         {
             string Username = ParentView.Username;

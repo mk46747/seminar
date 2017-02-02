@@ -15,22 +15,26 @@ namespace NannyApp.BaseLib
         void ShowLoginForm(IMainView MainView);
         void LoginUser(ILoginView LoginView);
         void ShowMainForm();
-        
+        void ShowMyCooperations();
         void ShowParentForm(Form LoginView);
         void CreateParent(IParentView ParentView);
         void ShowOfferForm();
+        void ShowMyProfile();
         void CreateOffer(IOfferView OfferView);
-        /*
-        void ShowCreateParentOfferForm();
-        void CreateParentOffer(ICreateParentOfferView CreateParentOfferView);
-        void ShowOffersForm();
-        void ShowOfferForm();
-        void ShowCooperationsForm();
-        void ShowNannyForm();
-        void ShowParentForm();
-        void ShowCooperationsForm();
-        void ShowCooperationForm();
-        */
-       
+        void ShowOfferForm(int Id, IMainView MinView);
+        void ShowCooperation(int Id);
+        void UpdateCooperation(ICooperationView CooperationView);
+        void ShowReview(int CooperationId);
+        void SaveReview(IReviewView ReviewView);
+        void ShowReviews(int NannyId);
+        void ShowOwner(IOfferView OfferView);
+        void Logout(IMainView MainView);
+        void ApplyToOffer(int Id);
+
+        void InitializeLists(IMainView MainView);
+
+        
+
+
     }
 }

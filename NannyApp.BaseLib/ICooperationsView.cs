@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NannyApp.Model;
 
 namespace NannyApp.BaseLib
 {
-    public interface IReviewView
+    public interface ICooperationsView
     {
-        int CooperationId { get; set; }
-        int ReviewScore { get; set; }
-        string Comment { get; set; }
+        IList<Cooperation> Cooperations { get; set; }
     }
 }

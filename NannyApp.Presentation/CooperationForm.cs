@@ -8,15 +8,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NannyApp.Model;
 
 namespace NannyApp.Presentation
 {
     public partial class CooperationForm : Form, ICooperationView
     {
-        public CooperationForm()
+        private IMainFormController MainFormController;
+        public CooperationForm(IMainFormController MainFormController)
         {
+            this.MainFormController = MainFormController;
             InitializeComponent();
         }
+
+        private void ShowReview(object sender, EventArgs e)
+        {
+            MainFormController.ShowReview(this.CooperationId);
+
+        }
+        public void HideReviewButton()
+        {
+            ReviewButton.Hide();
+
+        }
+
+
+        private void UpdateCooperation(object sender, EventArgs e)
+        {
+            MainFormController.UpdateCooperation(this);
+        }
+
 
         public string NannyUserName
         {
@@ -26,7 +47,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                NannyNameTextBox.Text = NannyUserName;
+                NannyNameTextBox.Text = value;
             }
         }
 
@@ -38,7 +59,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                ParentNameTextBox.Text = ParentUserName;
+                ParentNameTextBox.Text = value;
             }
         }
 
@@ -50,7 +71,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                NannyContactTextBox.Text = NannyContact;
+                NannyContactTextBox.Text = value;
             }
         }
 
@@ -62,7 +83,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                ParentContactTextBox.Text = ParentContact;
+                ParentContactTextBox.Text = value;
             }
         }
 
@@ -74,7 +95,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                StartDateDateTime.Value = StartDate;
+                StartDateDateTime.Value = value;
             }
         }
 
@@ -86,7 +107,7 @@ namespace NannyApp.Presentation
             }
             set
             {
-                EndDateDateTime.Value = EndDate;
+                EndDateDateTime.Value = value;
             }
         }
 
@@ -98,7 +119,56 @@ namespace NannyApp.Presentation
             }
             set
             {
-                PriceTextBox.Text = Price.ToString();
+                PriceTextBox.Text = value.ToString();
+            }
+        }
+        public int CooperationId
+        {
+            get
+            {
+               return Int32.Parse(cooperationId.Text);
+            }
+            set
+            {
+                cooperationId.Text = value.ToString();
+            }
+        }
+        public CooperationStatus Status
+        {
+            get
+            {
+                if (acceptRadio.Checked == true)
+                {
+                    return CooperationStatus.ACCEPTED;
+                }
+                if (rejectRadio.Checked == true)
+                {
+                    return CooperationStatus.DECLINED;
+                } if (pendingRadio.Checked == true)
+                {
+                    return CooperationStatus.PENDING;
+                }
+                return CooperationStatus.PENDING;
+                
+            }
+            set
+            {
+                if (value == CooperationStatus.ACCEPTED)
+                {
+                    acceptRadio.Checked = true;
+                }
+                else if (value == CooperationStatus.DECLINED)
+                {
+                    rejectRadio.Checked = true;
+
+
+                }
+                else if (value == CooperationStatus.PENDING)
+                {
+                    pendingRadio.Checked = true;
+
+
+                }
             }
         }
     }

@@ -35,6 +35,7 @@
             this.ReviewScoreNumeric = new System.Windows.Forms.NumericUpDown();
             this.BackButton = new System.Windows.Forms.Button();
             this.SaveReviewButton = new System.Windows.Forms.Button();
+            this.cooperationId = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReviewScoreNumeric)).BeginInit();
             this.SuspendLayout();
@@ -117,12 +118,22 @@
             this.SaveReviewButton.TabIndex = 5;
             this.SaveReviewButton.Text = "Save review";
             this.SaveReviewButton.UseVisualStyleBackColor = true;
+            this.SaveReviewButton.Click += new System.EventHandler(this.SaveReview);
+            // 
+            // cooperationId
+            // 
+            this.cooperationId.AutoSize = true;
+            this.cooperationId.Location = new System.Drawing.Point(0, 0);
+            this.cooperationId.Name = "cooperationId";
+            this.cooperationId.Size = new System.Drawing.Size(0, 13);
+            this.cooperationId.TabIndex = 1;
             // 
             // ReviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 104);
+            this.Controls.Add(this.cooperationId);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ReviewForm";
             this.Text = "Review";
@@ -130,6 +141,7 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReviewScoreNumeric)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -142,5 +154,6 @@
         private System.Windows.Forms.NumericUpDown ReviewScoreNumeric;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button SaveReviewButton;
+        private System.Windows.Forms.Label cooperationId;
     }
 }

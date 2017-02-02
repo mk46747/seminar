@@ -32,6 +32,8 @@ namespace NannyApp.DAL.Repositories
                     return null;
                 }
             }
+           // return Offers.OrderBy(o => o.Id).ToList();
+
             return Offers;
 
         }
