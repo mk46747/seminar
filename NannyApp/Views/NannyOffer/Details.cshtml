@@ -109,12 +109,15 @@
     <hr />
     <br />
 
-            <input type="button" value="Apply for this offer" onclick="location.href='@Url.Action("CreateForParentOffer", "Cooperation", new { IdParent = Convert.ToInt32(Session["Username"]), NannyOffer = Model })'" />
 
     <input type="button" value="Back to list" onclick="location.href='@Url.Action("Index", "NannyOffer")'" />
     @if (Model.Nanny.Username.Equals(Convert.ToString(Session["Username"])))
     {
         <input type="button" value="Edit your offer" onclick="location.href='@Url.Action("Edit", "NannyOffer", new { id = Model.Id })'" />
+    }
+    else
+    {
+        <input type="button" value="Apply for this offer" onclick="location.href='@Url.Action("CreateForParentOffer", "Cooperation", new { IdParent = Convert.ToInt32(Session["Id"]), NannyOffer = Model })'" />
     }
     <br /><br />
     <hr />

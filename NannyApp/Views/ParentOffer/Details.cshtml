@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Detaiils";
     Layout = "~/Views/Shared/_mytemplate_nanny.cshtml";
+    int id = Convert.ToInt32(Session["Id"]);
 }
 <div class="form-style-8">
     <table>
@@ -73,7 +74,7 @@
                 @Html.DisplayFor(model => model.BabySittingPlace)
             </td>
         </tr>
-        <tr>
+        @*<tr>
             <td width="150px">
                 <h3>Number of children:</h3>
             </td>
@@ -88,7 +89,7 @@
             <td width="300px" align="center">
                 @Html.DisplayFor(model => model.MinChildrenAge) - @Html.DisplayFor(model => model.MaxChildrenAge) years
             </td>
-        </tr>
+        </tr>*@
         <tr>
             <td width="300px">
                 <h3>Experience that parent ask from nanny:</h3>
@@ -108,14 +109,15 @@
     </table>
     <hr />
     <br />
-    @{
-            <input type="button" value="Apply for this offer" onclick="location.href='@Url.Action("Create", "Cooperation", new { IdNanny = Convert.ToInt32(Session["Username"]), ParentOffer = Model })'" />
-        }
-    }
+  
     <input type="button" value="Back to list" onclick="location.href='@Url.Action("Index", "ParentOffer")'" />
     @if (Model.Parent.Username.Equals(Convert.ToString(Session["Username"])))
     {
         <input type="button" value="Edit your offer" onclick="location.href='@Url.Action("Edit", "ParentOffer", new { id = Model.Id })'" />
+    }
+    else
+    {
+        <input type="button" value="Apply for this offer" onclick="location.href='@Url.Action("Create", "Cooperation", new { IdNanny = id, ParentOffer = Model })'" />
     }
     <br /><br />
     <hr />
