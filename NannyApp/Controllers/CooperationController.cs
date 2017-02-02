@@ -45,18 +45,21 @@ namespace NannyApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                UserRepository UserRepository = new UserRepository();
-                Nanny nanny = UserRepository.GetNanny(IdNanny);
-                Parent parent = UserRepository.GetParent(ParentOffer.Parent.Id);
+                //UserRepository UserRepository = new UserRepository();
+                //Nanny nanny = UserRepository.GetNanny(IdNanny);
+                //Parent parent = UserRepository.GetParent(ParentOffer.Parent.Id);
 
-                Cooperation newCooperation = new Cooperation();
+                //Cooperation newCooperation = new Cooperation();
 
-                newCooperation.CooperationInitiator = parent; //tko se prijavljuje
-                newCooperation.CooperationAcceptee = nanny;
+                //newCooperation.CooperationInitiator = nanny; 
+                //newCooperation.CooperationAcceptee = parent;
+                //newCooperation.Offer = ParentOffer;
+                //newCooperation.Status = CooperationStatus.PENDING;
+                //parent.Cooperations = newCooperation;
 
-                UserRepository.UpdateUser(nanny);
+                //UserRepository.UpdateUser(parent);
 
-                return RedirectToAction("Create");
+                //return RedirectToAction("Create");
             }
             return View();   
         }
