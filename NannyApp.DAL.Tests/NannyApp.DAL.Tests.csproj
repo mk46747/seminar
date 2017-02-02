@@ -90,7 +90,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="OfferTests.cs" />
-    <Compile Include="CooperationTests.cs" />
     <Compile Include="UserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
