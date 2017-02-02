@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Detaiils";
     Layout = "~/Views/Shared/_mytemplate_nanny.cshtml";
+    int id = Convert.ToInt32(Session["Id"]);
 }
 <div class="form-style-8">
     <table>
@@ -117,7 +118,7 @@
     }
     else
     {
-        <input type="button" value="Apply for this offer" onclick="location.href='@Url.Action("CreateForParentOffer", "Cooperation", new { IdParent = Convert.ToInt32(Session["Id"]), NannyOffer = Model })'" />
+        <input type="button" value="Apply for this offer" onclick="location.href='@Url.Action("CreateForNannyOffer", "Cooperation", new { IdParent = id, NannyOffer = Model })'" />
     }
     <br /><br />
     <hr />

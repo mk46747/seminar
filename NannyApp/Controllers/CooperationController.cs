@@ -41,25 +41,26 @@ namespace NannyApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateForParentOffer(int IdNanny, ParentOffer ParentOffer)
+        public ActionResult CreateForParentOffer(int IdParentOffer)
         {
+            int IdNanny = Convert.ToInt32(Session["Id"]);
             if (ModelState.IsValid)
             {
-                //UserRepository UserRepository = new UserRepository();
-                //Nanny nanny = UserRepository.GetNanny(IdNanny);
-                //Parent parent = UserRepository.GetParent(ParentOffer.Parent.Id);
+                UserRepository UserRepository = new UserRepository();
+                OfferRepository OfferRepository = new OfferRepository();
 
-                //Cooperation newCooperation = new Cooperation();
+                Nanny Initiator = UserRepository.GetNanny(IdNanny);
+                ParentOffer ParentOffer = OfferRepository.GetParentOffer(IdParentOffer);
+                Parent Aceptee = UserRepository.GetParent(ParentOffer.Parent.Id);
 
-                //newCooperation.CooperationInitiator = nanny; 
-                //newCooperation.CooperationAcceptee = parent;
-                //newCooperation.Offer = ParentOffer;
-                //newCooperation.Status = CooperationStatus.PENDING;
-                //parent.Cooperations = newCooperation;
+                Cooperation Cooperation = CooperationFactory.CreateCooperation(Initiator, Aceptee, ParentOffer);
+                Initiator.AddCooperation(Cooperation);
+                Aceptee.AddCooperation(Cooperation);
 
-                //UserRepository.UpdateUser(parent);
+                UserRepository.UpdateUser(Aceptee);
+                UserRepository.UpdateUser(Initiator);
 
-                //return RedirectToAction("Create");
+                return RedirectToAction("Create");
             }
             return View();   
         }
@@ -70,15 +71,15 @@ namespace NannyApp.Controllers
             if (ModelState.IsValid)
             {
                 UserRepository UserRepository = new UserRepository();
-                Nanny nanny = UserRepository.GetNanny(NannyOffer.Nanny.Id);
-                Parent parent = UserRepository.GetParent(IdParent);
+                Nanny Aceptee = UserRepository.GetNanny(NannyOffer.Nanny.Id);
+                Parent Initiator = UserRepository.GetParent(IdParent);
 
-                Cooperation newCooperation = new Cooperation();
+                Cooperation Cooperation = CooperationFactory.CreateCooperation(Initiator, Aceptee, NannyOffer);
+                Initiator.AddCooperation(Cooperation);
+                Aceptee.AddCooperation(Cooperation);
 
-                newCooperation.CooperationInitiator = parent; //tko se prijavljuje
-                newCooperation.CooperationAcceptee = nanny;
-
-                UserRepository.UpdateUser(nanny);
+                UserRepository.UpdateUser(Aceptee);
+                UserRepository.UpdateUser(Initiator);
 
                 return RedirectToAction("Create");
             }
